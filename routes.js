@@ -102,13 +102,12 @@ define([], function () {
             path: '/newsletter',
             component: view('default'),
             meta: {
-                        breadcrumb: 'Newsletter',
-                    },
+                breadcrumb: 'Newsletter Sign-Up',
+            },
             children: [
                 {
                     path: '',
                     component: view('newsletter'),
-                    
                     name: 'newsletter'
                 }
             ]
