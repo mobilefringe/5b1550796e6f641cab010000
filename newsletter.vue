@@ -13,7 +13,7 @@
                 <div class="main_container">
                     <div class="row">
                         <div class="col-md-12">
-                            <page-breadcrumb></page-breadcrumb>
+                            <breadcrumb></breadcrumb>
                             <p class="inside_page_link">Be the first to know about upcoming events and special announcements from {{ property.name }}!</p>
 <!--                            <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A6F7A1716BD7F01B4CD75AA1C2A8DFAC40CC867D74811AB201615AB13128353BAC932CF4B0CEBDE8DEA0BB726D6A94550">	-->
 <!--<p>-->
