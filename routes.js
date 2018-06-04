@@ -108,9 +108,6 @@ define([], function () {
                     meta: {
                         breadcrumb: 'Newsletter',
                     },
-                    // meta: {
-                    //     pageName: 'Newsletter',
-                    // },
                     name: 'newsletter'
                 }
             ]
