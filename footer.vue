@@ -94,7 +94,8 @@
                 },
                 newsletterRoute() {
                     this.show_menu = false;
-                    this.$router.push("/newsletter?email=" + this.newsletter_email);
+                    this.$router.push("/newsletter?name=" + this.newsletter_name + "?email=" + this.newsletter_email);
+                    this.newsletter_name = "";
                     this.newsletter_email = "";
                 }
             }
