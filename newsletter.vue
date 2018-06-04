@@ -79,6 +79,7 @@
                 $route () {
                     console.log(this.$route.query)
                     this.form_data.name = this.$route.query.name;
+                    $("#newsletter_name").val(this.form_data.name);
                     this.form_data.email = this.$route.query.email;
                     $("#newsletter_email").val(this.form_data.email);
                 }
