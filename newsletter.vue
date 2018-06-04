@@ -44,15 +44,27 @@
 
                             <form class="form-horizontal" action="//mobilefringe.createsend.com/t/d/s/vjklyu/" method="post" @submit.prevent="validateBeforeSubmit">
                                 <div class="row">
-                                    <div class="col-sm-8" >
-                                        <label for="cm-name">Name</label>
-                                        <input v-model="form_data.name" required class="margin_20 form-control" name="cm-name" type="text" placeholder="Name" id="newsletter_name">
+                                    <div class="col-sm-6" >
+                                        <label for="newsletter_name">First Name</label>
+                                        <input v-model="form_data.name" required class="margin_20 form-control" name="cm-f-fihudt" type="text" placeholder="Name" id="newsletter_name">
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-6" >
+                                        <label for="fieldfihudi">Last Name</label>
+                                        <input v-model="form_data.name" required class="margin_20 form-control" name="cm-name" type="text" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
                                         <label for="cm-vjklyu-vjklyu">Email</label>
                                         <input v-model="form_data.email" required class="margin_20 form-control" name="cm-vjklyu-vjklyu" type="email" placeholder="Email" id="newsletter_email">
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-6">
+                                        <label for="fieldfihudd">Phone Number</label>
+                                        <input id="fieldfihudd" name="cm-f-fihudd" type="text" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
                                         <div style="margin-left: 20px">
                                             <label class="checkbox">
                                                 <input name="agree_newsletter" required  type="checkbox">
