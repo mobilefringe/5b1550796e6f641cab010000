@@ -12,7 +12,7 @@
                         <button @click="newsletterRoute" class="newsletter_btn animated_btn">Subscribe</button>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row footer_content">
                     
                     
                 </div>
