@@ -44,8 +44,10 @@
                                             </label>
                                         </div>
             					    </div>
-            					    <div class="margin_20 clearfix"></div>
-                                    <div class="col-xs-12">
+            					</div>
+        					    <div class="margin_40 clearfix"></div>
+        					    <div class="row">
+                                    <div class="col-xs-12 center-block">
                                         <button class="animated_btn" type="submit" :disabled="formSuccess">Subscribe</button>
                                     </div>
                                 </div>
