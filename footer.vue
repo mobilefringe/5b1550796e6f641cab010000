@@ -25,7 +25,7 @@
                         </span>
                     </div>
                     <p>{{ getPropertyAddress }}</p>
-                    <p>{{ property.contact_phone }}</p>
+                    <p class="margin_40">{{ property.contact_phone }}</p>
                     <div class="footer_links">
                         <p><a href="" target="_blank">Code of Conduct</a> | <a href="" target="_blank">Privacy Policy</a></p>
                     </div>
