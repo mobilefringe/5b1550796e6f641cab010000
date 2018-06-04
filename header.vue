@@ -17,19 +17,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-9">
-                    <div class="header_social_container hidden-sm hidden-xs">
-                        <div class="header_social">
-                            <span class="social_icon" v-for="item in social_media">
-                                <a :href="item.url" target="_blank">
-                                    <div>
-                                        <p class="accessibility">{{item.name}}</p>
-                                        <i :class="item.iconClass" aria-hidden="true"></i>
-                                    </div>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
+                <div class="col-md-12">
                     <nav id="primary_nav">
 						<ul>
 						    <li class="menu_item" v-for="item in menu_items" :id="item.id">
