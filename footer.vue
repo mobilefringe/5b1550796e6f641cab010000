@@ -1,8 +1,8 @@
 <template>
     <footer v-if="dataLoaded" v-cloak>
         <section id="footer">
-            <div class="main_container">
-                <div class="row newsletter_signup">
+            <div class="newsletter_signup">
+                <div class="row main_container">
                     <div class="col-md-12 center-block">
                         <p>Sign up to receive the latest deals and news!</p>
                         <label for="userName" class="accessibility">Enter Name</label>
@@ -12,11 +12,14 @@
                         <button @click="newsletterRoute" class="newsletter_btn animated_btn">Subscribe</button>
                     </div>
                 </div>
-                <div class="row footer_content">
-                    
+            </div>
+            <div class="footer_content">
+                <div class="row main_container">
                     
                 </div>
-                <div class="row copyright">
+            </div>
+            <div class="copyright">
+                <div class="row main_container">
                     <div class="col-md-12">
                         <p class="footer_text">&#169; {{copyright_year}} <a :href="siteInfo.propertyManagementURL" target="_blank">{{ siteInfo.propertyManagementName }}</a>. All rights reserved. | Powered by <a href="https://www.mallmaverick.com/" target="_blank">Mall Maverick</a></p>
                     </div>
