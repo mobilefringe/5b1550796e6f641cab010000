@@ -15,7 +15,15 @@
             </div>
             <div class="footer_content">
                 <div class="row main_container">
-                    
+                    <p>{{ property.name }}</p>    
+                    <div class="header_social">
+					    <span class="social_icon" v-for="item in social_media">
+                            <a :href="item.url" target="_blank">
+                                <p class="accessibility">{{item.name}}</p>
+                                <i :class="item.iconClass" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
