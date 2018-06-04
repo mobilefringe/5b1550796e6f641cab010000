@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="fieldfihudd">Phone Number</label>
-                                        <input id="fieldfihudd" name="cm-f-fihudd" type="text" />
+                                        <input id="fieldfihudd" v-model="form_data.email" required class="margin_20 form-control name="cm-f-fihudd" type="text" placeholder="Phone Number" />
                                     </div>
                                 </div>
                                 <div class="row">
