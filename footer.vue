@@ -17,7 +17,7 @@
                     
                 </div>
                 <div class="row copyright">
-                    <div class="col-sm-4 col-md-6">
+                    <div class="col-md-12">
                         <p class="footer_text">&#169; {{copyright_year}} <a :href="siteInfo.propertyManagementURL" target="_blank">{{ siteInfo.propertyManagementName }}</a>. All rights reserved.</p>
                         <p class="footer_text">Powered by <a href="https://www.mallmaverick.com/" target="_blank">Mall Maverick</a></p>
                     </div>
