@@ -157,11 +157,11 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                         url: "",
                         iconClass: "fab fa-snapchat-ghost"
                     },
-                    {
-                        name: "YouTube",
-                        url: "https://www.youtube.com/",
-                        iconClass: "fab fa-youtube"
-                    }
+                    // {
+                    //     name: "YouTube",
+                    //     url: "https://www.youtube.com/",
+                    //     iconClass: "fab fa-youtube"
+                    // }
                 ],
             }
         },
