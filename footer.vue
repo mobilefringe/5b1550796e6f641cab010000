@@ -5,52 +5,17 @@
                 <div class="row newsletter_signup">
                     <div class="col-md-12 center-block">
                         <p>Sign up to receive the latest deals and news!</p>
+                        <label for="userName" class="accessibility">Enter Name</label>
+                        <input id="userName" v-model="newsletter_email" type="text" placeholder="Name*" class="newsletter_control" required />
+                        <label for="emailAddress" class="accessibility">Enter Email Address</label>
+                        <input id="emailAddress" v-model="newsletter_email" type="text" placeholder="Email*" class="newsletter_control" required />
+                        <button @click="newsletterRoute" class="newsletter_btn animated_btn">Subscribe</button>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 footer_hours">
-                    <p class="footer_heading">MANAGEMENT OFFICE HOURS</p>
-                    <img src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1525870162000/clock.png" class="clock_icon" alt="">
-                    <div class="footer_hours_container">
-                        <p>
-                            Monday to Friday: <br/>
-                            <span v-for="hour in weekdayHours">
-                                {{hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone)}}    
-                            </span>
-                        </p>
-                        <p>
-                            Saturday:<br/>
-                            <span v-for="hour in saturdayHours">
-                                {{hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone)}}    
-                            </span>
-                        </p>
-                        <p>
-                            Sunday:<br/>  
-                            <span v-for="hour in sundayHours">
-                                {{hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone)}}    
-                            </span>
-                        </p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 footer_newsletter">
-                    <p class="footer_heading">NEWSLETTER SUBSCRIPTION</p>
-                    <label for="emailAddress" class="accessibility">Enter Email Address</label>
-                    <input id="emailAddress" v-model="newsletter_email" type="text" placeholder="Susbcribe to Newsletter" class="newsletter_control" required />
-                    <button @click="newsletterRoute" class="newsletter_btn animated_btn">Subscribe</button>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-4 footer_insta">
-                    <a class="pull-right insta_view_more" :href="siteInfo.instagramURL" target="_blank">View More <i class="fa fa-caret-right"></i></a>
-                    <p class="footer_heading">INSTAGRAM</p>
-                    <div class="insta-feed-container">
-                        <div class="insta-feed-image " v-for="(item, index) in instaFeed">
-                            <a :href="item.link" target="_blank">
-                                <img :src="item.images.thumbnail.url" :alt="item.id"/>
-                            </a>
-                        </div>
-                    </div> 
-                </div>
+            <div class="row ">
+                
+                
             </div>
         </section>
         <section class="footer_privacy ">
@@ -77,6 +42,7 @@
                     dataLoaded: false,
                     instaFeed: null,
                     siteInfo: site,
+                    newsletter_name: "",
                     newsletter_email: ""
                 }
             },
