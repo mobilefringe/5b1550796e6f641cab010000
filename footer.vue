@@ -64,18 +64,7 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
-                    'getPropertyHours',
-                    'getPropertyHolidayHours'
                 ]),
-                weekdayHours() {
-                    return _.filter(this.getPropertyHours, function(o) { return o.day_of_week == 1 });
-                },
-                saturdayHours() {
-                    return _.filter(this.getPropertyHours, function(o) { return o.day_of_week == 6 });
-                },
-                sundayHours() {
-                    return _.filter(this.getPropertyHours, function(o) { return o.day_of_week == 0 });
-                },
                 copyright_year() {
                     return moment().year();
                 },
