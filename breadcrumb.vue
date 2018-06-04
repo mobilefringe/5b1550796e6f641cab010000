@@ -12,7 +12,6 @@
 <script>
 define(["Vue", "vuex", "vue-breadcrumbs"], function (Vue, Vuex, VueBreadcrumbs) {
     Vue.use(VueBreadcrumbs);
-    console.log(VueBreadcrumbs)
     return Vue.component("breadcrumb", {
         template: template, // the variable template will be injected
         data: function data() {
