@@ -24,6 +24,11 @@
                             </a>
                         </span>
                     </div>
+                    <p>{{ getPropertyAddress() }}</p>
+                    <p>{{ property.phone }}</p>
+                    <div class="footer_links">
+                        <p><a href="" target="_blank">Code of Conduct</a> | <a href="" target="_blank">Privacy Policy</a></p>
+                    </div>
                 </div>
             </div>
             <div class="copyright">
