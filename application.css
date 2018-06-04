@@ -542,14 +542,14 @@ footer {
 .page_content {
     margin: 20px 0;
 }
-.inside_page_header {
-    margin-bottom: 20px;
-    padding: 8px 20px;
-    background: $primary;
-    font-family: Georgia-Italic;
-    font-size: 1.375rem;
-    color: $text;;
-}
+// .inside_page_header {
+//     margin-bottom: 20px;
+//     padding: 8px 20px;
+//     background: $primary;
+//     font-family: Georgia-Italic;
+//     font-size: 1.375rem;
+//     color: $text;;
+// }
 .inside_page_title {
     margin-bottom: 10px;
     font-family: Georgia;
