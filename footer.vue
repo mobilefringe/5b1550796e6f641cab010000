@@ -16,7 +16,7 @@
             <div class="footer_content">
                 <div class="row main_container">
                     <p>{{ property.name }}</p>    
-                    <div class="header_social">
+                    <div class="social_icon_container">
 					    <span class="social_icon" v-for="item in social_media">
                             <a :href="item.url" target="_blank">
                                 <p class="accessibility">{{item.name}}</p>
