@@ -51,6 +51,7 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
     Vue.use(VueRouter);
     Vue.use(Vue2Filters);
     Vue.use(VueI18n);
+    Vue.use(VueBreadcrumbs);
     
     /* initialize router */
     const router = new VueRouter({
