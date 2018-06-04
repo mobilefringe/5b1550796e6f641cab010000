@@ -57,9 +57,9 @@
             },
             props:['social_media'],
             created () {
-                this.loadData().then(response => {
+                // this.loadData().then(response => {
                     this.dataLoaded = true;
-                });
+                // });
             },
             computed: {
                 ...Vuex.mapGetters([
