@@ -10,28 +10,47 @@
                         </div>
                     </div>
                 </div>
-                <div class="main_container margin_30">
-                    <div class="details_row">
-                        <div class="details_col_3 hidden_phone">
-                            <h3 class="inside_page_title">Address</h3>
-                            <p class="inside_page_link">
-                                {{ property.address1 }} <br>
-                                {{ property.city }}, {{ property.province_state }} <br>
-                                {{ property.postal_code }}
-                            </p>
-                            <a class="animated_btn" :href="siteInfo.googleMapsURL" target="_blank">Driving Direction</a>  
-                        </div>
-                        <div class="details_col_9">
+                <div class="main_container">
+                    <div class="row">
+                        <div class="col-md-12">
                             <p class="inside_page_link">Be the first to know about upcoming events and special announcements from {{ property.name }}!</p>
-                            <form class="form-horizontal" action="//mobilefringe.createsend.com/t/d/s/vltuui/" method="post" @submit.prevent="validateBeforeSubmit">
+                            <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A6F7A1716BD7F01B4CD75AA1C2A8DFAC40CC867D74811AB201615AB13128353BAC932CF4B0CEBDE8DEA0BB726D6A94550">	
+<p>
+    <label for="fieldfihudt">First Name</label>
+    <br />
+    <input id="fieldfihudt" name="cm-f-fihudt" type="text" />
+</p>
+<p>
+    <label for="fieldfihudi">Last Name</label>
+    <br />
+    <input id="fieldfihudi" name="cm-f-fihudi" type="text" />
+</p>
+<p>
+    <label for="fieldEmail">Email</label>
+    <br />
+    <input id="fieldEmail" name="cm-vjklyu-vjklyu" type="email" class="js-cm-email-input"
+    required />
+</p>
+<p>
+    <label for="fieldfihudd">Phone Number</label>
+    <br />
+    <input id="fieldfihudd" name="cm-f-fihudd" type="text" />
+</p>
+<p>
+    <button class="js-cm-submit-button" type="submit">Subscribe</button>
+</p>
+</form>
+<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+
+                            <form class="form-horizontal" action="//mobilefringe.createsend.com/t/d/s/vjklyu/" method="post" @submit.prevent="validateBeforeSubmit">
                                 <div class="row">
                                     <div class="col-sm-8" >
                                         <label for="cm-name">Name</label>
                                         <input v-model="form_data.name" required class="margin_20 form-control" name="cm-name" type="text" placeholder="Name" id="newsletter_name">
                                     </div>
                                     <div class="col-sm-8">
-                                        <label for="cm-vltuui-vltuui">Email</label>
-                                        <input v-model="form_data.email" required class="margin_20 form-control" name="cm-vltuui-vltuui" type="email" placeholder="Email" id="newsletter_email">
+                                        <label for="cm-vjklyu-vjklyu">Email</label>
+                                        <input v-model="form_data.email" required class="margin_20 form-control" name="cm-vjklyu-vjklyu" type="email" placeholder="Email" id="newsletter_email">
                                     </div>
                                     <div class="col-sm-8">
                                         <div style="margin-left: 20px">
