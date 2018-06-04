@@ -69,6 +69,7 @@
                 }
             },
             mounted () {
+                console.log(this.$route.query)
                 this.form_data.email = this.$route.query.email;
                 $("#newsletter_email").val(this.form_data.email);
             },
