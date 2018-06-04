@@ -9,7 +9,7 @@
                         <input id="userName" v-model="newsletter_email" type="text" placeholder="Name*" class="newsletter_control" required />
                         <label for="emailAddress" class="accessibility">Enter Email Address</label>
                         <input id="emailAddress" v-model="newsletter_email" type="text" placeholder="Email*" class="newsletter_control" required />
-                        <button @click="newsletterRoute" class="newsletter_btn animated_btn">Subscribe</button>
+                        <button @click="newsletterRoute" class="">Subscribe</button>
                     </div>
                 </div>
             </div>
