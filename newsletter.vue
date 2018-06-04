@@ -15,33 +15,6 @@
                         <div class="col-md-12">
                             <breadcrumb></breadcrumb>
                             <p class="inside_page_link">Be the first to know about upcoming events and special announcements from {{ property.name }}!</p>
-<!--                            <form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="92D4C54F0FEC16E5ADC2B1904DE9ED1A6F7A1716BD7F01B4CD75AA1C2A8DFAC40CC867D74811AB201615AB13128353BAC932CF4B0CEBDE8DEA0BB726D6A94550">	-->
-<!--<p>-->
-<!--    <label for="fieldfihudt">First Name</label>-->
-<!--    <br />-->
-<!--    <input id="fieldfihudt" name="cm-f-fihudt" type="text" />-->
-<!--</p>-->
-<!--<p>-->
-<!--    <label for="fieldfihudi">Last Name</label>-->
-<!--    <br />-->
-<!--    <input id="fieldfihudi" name="cm-f-fihudi" type="text" />-->
-<!--</p>-->
-<!--<p>-->
-<!--    <label for="fieldEmail">Email</label>-->
-<!--    <br />-->
-<!--    <input id="fieldEmail" name="cm-vjklyu-vjklyu" type="email" class="js-cm-email-input"-->
-<!--    required />-->
-<!--</p>-->
-<!--<p>-->
-<!--    <label for="fieldfihudd">Phone Number</label>-->
-<!--    <br />-->
-<!--    <input id="fieldfihudd" name="cm-f-fihudd" type="text" />-->
-<!--</p>-->
-<!--<p>-->
-<!--    <button class="js-cm-submit-button" type="submit">Subscribe</button>-->
-<!--</p>-->
-<!--</form>-->
-
 
                             <form class="form-horizontal" action="//mobilefringe.createsend.com/t/d/s/vjklyu/" method="post" @submit.prevent="validateBeforeSubmit">
                                 <div class="row">
