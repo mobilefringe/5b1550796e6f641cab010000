@@ -47,7 +47,7 @@
             					</div>
         					    <div class="margin_40 clearfix"></div>
         					    <div class="row">
-                                    <div class="col-xs-12 center-block">
+                                    <div class="col-xs-12">
                                         <button class="animated_btn" type="submit" :disabled="formSuccess">Subscribe</button>
                                     </div>
                                 </div>
