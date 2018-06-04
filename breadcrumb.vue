@@ -2,8 +2,9 @@
     <div class="row">
         <div class="col-md-12">
             <p class="page-breadcrumb">
+                <router-link to="/">Home</router-link> <i class="fa fa-angle-right" aria-hidden="true"></i>
                 <breadcrumbs></breadcrumbs>
-                <span class="pull-left">{{property.name}} <i class="fa fa-angle-right" aria-hidden="true"></i> </span>
+                <span class="pull-left">{{property.name}}  </span>
             </p>
         </div>
     </div>
