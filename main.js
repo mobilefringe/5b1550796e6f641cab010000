@@ -140,7 +140,7 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                     {
                         name: "Facebook",
                         url: "https://www.facebook.com",
-                        iconClass: "fab fa-facebook-f"
+                        iconClass: "fab fa-facebook"
                     },
                     {
                         name: "Twitter",
