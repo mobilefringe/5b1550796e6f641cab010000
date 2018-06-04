@@ -17,21 +17,21 @@
                             <form class="form-horizontal" action="//mobilefringe.createsend.com/t/d/s/vjklyu/" method="post" @submit.prevent="validateBeforeSubmit">
                                 <div class="row">
                                     <div class="col-sm-6" >
-                                        <label for="newsletter_name">First Name</label>
+                                        <label for="newsletter_name" class="accessibility">First Name</label>
                                         <input v-model="form_data.name" required class="margin_20 form-control" name="cm-f-fihudt" type="text" placeholder="Name" id="newsletter_name">
                                     </div>
                                     <div class="col-sm-6" >
-                                        <label for="fieldfihudi">Last Name</label>
+                                        <label for="fieldfihudi" class="accessibility">Last Name</label>
                                         <input v-model="form_data.name" required class="margin_20 form-control" name="cm-name" type="text" placeholder="Name">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <label for="cm-vjklyu-vjklyu">Email</label>
+                                        <label for="cm-vjklyu-vjklyu" class="accessibility">Email</label>
                                         <input v-model="form_data.email" required class="margin_20 form-control" name="cm-vjklyu-vjklyu" type="email" placeholder="Email" id="newsletter_email">
                                     </div>
                                     <div class="col-sm-6">
-                                        <label for="fieldfihudd">Phone Number</label>
+                                        <label for="fieldfihudd" class="accessibility">Phone Number</label>
                                         <input id="fieldfihudd" v-model="form_data.email" required class="margin_20 form-control" name="cm-f-fihudd" type="text" placeholder="Phone Number" />
                                     </div>
                                 </div>
