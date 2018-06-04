@@ -55,6 +55,7 @@
                     newsletter_email: ""
                 }
             },
+            props:['social_media'],
             created () {
                 this.loadData().then(response => {
                     var socialFeed = response[0].data;
