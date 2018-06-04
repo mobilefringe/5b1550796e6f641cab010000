@@ -58,15 +58,6 @@
             props:['social_media'],
             created () {
                 this.loadData().then(response => {
-                    var socialFeed = response[0].data;
-                    var social_feed = socialFeed.social.instagram;
-                    this.instaFeed = _.slice(social_feed, [0], [14]);
-                    this.instaFeed.map(insta => {
-                        if(insta.caption != null){
-                            insta.caption.text = _.truncate(insta.caption.text, { 'length': 60, 'separator': ' ' });
-                        }
-                    });
-
                     this.dataLoaded = true;
                 });
             },
@@ -79,7 +70,7 @@
                     return moment().year();
                 },
                 getPropertyAddress() {
-                    return this.property.address1 + ' ' + this.property.city + ' ' + this.property.country + ' ' + this.property.province_state
+                    return this.property.address1 + ', ' + this.property.city + ' ' + this.property.country + ' ' + this.property.province_state
                 }
             },
             methods: {
