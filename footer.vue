@@ -74,14 +74,6 @@
                 }
             },
             methods: {
-                loadData: async function() {
-                    try {
-                        let results = await Promise.all([this.$store.dispatch('LOAD_PAGE_DATA', {url: "http://twinpines.mallmaverick.com/api/v3/twinpines/social.json"})]);
-                        return results;
-                    } catch (e) {
-                        console.log("Error loading data: " + e.message);
-                    }
-                },
                 newsletterRoute() {
                     this.show_menu = false;
                     this.$router.push("/newsletter?name=" + this.newsletter_name + "?email=" + this.newsletter_email);
