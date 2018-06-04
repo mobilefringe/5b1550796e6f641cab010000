@@ -106,8 +106,7 @@ define([], function () {
                     path: '',
                     component: view('newsletter'),
                     meta: {
-                        breadcrumb: 'Collection Overview',
-                        navKey: 'art'
+                        breadcrumb: 'Newsletter',
                     },
                     // meta: {
                     //     pageName: 'Newsletter',
