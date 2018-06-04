@@ -124,12 +124,12 @@ hr{
     -ms-flex-align: end;
     align-items: flex-end; 
 }
-.site_logo {
-    width: 116px;
-    img {
-        max-width: 100%;
-    }
-}
+// .site_logo {
+//     width: 116px;
+//     img {
+//         max-width: 100%;
+//     }
+// }
 #menu-icon {
     display: none;
 }
