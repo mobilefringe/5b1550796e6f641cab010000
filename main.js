@@ -73,6 +73,7 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
         el: '#app',
         data: function () {
             return {
+                breadcrumb: this.$breadcrumbs,
                 menu_items: [
                     {
                         name: "Directory",
