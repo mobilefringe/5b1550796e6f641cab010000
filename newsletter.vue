@@ -4,7 +4,7 @@
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header">
-                    <div class="main_container">
+                    <div class="main_container position_relative">
                         <h2>Newsletter</h2>
                     </div>
                 </div>
