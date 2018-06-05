@@ -44,8 +44,6 @@
             data: function () {
                 return {
                     dataLoaded: false,
-                    toggleEvents: false,
-                    togglePromos: false
                 }
             },
             created (){
@@ -57,8 +55,7 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
-                    'processedEvents',
-                    'processedPromos'
+                    'processedEvents'
                 ]),
                 eventList: function events() {
                     var events = this.processedEvents;
@@ -86,38 +83,12 @@
                     }
                     return sortedEvents
                     
-                },
-                promoList: function promos() {
-                    var vm = this;
-                    var showPromos = [];
-                    _.forEach(this.processedPromos, function(value, key) {
-                        var today = moment.tz(this.timezone).format();
-                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
-                        if (today >= showOnWebDate) {
-                            if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
-                                value.store.image_url = "http://placehold.it/400x400";
-                            }
-                            
-                            if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "http://placehold.it/400x400";
-                            }
-                            
-                            value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
-                            
-                            showPromos.push(value);
-                        }
-                    });
-                    var sortedPromos = _.orderBy(showPromos, [function(o) { return o.end_date; }]);
-                    if (sortedPromos.length > 0) {
-                        this.togglePromos = true;
-                    }
-                    return sortedPromos;
                 }
             },
             methods: {
                 loadData: async function () {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "events"), this.$store.dispatch("getData","promotions")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "events")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
