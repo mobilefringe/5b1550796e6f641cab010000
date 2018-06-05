@@ -14,9 +14,9 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div class="row">
-                        <div v-if="promoList" v-for="promo in promoList">
-
+                    
+                    <div v-if="promoList" v-for="promo in promoList">
+                        <div class="row">
                             <div class="col-md-4">
                                 <img :src="promo.image_url" :alt="'Event: ' + promo.name" class="img_max" />   
                             </div>
