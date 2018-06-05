@@ -82,7 +82,6 @@
                         this.toggleEvents = true;
                     }
                     return sortedEvents
-                    
                 }
             },
             methods: {
