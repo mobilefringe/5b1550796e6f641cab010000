@@ -17,15 +17,15 @@
                     <div class="row">
                         <div v-if="eventList" v-for="event in eventList">
                             <div class="col-md-12">
-                                <h3>{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
+                                <h3 class="event_date_heading">{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
                             </div>
                             <div class="col-md-4">
                                 <img :src="event.image_url" :alt="'Event: ' + event.name" class="img_max" />   
                             </div>
                             <div class="col-md-8">
-                                <h4>{{ event.name }}</h4>
-                                <p>Location | <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span><span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span></p>
-                                <div class="" v-html="event.description_short"></div>
+                                <h4 class="event_name">{{ event.name }}</h4>
+                                <p class="event_dates">Location | <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span><span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span></p>
+                                <div class="event_desc" v-html="event.description_short"></div>
                             </div>
                         </div>
                         <div v-else>
