@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-md-8">
                                 <h4 class="event_name">{{ event.name }}</h4>
-                                <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span><span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span></p>
+                                <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(event)">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ event.start_date | moment("MMMM D", timezone)}}</span></p>
                                 <div class="event_desc" v-html="event.description_short"></div>
                             </div>
                         </div>
