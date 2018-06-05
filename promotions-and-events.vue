@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header">
                     <div class="main_container position_relative">
-                        <h2>Events</h2>
+                        <h2>Sales & Promotions</h2>
                     </div>
                 </div>
                 <div class="main_container">
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <div v-else>
-                            <p>Sorry, there are no Promotion posted at this time. Please check back soon!</p>    
+                            <p>Sorry, there are no Promotions posted at this time. Please check back soon!</p>    
                         </div>
                     </div>
                 </div>
