@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="sticky">
         <section id="header">
             <div class="main_container">
                 <div class="row">
