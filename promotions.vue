@@ -20,7 +20,7 @@
                             <!--    <h3 class="event_date_heading">{{ promo.end_date | moment("MMMM YYYY", timezone)}}</h3>    -->
                             <!--</div>-->
                         </div>
-                        <div class="row">
+                        <div class="row margin_20">
                             <div class="col-md-4">
                                 <img :src="promo.image_url" :alt="'Event: ' + promo.name" class="img_max" />   
                             </div>
@@ -55,12 +55,21 @@
             data: function () {
                 return {
                     dataLoaded: false,
-                    toggleEvents: false,
                     togglePromos: false
+                    
+                    
+                    posts: [],
+                    morePosts: [],
+                    morePostsFetched: false,
+                    noMorePosts: false,
+                    noPosts: false
                 }
             },
             created (){
                 this.loadData().then(response => {
+                    this.firstPost
+                    this.posts
+                    
                     this.dataLoaded = true;
                 });
             },
@@ -141,6 +150,26 @@
                         return false
                     } else {
                         return true
+                    }
+                },
+                handleButton: function () {
+                    if(!this.morePostsFetched){
+                        this.morePosts = this.blogList;
+                        this.posts = this.morePosts.splice(0, 3);
+                        this.morePostsFetched = true;
+                    } else {
+                        var nextPosts = this.morePosts.splice(0, 3);
+                        // Add 3 more posts to posts array
+                        var vm = this;
+                        _.forEach(nextPosts, function(value, key) {
+                            vm.posts.push(value);
+                        });
+                    }
+                    if(this.blogList.length === 0){
+                        this.noMorePosts = true
+                        this.noPosts = true
+                    } else {
+
                     }
                 }
             }
