@@ -34,6 +34,12 @@
                             <p>Sorry, there are no Promotions posted at this time. Please check back soon!</p>    
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="contact_btn" v-if="!noMorePosts" @click="handleButton">Load More</button>
+                            <p v-if="noPosts">No More Posts</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
