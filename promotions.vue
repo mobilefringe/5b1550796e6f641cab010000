@@ -17,10 +17,10 @@
                     <div class="row">
                         <div v-if="promoList" v-for="promo in promoList">
                             <div class="col-md-12">
-                                <h3 class="event_date_heading">{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
+                                <h3 class="event_date_heading">{{ promo.end_date | moment("MMMM YYYY", timezone)}}</h3>    
                             </div>
                             <div class="col-md-4">
-                                <img :src="event.image_url" :alt="'Event: ' + promo.name" class="img_max" />   
+                                <img :src="promo.image_url" :alt="'Event: ' + promo.name" class="img_max" />   
                             </div>
                             <div class="col-md-8">
                                 <h4 class="event_name">{{ promo.name }}</h4>
