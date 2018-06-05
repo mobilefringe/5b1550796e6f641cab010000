@@ -1,6 +1,6 @@
 <template>
-    <header class="sticky">
-        <section id="header">
+    <header>
+        <section id="header" class="sticky">
             <div class="main_container">
                 <div class="row">
                     <div class="col-md-12">
