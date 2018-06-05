@@ -14,8 +14,12 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    
                     <div v-if="promoList" v-for="promo in promoList">
+                        <div class="row">
+                            <!--<div class="col-md-12">-->
+                            <!--    <h3 class="event_date_heading">{{ promo.end_date | moment("MMMM YYYY", timezone)}}</h3>    -->
+                            <!--</div>-->
+                        </div>
                         <div class="row">
                             <div class="col-md-4">
                                 <img :src="promo.image_url" :alt="'Event: ' + promo.name" class="img_max" />   
@@ -35,9 +39,7 @@
         </transition>
     </div>
 </template>
-                            <!--<div class="col-md-12">-->
-                            <!--    <h3 class="event_date_heading">{{ promo.end_date | moment("MMMM YYYY", timezone)}}</h3>    -->
-                            <!--</div>-->
+                            
 <script>
     define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load", "bootstrap-vue"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload, BootstrapVue) {
         Vue.use(BootstrapVue);
