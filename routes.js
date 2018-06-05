@@ -40,7 +40,7 @@ define([], function () {
                     path: '',
                     component: view('events'),
                     meta: {
-                        pageName: 'Events',
+                        breadcrumb: 'Events',
                     },
                     name: 'events'
                 },
