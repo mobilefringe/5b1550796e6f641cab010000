@@ -37,6 +37,14 @@ define([], function () {
             component: view('default'),
             children: [
                 {
+                    path: '',
+                    component: view('events'),
+                    meta: {
+                        pageName: 'Events',
+                    },
+                    name: 'jobs'
+                },
+                {
                     path: ':id',
                     component: view('event_details'),
                     meta: {
