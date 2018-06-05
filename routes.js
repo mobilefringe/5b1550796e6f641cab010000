@@ -42,7 +42,7 @@ define([], function () {
                     meta: {
                         pageName: 'Events',
                     },
-                    name: 'jobs'
+                    name: 'events'
                 },
                 {
                     path: ':id',
