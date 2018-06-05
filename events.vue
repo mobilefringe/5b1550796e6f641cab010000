@@ -20,7 +20,7 @@
                                 <h3>{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
                             </div>
                             <div class="col-md-4">
-                                <img :src="event.image_url" :alt="'Event: ' + event.name" class="max_img" />   
+                                <img :src="event.image_url" :alt="'Event: ' + event.name" class="img_max" />   
                             </div>
                             <div class="col-md-8">
                                 <h4>{{ event.name }}</h4>
