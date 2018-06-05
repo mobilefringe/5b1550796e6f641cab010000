@@ -151,6 +151,14 @@ define([], function () {
             component: view('default'),
             children: [
                 {
+                    path: '',
+                    component: view('promotions'),
+                    meta: {
+                        breadcrumb: 'Sales & Promotions',
+                    },
+                    name: 'promotions'
+                },
+                {
                     path: ':id',
                     component: view('promotion_details'),
                     meta: {
