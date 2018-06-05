@@ -17,7 +17,7 @@
                     <div class="row">
                         <div v-if="eventList" v-for="event in eventList">
                             <div class="col-md-4">
-                                <img :src="event.image_url" :alt="'Event: ' + promo.name" class="max_img" />   
+                                <img :src="event.image_url" :alt="'Event: ' + event.name" class="max_img" />   
                             </div>
                             <div class="col-md-8">
                                 <h4>{{ event.name }}</h4>
