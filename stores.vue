@@ -25,7 +25,7 @@
             							</article>
             						</template>
             					</search-component>
-            					<i class="fas fa-search"></i>
+            					<i class="fa fa-search"></i>
             				</div> 
             				<div class="store_category">
             					<v-select 
