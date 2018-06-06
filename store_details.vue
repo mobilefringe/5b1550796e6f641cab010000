@@ -20,9 +20,6 @@
                             <div v-if="currentStore.phone">
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
-                            <div v-if="currentStore.unit">
-                                <p class="store_details_phone">{{ currentStore.unit }}</p>
-                            </div>
                             <a v-if="currentStore.website" class="" :href="'http://' + currentStore.website" target="_blank">Website</a>
                         </div>
                         <div class="col-md-8">
