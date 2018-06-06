@@ -18,14 +18,12 @@
                         <div class="col-md-4">
                             <img class="store_details_image center-block" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
                             <div v-if="currentStore.phone">
-                                <h3 class="inside_page_title">Phone</h3>
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
                             <div v-if="currentStore.unit">
-                                <h3 class="inside_page_title">Address</h3>
                                 <p class="store_details_phone">{{ currentStore.unit }}</p>
                             </div>
-                            <a v-if="currentStore.website" class="animated_btn" :href="'http://' + currentStore.website" target="_blank">Visit Website</a>
+                            <a v-if="currentStore.website" class="" :href="'http://' + currentStore.website" target="_blank">Website</a>
                         </div>
                         <div class="col-md-8">
                             <div id="map" class="margin_20">
