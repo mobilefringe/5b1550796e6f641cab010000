@@ -112,21 +112,21 @@
     .store_logo_container:hover .store_tag {
         display: none;
     }
-    .store_logo_container:hover .store_details {
-        display: block;
-    }
-    .store_logo_container:hover .store_details .store_text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 0.75rem;
-        color: #fff;
-        line-height: 22px;
-        letter-spacing: 0.6px;
-        text-transform: uppercase;
-        text-align: center;
-    }
+    /*.store_logo_container:hover .store_details {*/
+    /*    display: block;*/
+    /*}*/
+    /*.store_logo_container:hover .store_details .store_text {*/
+    /*    position: absolute;*/
+    /*    top: 50%;*/
+    /*    left: 50%;*/
+    /*    transform: translate(-50%, -50%);*/
+    /*    font-size: 0.75rem;*/
+    /*    color: ;*/
+    /*    line-height: normal;*/
+    /*    letter-spacing: 0.6px;*/
+    /*    text-transform: uppercase;*/
+    /*    text-align: center;*/
+    /*}*/
     .listView {
         column-count: 2;
     }
