@@ -9,7 +9,7 @@
                     </div>
                 </div>
         		<div class="main_container">
-        		    <div class="row">
+        		    <div class="row margin_40">
         		        <div class="col-md-6">
         		            <button class="animated_btn stores_btn" @click="toggleView()">{{ toggleText }}</button>
         		            <router-link to="/map">
