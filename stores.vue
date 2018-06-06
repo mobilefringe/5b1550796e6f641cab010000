@@ -11,8 +11,8 @@
         		<div class="main_container">
         		    <div class="row">
         		        <div class="col-md-6">
-        		            <button class="submit_btn animated_btn swing_in" @click="toggleView()">{{ toggleText }}</button>
-        		            <div class="animated_btn">
+        		            <button class="animated_btn stores_btn" @click="toggleView()">{{ toggleText }}</button>
+        		            <div class="animated_btn stores_btn">
         		                Center Map
         		            </div>
         		        </div>
