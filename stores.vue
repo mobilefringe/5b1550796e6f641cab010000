@@ -83,10 +83,6 @@
 	</div>
 </template>
 <style>
-    .store_logo_container {
-        margin: 0;
-        border: none !important;
-    }
     .store_details {
         position: absolute;
         top: 0;
