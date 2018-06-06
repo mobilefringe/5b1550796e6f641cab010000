@@ -185,7 +185,7 @@ define([], function () {
                     path: ':id',
                     component: view('store_details'),
                     meta: {
-                        breadcrumb: '',
+                        breadcrumb: 'Store Details',
                     },
                     name: 'storeDetails',
                     props: true
