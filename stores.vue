@@ -204,6 +204,7 @@
                     var vm = this;
                     var hover_image = "";
                     _.forEach(store_list, function(value, key) {
+                        value.image_url = "https://via.placeholder.com/500";
                         // if(value.assets != undefined){
                         //     //Stores JSON
                         //     var store_id = value.id
