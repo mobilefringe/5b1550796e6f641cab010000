@@ -146,7 +146,7 @@
                     filteredStores: null,
                     search_result : null,
                     query: "",
-                    toggleText: "List View",
+                    toggleText: "Display as List",
                     logoView: true,
                     listView: false
                 }
@@ -266,11 +266,11 @@
                 },
                 toggleView() {
                     if (this.logoView) {
-                        this.toggleText = "Logo View"
+                        this.toggleText = "Display as Logos"
                         this.listView = true;
                         this.logoView = false;
                     } else if (this.listView) {
-                        this.toggleText = "List View"
+                        this.toggleText = "Display as List"
                         this.logoView = true;
                         this.listView = false;
                     } 
