@@ -101,32 +101,9 @@
         background-color: rgba(255, 255, 255, 0.4);
         transition: all 0.3s ease;
     }
-    /*.store_logo_container:hover .store_img {*/
-    /*    display: block;*/
-    /*    -webkit-filter: blur(3px);*/
-    /*    -moz-filter: all .25s ease;*/
-    /*    -o-filter: all .25s ease;*/
-    /*    -ms-filter: all .25s ease;*/
-    /*    filter: blur(3px);*/
-    /*}*/
     .store_logo_container:hover .store_tag {
         display: none;
     }
-    /*.store_logo_container:hover .store_details {*/
-    /*    display: block;*/
-    /*}*/
-    /*.store_logo_container:hover .store_details .store_text {*/
-    /*    position: absolute;*/
-    /*    top: 50%;*/
-    /*    left: 50%;*/
-    /*    transform: translate(-50%, -50%);*/
-    /*    font-size: 0.75rem;*/
-    /*    color: ;*/
-    /*    line-height: normal;*/
-    /*    letter-spacing: 0.6px;*/
-    /*    text-transform: uppercase;*/
-    /*    text-align: center;*/
-    /*}*/
     .listView {
         column-count: 2;
     }
