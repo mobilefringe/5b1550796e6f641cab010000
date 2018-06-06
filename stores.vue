@@ -141,7 +141,7 @@
     }
 </style>
 <script>
-    define(["Vue", "vuex", "vue-select", "jquery", "smooth-zoom", "vue!png-map", "vue!search-component", "masonry" , "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, $, smoothZoom, PNGMapComponent, SearchComponent, masonry, VueMasonryPlugin) {
+    define(["Vue", "vuex", "vue-select", "vue!search-component", "masonry" , "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, SearchComponent, masonry, VueMasonryPlugin) {
         Vue.use(VueMasonryPlugin.default);
         return Vue.component("stores-m-component", {
             template: template, // the variable template will be injected
