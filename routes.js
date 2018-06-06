@@ -177,7 +177,7 @@ define([], function () {
                     path: '',
                     component: view('stores'),
                     meta: {
-                        pageName: 'Store Directory',
+                        breadcrumb: 'Directory',
                     },
                     name: 'storeList'
                 },
@@ -185,7 +185,7 @@ define([], function () {
                     path: ':id',
                     component: view('store_details'),
                     meta: {
-                        pageName: 'Store Details',
+                        breadcrumb: '',
                     },
                     name: 'storeDetails',
                     props: true
