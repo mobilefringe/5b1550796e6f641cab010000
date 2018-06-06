@@ -101,14 +101,14 @@
         background-color: rgba(255, 255, 255, 0.4);
         transition: all 0.3s ease;
     }
-    .store_logo_container:hover .store_img {
-        display: block;
-        -webkit-filter: blur(3px);
-        -moz-filter: all .25s ease;
-        -o-filter: all .25s ease;
-        -ms-filter: all .25s ease;
-        filter: blur(3px);
-    }
+    /*.store_logo_container:hover .store_img {*/
+    /*    display: block;*/
+    /*    -webkit-filter: blur(3px);*/
+    /*    -moz-filter: all .25s ease;*/
+    /*    -o-filter: all .25s ease;*/
+    /*    -ms-filter: all .25s ease;*/
+    /*    filter: blur(3px);*/
+    /*}*/
     .store_logo_container:hover .store_tag {
         display: none;
     }
