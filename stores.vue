@@ -43,7 +43,7 @@
                                 <div v-masonry-tile  v-for="(store, index) in filteredStores" :key="index" class="stores-grid-item">
                             	    <div class="store_logo_container">
                             	        <router-link :to="'/stores/'+ store.slug">
-                                			<img class="store_img" :src="store.store_front_url_abs" alt="">
+                                			<img class="store_img" :src="store.image_url" alt="">
                                 			<div class="store_tag store_promotion" v-if="store.total_published_promos">-->
             									<div class="store_tag_text">{{$t("stores_page.promotion")}}</div>
             								</div>
