@@ -244,13 +244,12 @@
                         this.$router.replace({ name: 'stores' });
                     }
                 },
-                updateSVGMap (map) {
+                updatePNGMap(map) {
                     this.map = map;
-                    this.dropPin();
+                    this.dropPin(this.currentStore);
                 },
-                dropPin () {
-                    this.svgMapRef.addMarker(this.currentStore, '//codecloud.cdn.speedyrails.net/sites/589e308f6e6f641b9f010000/image/png/1484850466000/show_pin.png');
-                    this.svgMapRef.setViewBox(this.currentStore)
+                dropPin(store) {
+                    this.$refs.pngmap_ref.showLocation(store.id);
                 },
                 isMultiDay(promo) {
                     var timezone = this.timezone
