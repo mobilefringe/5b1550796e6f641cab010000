@@ -17,10 +17,10 @@
                     <div class="row">
                         <div class="col-md-4">
                             <img class="store_details_image center-block" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
-                            <div v-if="currentStore.phone">
+                            <div class="center" v-if="currentStore.phone">
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
-                            <div v-if="currentStore.website">
+                            <div class="center" v-if="currentStore.website">
                                 <a class="store_details_phone" :href="'http://' + currentStore.website" target="_blank">Website</a>
                             </div>
                             <ul v-if="storeHours" class="store_details_hours_list">
