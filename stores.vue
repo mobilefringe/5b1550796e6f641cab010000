@@ -73,7 +73,7 @@
                         <transition-group name="custom-classes-transition" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div">
                             <div v-for="(store, index) in filteredStores" :key="index">
                     	        <router-link :to="'/stores/'+ store.slug">
-                        			<div>
+                        			<div class="store_name">
                         			    {{ store.name }}
                         			    <span v-if="store.total_published_promos"><i class="fa fa-tag"></i></span>
                                         <span v-if="store.is_new_store"><i class="fa fa-star"></i></span>
