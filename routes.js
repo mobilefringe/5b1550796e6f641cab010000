@@ -172,13 +172,14 @@ define([], function () {
         {
             path: '/stores',
             component: view('default'),
+            meta: {
+                breadcrumb: 'Directory',
+            },
             children: [
                 {   
                     path: '',
                     component: view('stores'),
-                    meta: {
-                        breadcrumb: 'Directory',
-                    },
+                    
                     name: 'storeList'
                 },
                 {
