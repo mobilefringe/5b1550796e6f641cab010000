@@ -191,11 +191,6 @@
                     'findPromoById',
                     'findJobById'
                 ]),
-                storeCategory() {
-                    var currentStoreCategory = this.currentStore.categories[0];
-                    category = this.findCategoryById(currentStoreCategory)
-                    return category.name
-                },
                 getPNGurl () {
                     return "https://www.mallmaverick.com" + this.property.map_url;
                 },
@@ -203,6 +198,7 @@
                     return this.$refs.pngmapref;
                 },
                 allStores() {
+                    console.log(this.processedStores)
                     this.processedStores.map(function(store){
                         store.zoom = 1;
                     })
