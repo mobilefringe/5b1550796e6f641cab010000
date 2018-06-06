@@ -87,7 +87,7 @@
                 this.loadData().then(response => {
                     this.dataLoaded = true;
                     this.updateCurrentStore(this.id);
-                    console.log(this.$breadcrumbs,)
+                    console.log(this.$breadcrumbs)
                 });
             },
             watch: {
@@ -186,6 +186,7 @@
                     if (this.currentStore === null || this.currentStore === undefined) {
                         this.$router.replace({ name: 'stores' });
                     }
+                    this.$breadcrumbs[1].meta.breadcrumb = this.currentStore.name
                 },
                 updatePNGMap(map) {
                     this.map = map;
