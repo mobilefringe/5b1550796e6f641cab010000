@@ -16,24 +16,26 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="store_details_image center-block" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
-                            <div class="margin_20 center" v-if="currentStore.phone">
-                                <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
+                            <div class="sidebar">
+                                <img class="store_details_image center-block" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
+                                <div class="margin_20 center" v-if="currentStore.phone">
+                                    <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
+                                </div>
+                                <div class="margin_20 center" v-if="currentStore.website">
+                                    <a class="store_details_phone" :href="currentStore.website" target="_blank">Website</a>
+                                </div>
+                                <ul v-if="storeHours" class="store_details_hours_list">
+                                    <li v-for="hour in storeHours" :class="{ today: hour.todays_hours }">
+                                        <div v-if="!hour.is_closed">
+                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span><span class="hours_list_time">{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}</span>
+                                        </div>
+                                        <div v-else>
+                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>CLOSED
+                                        </div>
+                                    </li>
+                                    <li class="hours_vary">*Hours may vary</li>
+                                </ul>
                             </div>
-                            <div class="margin_20 center" v-if="currentStore.website">
-                                <a class="store_details_phone" :href="currentStore.website" target="_blank">Website</a>
-                            </div>
-                            <ul v-if="storeHours" class="store_details_hours_list">
-                                <li v-for="hour in storeHours" :class="{ today: hour.todays_hours }">
-                                    <div v-if="!hour.is_closed">
-                                        <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span><span class="hours_list_time">{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}</span>
-                                    </div>
-                                    <div v-else>
-                                        <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>CLOSED
-                                    </div>
-                                </li>
-                                <li class="hours_vary">*Hours may vary</li>
-                            </ul>
                         </div>
                         <div class="col-md-8">
                             <div id="map" class="margin_20">
