@@ -8,42 +8,34 @@
                         <h2>Directory</h2>
                     </div>
                 </div>
-        		<div class="site_container page_content">
-        			<div class="stores_header_container">
-        			    <div class="stores_header_line hidden_phone"></div>
-        				<div class="stores_button_container search position_relative">
-        					<search-component :list="allStores" :placeholder="$t('stores_page.find_your_store')" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
-        						<template slot="item" scope="option" class="manual">
-        							<article class="media">
-        								<p>{{ option.data.name }}</p>
-        							</article>
-        						</template>
-        					</search-component>
-        					<img src="//codecloud.cdn.speedyrails.net/sites/5ac3cb4b6e6f640eec120000/image/png/1517497861636/search_icon_2x.png" id="search_icon" alt="">
-        				</div>
-        				<div class="stores_header_line hidden_phone"></div>
-        				<div class="stores_button_container category">
-        					<v-select 
-        					    v-model="selectedCat" 
-        					    :options="dropDownCats" 
-        					    :searchable="false" 
-        					    :on-change="filterByCategory" 
-        					    class="category-select" 
-        					    :placeholder="$t('stores_page.sort_by_cats')" 
-        					    id="selectByCat"
-        				    ></v-select>
-        				</div>
-        				<div class="stores_header_line hidden_phone"></div>
-        				<div class="stores_button_container map_link hidden_phone">
-        				    <router-link to="/map">
-        				        <div>{{$t("stores_page.view_map")}}</div>
-        				    </router-link>
-        				</div>
-        				<div class="stores_header_line hidden_phone"></div>
-        			</div>
-        			<div class="margin_40">
-    			        <button class="submit_btn animated_btn swing_in" @click="toggleView()">{{ toggleText }}</button>
-        			</div>
+        		<div class="main_container">
+        		    <div class="row">
+        		        <div class="col-md-6">
+        		            <button class="submit_btn animated_btn swing_in" @click="toggleView()">{{ toggleText }}</button>   
+        		        </div>
+        		        <div class="col-md-6">
+        		            <div class="">
+            					<search-component :list="allStores" :placeholder="$t('stores_page.find_your_store')" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
+            						<template slot="item" scope="option" class="manual">
+            							<article class="media">
+            								<p>{{ option.data.name }}</p>
+            							</article>
+            						</template>
+            					</search-component>
+            				</div> 
+            				<div class="stores_button_container category">
+            					<v-select 
+            					    v-model="selectedCat" 
+            					    :options="dropDownCats" 
+            					    :searchable="false" 
+            					    :on-change="filterByCategory" 
+            					    class="category-select" 
+            					    :placeholder="$t('stores_page.sort_by_cats')" 
+            					    id="selectByCat"
+            				    ></v-select>
+            				</div>
+        		        </div>
+        		    </div>
         			<!-- Logo View -->
         			<div v-if="logoView">
             			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item">
