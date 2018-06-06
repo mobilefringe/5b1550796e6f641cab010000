@@ -841,39 +841,39 @@ footer {
     }
 }
 
-/* *** STORE DETAILS *** */
-.store_details_image {
-    margin-bottom: 20px; 
-    max-width: 100%;
-    border: 1px solid #D8D8D8;
-}
-.store_details_phone {
-    margin-bottom: 20px;  
-    display: inline-block;
-    font-family: Avenir-Book;
-    font-size: 1.125rem;
-    color: $text;
-}
-.store_details_hours_list {
-    margin-bottom: 20px;
-    padding: 0;
-    list-style-type: none;
-    font-size: 1.125rem;
-    line-height: 1.875rem;
-    .today {
-        font-family: Avenir-Medium; 
-        color: $primary;
-    }
-    .hours_list_day {
-        padding-right: 50px;
-        min-width: 145px;
-        display: inline-block;
-    }
-}
-.store_details_desc {
-    font-size: 1.125rem !important;
-    line-height: 1.875rem !important;
-}
+// /* *** STORE DETAILS *** */
+// .store_details_image {
+//     margin-bottom: 20px; 
+//     max-width: 100%;
+//     border: 1px solid #D8D8D8;
+// }
+// .store_details_phone {
+//     margin-bottom: 20px;  
+//     display: inline-block;
+//     font-family: Avenir-Book;
+//     font-size: 1.125rem;
+//     color: $text;
+// }
+// .store_details_hours_list {
+//     margin-bottom: 20px;
+//     padding: 0;
+//     list-style-type: none;
+//     font-size: 1.125rem;
+//     line-height: 1.875rem;
+//     .today {
+//         font-family: Avenir-Medium; 
+//         color: $primary;
+//     }
+//     .hours_list_day {
+//         padding-right: 50px;
+//         min-width: 145px;
+//         display: inline-block;
+//     }
+// }
+// .store_details_desc {
+//     font-size: 1.125rem !important;
+//     line-height: 1.875rem !important;
+// }
 
 @media(max-width: 768px){
     .visible_phone {
