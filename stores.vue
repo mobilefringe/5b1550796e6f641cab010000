@@ -74,7 +74,7 @@
                             <div v-for="(store, index) in filteredStores" :key="index">
                     	        <router-link :to="'/stores/'+ store.slug">
                         			<div class="store_name">
-                        			    {{ store.name }}
+                        			    <p>{{ store.name }}</p>
                         			    <span v-if="store.total_published_promos"><i class="fa fa-tag"></i></span>
                                         <span v-if="store.is_new_store"><i class="fa fa-star"></i></span>
                                         <span v-if="store.is_coming_soon_store"><i class="fa fa-clock"></i></span>
