@@ -37,7 +37,7 @@
                         </div>
                         <div class="col-md-8">
                             <div id="map" class="margin_20">
-                                <svg-map  ref="svgmapRef"  @updateMap="updateSVGMap"  :svgMapUrl="getSVGurl" ></svg-map>
+                                <mapplic-png-map ref="pngmap_ref" :height="300" :hovertip="true" :storelist="allStores" :floorlist="floorList" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" @updateMap="updatePNGMap"></mapplic-png-map>
                             </div>
                             <div class=" margin_30 store_details_desc" v-html="currentStore.rich_description"></div>
                             <div v-if="this.currentStore.promotions">
@@ -109,8 +109,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "jquery", "bootstrap-vue"], function (Vue, Vuex, moment, $, BootstrapVue) {
-        Vue.use(BootstrapVue);
+    define(["Vue", "vuex", "moment", "vue!mapplic-png-map", "jquery"], function (Vue, Vuex, moment, MapplicComponent, $) {
         return Vue.component("store-details-component", {
             template: template, // the variable template will be injected,
             props: ['id'],
