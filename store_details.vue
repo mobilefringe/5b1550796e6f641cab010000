@@ -87,7 +87,7 @@
                 this.loadData().then(response => {
                     this.dataLoaded = true;
                     this.updateCurrentStore(this.id);
-                    console.log(this.breadcrumb)
+                    console.log(this.$breadcrumbs,)
                 });
             },
             watch: {
