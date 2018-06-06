@@ -178,15 +178,7 @@
                     }); 
                     this.storeJobs = temp_job;
                     this.toggleJobs = true;
-                },
-                // map : function (){
-                    
-                //         var vm = this;
-                //         setTimeout(function () {
-                //             vm.dropPin();
-                //         }, 500);
-                   
-                // }
+                }
             },
             computed: {
                 ...Vuex.mapGetters([
@@ -227,7 +219,6 @@
                     floor_list.push(floor_1);
                     return floor_list;
                 }
-                
             },
             methods: {
                 loadData: async function () {
