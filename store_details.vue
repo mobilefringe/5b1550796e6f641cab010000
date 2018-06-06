@@ -21,7 +21,7 @@
                                 <a class="store_details_phone" :href="'tel:' + currentStore.phone">{{ currentStore.phone }}</a>    
                             </div>
                             <div class="center" v-if="currentStore.website">
-                                <a class="store_details_phone" :href="'http://' + currentStore.website" target="_blank">Website</a>
+                                <a class="store_details_phone" :href="currentStore.website" target="_blank">Website</a>
                             </div>
                             <ul v-if="storeHours" class="store_details_hours_list">
                                 <li v-for="hour in storeHours" :class="{ today: hour.todays_hours }">
