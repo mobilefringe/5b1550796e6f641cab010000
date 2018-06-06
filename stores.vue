@@ -17,7 +17,7 @@
         		            </div>
         		        </div>
         		        <div class="col-md-6">
-        		            <div class="">
+        		            <div class="store_search">
             					<search-component :list="allStores" placeholder="Search" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
             						<template slot="item" scope="option" class="manual">
             							<article class="media">
@@ -26,7 +26,7 @@
             						</template>
             					</search-component>
             				</div> 
-            				<div class="stores_button_container category">
+            				<div class="store_category">
             					<v-select 
             					    v-model="selectedCat" 
             					    :options="dropDownCats" 
