@@ -115,6 +115,7 @@
         display: none !important;
     }
 </style>
+
 <script>
     define(["Vue", "vuex", "moment", "vue!mapplic-png-map", "jquery"], function (Vue, Vuex, moment, MapplicComponent, $) {
         return Vue.component("store-details-component", {
