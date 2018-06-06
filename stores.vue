@@ -12,9 +12,11 @@
         		    <div class="row">
         		        <div class="col-md-6">
         		            <button class="animated_btn stores_btn" @click="toggleView()">{{ toggleText }}</button>
-        		            <div class="animated_btn stores_btn">
-        		                Center Map
-        		            </div>
+        		            <router-link to="/map">
+        		                <div class="animated_btn stores_btn">
+        		                    Center Map
+        		                </div>    
+        		            </router-link>
         		        </div>
         		        <div class="col-md-6">
         		            <div class="store_search">
