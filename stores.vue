@@ -200,25 +200,26 @@
                 ]),
                 allStores() {
                     var store_list = this.processedStores
+                    console.log(this.processedStores)
                     var vm = this;
                     var hover_image = "";
                     _.forEach(store_list, function(value, key) {
-                        if(value.assets != undefined){
-                            //Stores JSON
-                            var store_id = value.id
-                            vm.$store.dispatch('LOAD_PAGE_DATA', { url: vm.property.mm_host + "/api/v4/thegateway/stores/" + store_id + "/store_files.json" }).then(response => {
-                                if(response.data != undefined) {
-                                    hover_image = response.data.store_files[0].url
-                                    value.hover_img = 'https://www.mallmaverick.com' + hover_image
-                                    // vm.filteredStores = null;
-                                    // vm.filteredStores = store_list; 
-                                    // vm.filteredStores[key].hover_img = 'https://www.mallmaverick.com' + hover_image
-                                }
-                            }, error => {
-                                console.error("Could not retrieve data from server. Please check internet connection and try again.");
-                                vm.$router.replace({ name: 'home' });
-                            });
-                        }    
+                        // if(value.assets != undefined){
+                        //     //Stores JSON
+                        //     var store_id = value.id
+                        //     vm.$store.dispatch('LOAD_PAGE_DATA', { url: vm.property.mm_host + "/api/v4/thegateway/stores/" + store_id + "/store_files.json" }).then(response => {
+                        //         if(response.data != undefined) {
+                        //             hover_image = response.data.store_files[0].url
+                        //             value.hover_img = 'https://www.mallmaverick.com' + hover_image
+                        //             // vm.filteredStores = null;
+                        //             // vm.filteredStores = store_list; 
+                        //             // vm.filteredStores[key].hover_img = 'https://www.mallmaverick.com' + hover_image
+                        //         }
+                        //     }, error => {
+                        //         console.error("Could not retrieve data from server. Please check internet connection and try again.");
+                        //         vm.$router.replace({ name: 'home' });
+                        //     });
+                        // }    
                     });
                     this.filteredStores = store_list;
                     return store_list
