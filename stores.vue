@@ -10,89 +10,69 @@
                 </div>
                 <div class="main_container margin_30">
                     <div class="hidden_phone">
-                        <div class="row store_nav">
-                            <div class="col-md-3">
-                                <a class="store_nav_link active_store_nav" href="/stores">Directory</a>
-                            </div>
-                            <div class="col-md-3">
-                                <a class="store_nav_link" href="/map">Centre Map</a>
-                            </div>
-                            <div class="col-md-3">
-                                <span>Sort By: </span>
-                                <a class="store_nav_link" v-on:click="changeMode('alphabetical')">Alphabetical</a>
-                            </div>
-                            <div class="col-md-3">
-                                <v-select v-model="selectedCat" :options="dropDownCats" :searchable="false" :on-change="filteredByCategory" class="category-select" :placeholder="$t('stores_page.sort_by_cats')" id="selectByCat"></v-select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <span class="pull-right"><span class="promo_exist"><i class="fas fa-tag"></i></span> Promotion</span>  
-                                <span class="pull-right"><span class="new_store"><i class="fas fa-star"></i></span> New Store </span>
-                                <span class="pull-right"><span class="coming_soon_store"><i class="far fa-clock"></i></span> Coming Soon Store</span>
-                            </div>
-                        </div>
-                        <div class="row" v-if="sortByStores">
-                            <div class="col-md-6">
-                                <div v-if="listOne" v-for="(stores, index) in listOne">
-                                    <div class="list_header">
-                                        <div class="store_initial_container">
-                                            {{index}}
-                                        </div>
-                                    </div>
-                                    <div class="store-section" v-for="store in stores">
-                                        <p class="store_list_name">
-                                            <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
-                                                {{store.name}}
-                                            </router-link>
-                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
-                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
-                                        </p>
-                                    </div>
+                        <!--<div class="row store_nav">-->
+                        <!--    <div class="col-md-3">-->
+                        <!--        <a class="store_nav_link active_store_nav" href="/stores">Directory</a>-->
+                        <!--    </div>-->
+                        <!--    <div class="col-md-3">-->
+                        <!--        <a class="store_nav_link" href="/map">Centre Map</a>-->
+                        <!--    </div>-->
+                        <!--    <div class="col-md-3">-->
+                        <!--        <span>Sort By: </span>-->
+                        <!--        <a class="store_nav_link" v-on:click="changeMode('alphabetical')">Alphabetical</a>-->
+                        <!--    </div>-->
+                        <!--    <div class="col-md-3">-->
+                        <!--        <v-select v-model="selectedCat" :options="dropDownCats" :searchable="false" :on-change="filteredByCategory" class="category-select" :placeholder="$t('stores_page.sort_by_cats')" id="selectByCat"></v-select>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        <!--<div class="row">-->
+                        <!--    <div class="col-md-12">-->
+                        <!--        <span class="pull-right"><span class="promo_exist"><i class="fas fa-tag"></i></span> Promotion</span>  -->
+                        <!--        <span class="pull-right"><span class="new_store"><i class="fas fa-star"></i></span> New Store </span>-->
+                        <!--        <span class="pull-right"><span class="coming_soon_store"><i class="far fa-clock"></i></span> Coming Soon Store</span>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        <!-- Logo View -->
+        			<div v-if="logoView">
+            			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item">
+                            <transition-group name="custom-classes-transition" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div">
+                                <div v-masonry-tile  v-for="(store, index) in filteredStores" :key="index" class="stores-grid-item">
+                            	    <div class="store_logo_container">
+                            	        <router-link :to="'/stores/'+ store.slug">
+                                			<img class="store_img" :src="store.store_front_url_abs" alt="">
+                                			<div class="store_tag store_promotion" v-if="store.total_published_promos">-->
+            									<div class="store_tag_text">{{$t("stores_page.promotion")}}</div>
+            								</div>
+            								<div class="store_tag coming_soon" v-if="!store.total_published_promos && !store.is_new_store && store.is_coming_soon_store">
+            									<div class="store_tag_text">{{$t("stores_page.coming_soon")}}</div>
+            								</div>
+            								<div class="store_tag new_store" v-if="!store.total_published_promos && !store.is_coming_soon_store && store.is_new_store">
+            									<div class="store_tag_text">{{$t("stores_page.new_store")}}</div>
+            								</div>
+            								<div class="store_details">
+            								    <div class="store_text">{{ store.name }}</div>    
+            								</div>
+                                		</router-link>
+                            	    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6" >
-                                <div v-if="listTwo" v-for="(stores, index) in listTwo">
-                                    <div class="list_header">
-                                        <div class="store_initial_container">
-                                            {{index}}
-                                        </div>
-                                    </div>
-                                    <div class="store-section" v-for="store in stores">
-                                        <p class="store_list_name">
-                                            <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
-                                                {{store.name}}
-                                            </router-link>
-                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
-                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            </transition-group>
                         </div>
-                        <div class="row" v-else>
-                            <div class="col-md-12">
-                                <div v-for="(stores, index) in filteredStores" >
-                                    <div class="list_header">
-                                        <div class="store_initial_container">
-                                            {{index}}
-                                        </div>
-                                    </div>
-                                    <div class="store-section" v-for="store in stores">
-                                        <p class="store_list_name">
-                                            <router-link :to="{ name: 'storeDetails', params: { id: store.slug }}">
-                                                {{store.name}}
-                                            </router-link>
-                                            <span v-if="store.is_new_store" class="pull-right new_store"><i class="fas fa-star"></i></span>
-                                            <span v-if="store.is_coming_soon_store" class="pull-right coming_soon_store"><i class="far fa-clock"></i></span>
-                                            <span v-if="store.promotions != null" class="promo_exist pull-right"><i class="fas fa-tag"></i></span>
-                                        </p>
-                                    </div>
-                                </div>
+                    </div>
+                    <!-- List View -->
+                    <div v-if="listView" class="listView">
+                        <transition-group name="custom-classes-transition" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div">
+                            <div v-for="(store, index) in filteredStores" :key="index">
+                    	        <router-link :to="'/stores/'+ store.slug">
+                        			<div>
+                        			    {{ store.name }}
+                        			    <span v-if="store.total_published_promos"><i class="fa fa-tag"></i></span>
+                                        <span v-if="store.is_new_store"><i class="fa fa-star"></i></span>
+                                        <span v-if="store.is_coming_soon_store"><i class="fa fa-clock"></i></span>
+                        			</div>
+                        		</router-link>
                             </div>
-                        </div>
+                        </transition-group>
+                    </div>
                     </div>
                     <div class="visible_phone">
                         <div class="row margin_40">
