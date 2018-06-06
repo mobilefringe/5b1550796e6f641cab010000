@@ -179,7 +179,6 @@ define([], function () {
                 {   
                     path: '',
                     component: view('stores'),
-                    
                     name: 'storeList'
                 },
                 {
