@@ -32,7 +32,7 @@
                                         <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>CLOSED
                                     </div>
                                 </li>
-                                <li>*Hours may vary</li>
+                                <li class="hours_vary">*Hours may vary</li>
                             </ul>
                         </div>
                         <div class="col-md-8">
