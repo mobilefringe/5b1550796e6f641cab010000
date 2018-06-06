@@ -18,7 +18,7 @@
         		        </div>
         		        <div class="col-md-6">
         		            <div class="">
-            					<search-component :list="allStores" :placeholder="$t('stores_page.find_your_store')" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
+            					<search-component :list="allStores" placeholder="Search" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
             						<template slot="item" scope="option" class="manual">
             							<article class="media">
             								<p>{{ option.data.name }}</p>
@@ -33,7 +33,7 @@
             					    :searchable="false" 
             					    :on-change="filterByCategory" 
             					    class="category-select" 
-            					    :placeholder="$t('stores_page.sort_by_cats')" 
+            					    placeholder="Category" 
             					    id="selectByCat"
             				    ></v-select>
             				</div>
