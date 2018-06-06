@@ -45,13 +45,13 @@
                             	        <router-link :to="'/stores/'+ store.slug">
                                 			<img class="store_img" :src="store.image_url" alt="">
                                 			<div class="store_tag store_promotion" v-if="store.total_published_promos">-->
-            									<div class="store_tag_text">{{$t("stores_page.promotion")}}</div>
+            									<div class="store_tag_text">Promotion</div>
             								</div>
             								<div class="store_tag coming_soon" v-if="!store.total_published_promos && !store.is_new_store && store.is_coming_soon_store">
-            									<div class="store_tag_text">{{$t("stores_page.coming_soon")}}</div>
+            									<div class="store_tag_text">Coming Soon</div>
             								</div>
             								<div class="store_tag new_store" v-if="!store.total_published_promos && !store.is_coming_soon_store && store.is_new_store">
-            									<div class="store_tag_text">{{$t("stores_page.new_store")}}</div>
+            									<div class="store_tag_text">New Store</div>
             								</div>
             								<div class="store_details">
             								    <div class="store_text">{{ store.name }}</div>    
