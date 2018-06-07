@@ -154,6 +154,7 @@
                     this.updateCurrentStore(this.$route.params.id);
                 },
                 currentStore: function () {
+                    console.log(currentStore)
                     if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
                         this.currentStore.store_front_url_abs = "http://placehold.it/600x600"
                     }
