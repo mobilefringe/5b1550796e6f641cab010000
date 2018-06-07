@@ -173,13 +173,23 @@
                         if (_.includes(current_promo.image_url, 'missing')) {
                             current_promo.image_url = "http://placehold.it/1560x800/757575";
                         }
-                        current_promo.description_short = _.truncate(current_promo.description, { 'length': 150, 'separator': ' ' });
 
                         temp_promo.push(current_promo);
                     }); 
                     this.storePromotions = temp_promo;
-                    console.log(this.storePromotions)
 
+                    var vm = this;
+                    var temp_event = [];
+                    _.forEach(this.currentStore.events, function(value, key) {
+                        var current_event = vm.findEventById(value);
+                        
+                        if (_.includes(current_event.image_url, 'missing')) {
+                            current_event.image_url = "http://placehold.it/1560x800/757575";
+                        }
+
+                        temp_event.push(current_event);
+                    }); 
+                    this.storeEvents = temp_event;
                     
                     var vm = this;
                     var temp_job = [];
