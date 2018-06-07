@@ -202,7 +202,7 @@
                     var vm = this;
                     var temp_coupon = [];
                     _.forEach(this.currentStore.coupons, function(value, key) {
-                        var current_coupon = vm.findEventById(value);
+                        var current_coupon = vm.findCouponById(value);
                         
                         if (_.includes(current_coupon.image_url, 'missing')) {
                             current_coupon.image_url = "http://placehold.it/1560x800/757575";
