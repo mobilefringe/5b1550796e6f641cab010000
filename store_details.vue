@@ -46,7 +46,12 @@
                                 <h3 class="store_details_title">Current Events</h3>    
                             </div>
                             <div v-if="this.currentStore.promotions">
-                                <h3 class="store_details_title">Current Promotions</h3>        
+                                <h3 class="store_details_title">Current Promotions</h3>  
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        
+                                    </div>
+                                </div>
                             </div>
                             <div v-if="this.currentStore.coupons">
                                 <h3 class="store_details_title">Current Coupons</h3>        
@@ -126,7 +131,8 @@
                         temp_promo.push(current_promo);
                     }); 
                     this.storePromotions = temp_promo;
-                    this.togglePromos = true;
+                    console.log(this.storePromotions)
+
                     
                     var vm = this;
                     var temp_job = [];
