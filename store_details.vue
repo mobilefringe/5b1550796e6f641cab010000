@@ -127,7 +127,7 @@
 </style>
 
 <script>
-    define(["Vue", "vuex", "moment", "vue!mapplic-png-map", "jquery"], function (Vue, Vuex, moment, MapplicComponent, $) {
+    define(["Vue", "vuex", "moment", "vue!mapplic-png-map"], function (Vue, Vuex, moment, MapplicComponent) {
         return Vue.component("store-details-component", {
             template: template, // the variable template will be injected,
             props: ['id'],
@@ -218,7 +218,6 @@
                     'timezone',
                     'processedStores',
                     'findStoreBySlug',
-                    'findCategoryById',
                     'findHourById',
                     'findPromoById',
                     'findEventById',
