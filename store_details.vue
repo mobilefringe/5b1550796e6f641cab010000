@@ -51,8 +51,8 @@
                                     <div class="col-md-6" v-if="storePromotions" v-for="item in storePromotions">
                                         <img :src="item.image_url" :alt="item.name" class="img_max"/>
                                         
-                                        <figure class="snip0016">
-	                                        <img :src="item.image_url" :alt="item.name"/>
+                                        <figure class="feature_item">
+	                                        <img class="feature_img" :src="item.image_url" :alt="item.name"/>
                                         	<figcaption>
                                         		<h2>I think <span>nighttime</span> is dark</h2>
                                         		<p>So you can imagine your fears with less distraction.</p>
