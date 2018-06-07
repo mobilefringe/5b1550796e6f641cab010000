@@ -52,8 +52,9 @@
                                         <figure class="feature_item">
 	                                        <img class="feature_img" :src="item.image_url" :alt="item.name"/>
                                         	<figcaption class="feature_caption">
-                                        		<h2>I think <span>nighttime</span> is dark</h2>
-                                        		<p>So you can imagine your fears with less distraction.</p>
+                                        		<h3>{{ item.name }}</h3>
+                                        		<p>{{ }}</p>
+                                        		<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
                                         		<a href="#"></a>
                                         	</figcaption>			
                                         </figure>
