@@ -58,7 +58,7 @@
                     					            </span>
                             					    <span class="info">
                         					            <p><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
-                        					            <p>View Promotion Details</p>
+                        					            <p>View Promotion Details <i class="fa fa-angle-double-right" aria-hidden="true"></i></p>
                     					            </span>
                                 				</div>
                                     		</router-link>
