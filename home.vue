@@ -121,6 +121,8 @@
                 },
                 featuredItems() {
                     var promotions = _.filter(this.processedPromos, function(o) { return o.is_featured });
+                    if (promotions.length >= 2) {
+                        promotions = _.sortBy(promotions, function(o) { return o.feature_item_index });
                     console.log(promotions)
                     var events = this.processedEvents;
                 }
