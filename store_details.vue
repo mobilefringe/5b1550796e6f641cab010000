@@ -53,7 +53,7 @@
                                         
                                         <figure class="feature_item">
 	                                        <img class="feature_img" :src="item.image_url" :alt="item.name"/>
-                                        	<figcaption>
+                                        	<figcaption class="feature_caption">
                                         		<h2>I think <span>nighttime</span> is dark</h2>
                                         		<p>So you can imagine your fears with less distraction.</p>
                                         		<a href="#"></a>
