@@ -64,6 +64,15 @@
             },
             created(){
                 this.loadData().then(response => {
+                    var socialFeed = response[3].data;
+                    var social_feed = socialFeed.social.instagram;
+                    this.instaFeed = _.slice(social_feed, [0], [8]);
+                    this.instaFeed.map(insta => {
+                        if(insta.caption != null){
+                            insta.caption.text = _.truncate(insta.caption.text, { 'length': 60, 'separator': ' ' });
+                        }
+                    });
+                    
                     this.dataLoaded = true;  
                 });
             },
@@ -98,7 +107,7 @@
             methods: {
                 loadData: async function() {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData", "feature_items")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData", "feature_items"), this.$store.dispatch('LOAD_PAGE_DATA', { url: "http://twinpines.mallmaverick.com/api/v3/twinpines/social.json" })]);
                         return results;
                     } catch(e) {
                         console.log("Error loading data: " + e.message);    
