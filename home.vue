@@ -97,7 +97,9 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
-                    'getPropertyHours'
+                    'getPropertyHours',
+                    'processedPromos',
+                    'processedEvents'
                 ]),
                 homeBanners() {
                     var banners = [];
@@ -118,7 +120,8 @@
                     return banners
                 },
                 featuredItems() {
-                    
+                    var promotions = this.processedPromos;
+                    var events = this.processedEvents;
                 }
             },
             methods: {
