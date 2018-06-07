@@ -31,7 +31,7 @@
                                         <img :src="item.images.standard_resolution.url" :alt="item.id"/>
                                         <div class="insta_content">
                                             <p class="insta_caption">{{ item.caption.text }}</p>
-                                            <p class="insta_user"></p>
+                                            <p class="insta_user">{{ item.user.username }}</p>
                                             <i class="insta_icon fab fa-instagram"></i>
                                         </div>
                                     </a>
