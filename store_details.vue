@@ -49,16 +49,26 @@
                                 <h3 class="store_details_title">Current Promotions</h3>  
                                 <div class="row">
                                     <div class="col-md-6" v-if="storePromotions" v-for="item in storePromotions">
-                                        <figure class="feature_item">
-	                                        <img class="feature_img" :src="item.image_url" :alt="item.name"/>
-                                        	<figcaption class="feature_caption">
-                                        		<h3>{{ item.name }}</h3>
-                                        		<p><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
-                                        		<router-link :to="{ name: 'promoDetails', params: { id: item.slug }}">
-                                                    <p class="details-link">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></p>
-                                                </router-link>
-                                        	</figcaption>			
-                                        </figure>
+                                        <div class="feature_item_container">
+                                	        <router-link class="tile" :to="{ name: 'promoDetails', params: { id: item.slug }}">
+                                    			<img :src="item.image_url" :alt="item.name">
+                                				<div class="details">
+                            					    <h3>{{ item.name }}</h3>
+                            					    <p>{{ item.description }}</p>
+                                				</div>
+                                    		</router-link>
+                                	    </div>
+                        	    
+                                        <!--<figure class="feature_item">-->
+	                                       <!-- <img class="feature_img" :src="item.image_url" :alt="item.name"/>-->
+                                        <!--	<figcaption class="feature_caption">-->
+                                        <!--		<h3>{{ item.name }}</h3>-->
+                                        <!--		<p><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>-->
+                                        <!--		<router-link :to="{ name: 'promoDetails', params: { id: item.slug }}">-->
+                                        <!--            <p class="details-link">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></p>-->
+                                        <!--        </router-link>-->
+                                        <!--	</figcaption>			-->
+                                        <!--</figure>-->
                                     </div>
                                 </div>
                             </div>
