@@ -109,7 +109,7 @@
             methods: {
                 loadData: async function() {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData", "feature_items"), this.$store.dispatch('LOAD_PAGE_DATA', { url: "http://twinpines.mallmaverick.com/api/v3/twinpines/social.json" })]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData", "feature_items"), this.$store.dispatch('LOAD_PAGE_DATA', { url: "http://peninsula.mallmaverick.com/api/v3/peninsula/social.json" })]);
                         return results;
                     } catch(e) {
                         console.log("Error loading data: " + e.message);    
