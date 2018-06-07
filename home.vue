@@ -26,7 +26,14 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="instagram_feed">
-                                
+                                <div class="insta-feed-image " v-for="(item, index) in instaFeed">
+                                    <a :href="item.link" target="_blank">
+                                        <img :src="item.images.standard_resolution.url" :alt="item.id"/>
+                                        <div class="insta_content">
+                                            <!--<p class="insta_caption">{{ item.caption.text }}</p>-->
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
