@@ -47,7 +47,7 @@
                                 <div class="row">
                                     <div class="col-md-6" v-if="storeEvents" v-for="item in storeEvents">
                                         <div class="feature_item_container">
-                                	        <router-link class="tile" :to="{ name: 'promoDetails', params: { id: item.slug }}">
+                                	        <router-link class="tile" :to="{ name: 'eventDetails', params: { id: item.slug }}">
                                     			<img :src="item.image_url" :alt="item.name">
                                 				<div class="details">
                         					    	<span class="title">
@@ -89,7 +89,7 @@
                                 <div class="row">
                                     <div class="col-md-6" v-if="storeCoupons" v-for="item in storeCoupons">
                                         <div class="feature_item_container">
-                                	        <router-link class="tile" :to="{ name: 'promoDetails', params: { id: item.slug }}">
+                                	        <router-link class="tile" :to="{ name: 'couponDetails', params: { id: item.slug }}">
                                     			<img :src="item.image_url" :alt="item.name">
                                 				<div class="details">
                         					    	<span class="title">
