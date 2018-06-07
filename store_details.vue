@@ -49,8 +49,6 @@
                                 <h3 class="store_details_title">Current Promotions</h3>  
                                 <div class="row">
                                     <div class="col-md-6" v-if="storePromotions" v-for="item in storePromotions">
-                                        <img :src="item.image_url" :alt="item.name" class="img_max"/>
-                                        
                                         <figure class="feature_item">
 	                                        <img class="feature_img" :src="item.image_url" :alt="item.name"/>
                                         	<figcaption class="feature_caption">
