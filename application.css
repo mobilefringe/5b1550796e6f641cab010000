@@ -320,24 +320,24 @@ footer {
             color: #333;
         }
     }
-    .footer_insta {
-        .insta_view_more {
-            font-family: Avenir-Book;
-            font-size: 0.75rem;
-            color: $text;;
-            letter-spacing: 0.5px;
-        }  
-        .insta-feed-image {
-            margin-bottom: 5px;
-            padding: 0 2.5px;
-            width: 20%;
-            display: block;
-            float: left;
-            img {
-                max-width: 100%;
-            }
-        }
-    }
+    // .footer_insta {
+    //     .insta_view_more {
+    //         font-family: Avenir-Book;
+    //         font-size: 0.75rem;
+    //         color: $text;;
+    //         letter-spacing: 0.5px;
+    //     }  
+    //     .insta-feed-image {
+    //         margin-bottom: 5px;
+    //         padding: 0 2.5px;
+    //         width: 20%;
+    //         display: block;
+    //         float: left;
+    //         img {
+    //             max-width: 100%;
+    //         }
+    //     }
+    // }
 }
 .footer_privacy {
     padding: 15px 0;
