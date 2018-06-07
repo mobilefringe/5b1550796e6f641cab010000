@@ -105,6 +105,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="pull-right">
+                		            <router-link to="/map">
+                		                <div class="animated_btn stores_btn">
+                		                    Center Map
+                		                </div>    
+                		            </router-link>
+                		        </div>
+                		    </div>
                         </div>
                     </div>
                 </div>
