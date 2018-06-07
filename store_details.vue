@@ -53,8 +53,12 @@
                                 	        <router-link class="tile" :to="{ name: 'promoDetails', params: { id: item.slug }}">
                                     			<img :src="item.image_url" :alt="item.name">
                                 				<div class="details">
-                            					    <h3>{{ item.name }}</h3>
-                            					    <p>{{ item.description }}</p>
+                        					    	<span class="title">
+                        					            <h3>{{ feature.name }}</h3>
+                    					            </span>
+                            					    <span class="info">
+                        					            <p>{{ feature.description_2 }}</p>
+                    					            </span>
                                 				</div>
                                     		</router-link>
                                 	    </div>
