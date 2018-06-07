@@ -65,7 +65,8 @@
             },
             created(){
                 this.loadData().then(response => {
-                    var socialFeed = response[3].data;
+                    var socialFeed = response[2].data;
+                    console.log(socialFeed)
                     var social_feed = socialFeed.social.instagram;
                     this.instaFeed = _.slice(social_feed, [0], [8]);
                     this.instaFeed.map(insta => {
