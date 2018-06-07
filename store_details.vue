@@ -80,11 +80,10 @@
                     dataLoaded: false,
                     currentStore: null,
                     storeHours: null,
+                    map: null,
+                    storeEvents: null,
                     storePromotions: null,
-                    togglePromos: false,
-                    storeJobs: null,
-                    toggleJobs: false,
-                    map: null
+                    storeCoupons: null
                 }
             },
             props:['id'],
@@ -141,7 +140,6 @@
                         temp_job.push(current_job);
                     }); 
                     this.storeJobs = temp_job;
-                    this.toggleJobs = true;
                 }
             },
             computed: {
