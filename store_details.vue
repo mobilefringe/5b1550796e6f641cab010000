@@ -57,7 +57,7 @@
                         					            <h3>{{ item.name }}</h3>
                     					            </span>
                             					    <span class="info">
-                        					            <p>{{ item.description }}</p>
+                        					            <p><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
                     					            </span>
                                 				</div>
                                     		</router-link>
