@@ -203,7 +203,6 @@
                         temp_coupon.push(current_coupon);
                     }); 
                     this.storeCoupons = temp_coupon;
-                    
                 }
             },
             computed: {
@@ -215,7 +214,7 @@
                     'findCategoryById',
                     'findHourById',
                     'findPromoById',
-                    'findJobById'
+                    'findEventById'
                 ]),
                 getPNGurl () {
                     return "https://www.mallmaverick.com" + this.property.map_url;
