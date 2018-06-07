@@ -250,7 +250,7 @@
             methods: {
                 loadData: async function () {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "stores"), this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData","jobs")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "stores"), this.$store.dispatch("getData","events"), this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData","coupons")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
