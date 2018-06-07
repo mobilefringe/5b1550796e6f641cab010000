@@ -16,6 +16,7 @@
                     </slick>
                 </div>
                 <div class="main_container">
+                    <h2>Events & Promotions</h2>
                     <div v-if="featureItems" class="row">
                         <div v-for="item in featureItems" class="col-sm-4 feature_item">
                             <img :src="item.image_url" :alt="item.name" />
