@@ -192,12 +192,18 @@
                     this.storeEvents = temp_event;
                     
                     var vm = this;
-                    var temp_job = [];
-                    _.forEach(this.currentStore.jobs, function(value, key) {
-                        var current_job = vm.findJobById(value);
-                        temp_job.push(current_job);
+                    var temp_coupon = [];
+                    _.forEach(this.currentStore.coupons, function(value, key) {
+                        var current_coupon = vm.findEventById(value);
+                        
+                        if (_.includes(current_coupon.image_url, 'missing')) {
+                            current_coupon.image_url = "http://placehold.it/1560x800/757575";
+                        }
+
+                        temp_coupon.push(current_coupon);
                     }); 
-                    this.storeJobs = temp_job;
+                    this.storeCoupons = temp_coupon;
+                    
                 }
             },
             computed: {
