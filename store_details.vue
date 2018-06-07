@@ -210,7 +210,7 @@
 
                         temp_coupon.push(current_coupon);
                     }); 
-                    this.storeCoupons = temp_coupon;
+                    // this.storeCoupons = temp_coupon;
                 }
             },
             computed: {
