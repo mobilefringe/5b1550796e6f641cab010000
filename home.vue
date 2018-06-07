@@ -17,10 +17,22 @@
                 </div>
                 <div class="main_container">
                     <h2>Events & Promotions</h2>
-                    <div v-if="featureItems" class="row">
-                        <div v-for="item in featureItems" class="col-sm-4 feature_item">
-                            <img :src="item.image_url" :alt="item.name" />
-                            <!--<img src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1518461604000/Stores Directory.png" />-->
+                    <div class="row margin_40">
+                        <div class="col-md-4" v-if="featuredItems" v-for="item in featuredItems">
+                            <div class="feature_item_container">
+                    	        <router-link class="tile" :to="{ name: 'couponDetails', params: { id: item.slug }}">
+                        			<img :src="item.image_url" :alt="item.name">
+                    				<div class="details">
+            					    	<span class="title">
+            					            <h3>{{ item.name }}</h3>
+        					            </span>
+                					    <span class="info">
+            					            <p><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
+            					            <p>View Promotion Details <i class="fa fa-angle-double-right" aria-hidden="true"></i></p>
+        					            </span>
+                    				</div>
+                        		</router-link>
+                    	    </div>
                         </div>
                     </div>
                     <h2 class="center">In Our Feed</h2>
@@ -70,7 +82,6 @@
             created(){
                 this.loadData().then(response => {
                     var socialFeed = response[2].data;
-                    console.log(socialFeed)
                     var social_feed = socialFeed.social.instagram;
                     this.instaFeed = _.slice(social_feed, [0], [6]);
                     this.instaFeed.map(insta => {
@@ -106,14 +117,14 @@
                     });
                     return banners
                 },
-                featureItems() {
-                    return _.slice(this.$store.state.feature_items, 0, 3);
+                featuredItems() {
+                    
                 }
             },
             methods: {
                 loadData: async function() {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData", "feature_items"), this.$store.dispatch('LOAD_PAGE_DATA', { url: "http://peninsula.mallmaverick.com/api/v3/peninsula/social.json" })]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch('LOAD_PAGE_DATA', { url: "http://peninsula.mallmaverick.com/api/v3/peninsula/social.json" }), this.$store.dispatch("getData", "promotions"). this.$store.dispatch("getData", "events")]);
                         return results;
                     } catch(e) {
                         console.log("Error loading data: " + e.message);    
