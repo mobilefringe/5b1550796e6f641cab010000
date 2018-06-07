@@ -68,7 +68,7 @@
                     var socialFeed = response[2].data;
                     console.log(socialFeed)
                     var social_feed = socialFeed.social.instagram;
-                    this.instaFeed = _.slice(social_feed, [0], [8]);
+                    this.instaFeed = _.slice(social_feed, [0], [6]);
                     this.instaFeed.map(insta => {
                         if(insta.caption != null){
                             insta.caption.text = _.truncate(insta.caption.text, { 'length': 60, 'separator': ' ' });
