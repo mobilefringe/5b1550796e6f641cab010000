@@ -54,10 +54,10 @@
                                     			<img :src="item.image_url" :alt="item.name">
                                 				<div class="details">
                         					    	<span class="title">
-                        					            <h3>{{ feature.name }}</h3>
+                        					            <h3>{{ item.name }}</h3>
                     					            </span>
                             					    <span class="info">
-                        					            <p>{{ feature.description_2 }}</p>
+                        					            <p>{{ item.description }}</p>
                     					            </span>
                                 				</div>
                                     		</router-link>
