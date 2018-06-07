@@ -221,7 +221,8 @@
                     'findCategoryById',
                     'findHourById',
                     'findPromoById',
-                    'findEventById'
+                    'findEventById',
+                    'findCouponById'
                 ]),
                 getPNGurl () {
                     return "https://www.mallmaverick.com" + this.property.map_url;
