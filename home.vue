@@ -121,6 +121,7 @@
                 },
                 featuredItems() {
                     var promotions = this.processedPromos;
+                    console.log(promotions)
                     var events = this.processedEvents;
                 }
             },
