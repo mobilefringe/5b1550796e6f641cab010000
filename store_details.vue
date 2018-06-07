@@ -63,17 +63,6 @@
                                 				</div>
                                     		</router-link>
                                 	    </div>
-                        	    
-                                        <!--<figure class="feature_item">-->
-	                                       <!-- <img class="feature_img" :src="item.image_url" :alt="item.name"/>-->
-                                        <!--	<figcaption class="feature_caption">-->
-                                        <!--		<h3>{{ item.name }}</h3>-->
-                                        <!--		<p><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>-->
-                                        <!--		<router-link :to="{ name: 'promoDetails', params: { id: item.slug }}">-->
-                                        <!--            <p class="details-link">Learn More <i class="fa fa-angle-double-right" aria-hidden="true"></i></p>-->
-                                        <!--        </router-link>-->
-                                        <!--	</figcaption>			-->
-                                        <!--</figure>-->
                                     </div>
                                 </div>
                             </div>
