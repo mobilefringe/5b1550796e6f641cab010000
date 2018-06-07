@@ -59,7 +59,8 @@
                         infinite: true,
                         slidesToShow: 1,
                         speed: 1000
-                    }
+                    },
+                    instaFeed: null
                 }
             },
             created(){
