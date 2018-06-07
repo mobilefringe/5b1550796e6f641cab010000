@@ -202,6 +202,7 @@
                     var vm = this;
                     var temp_coupon = [];
                     _.forEach(this.currentStore.coupons, function(value, key) {
+                        console.log(this.currentStore.coupons)
                         var current_coupon = vm.findCouponById(value);
                         console.log(current_coupon)
                         // if (_.includes(current_coupon.image_url, 'missing')) {
