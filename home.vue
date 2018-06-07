@@ -120,7 +120,7 @@
                     return banners
                 },
                 featuredItems() {
-                    var promotions = this.processedPromos;
+                    var promotions = _.filter(this.processedPromos, function(o) { return o.is_featured });
                     console.log(promotions)
                     var events = this.processedEvents;
                 }
