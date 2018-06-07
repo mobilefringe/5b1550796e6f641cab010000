@@ -22,7 +22,7 @@
                             <!--<img src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1518461604000/Stores Directory.png" />-->
                         </div>
                     </div>
-                    <h2>In Our Feed</h2>
+                    <h2 class="center">In Our Feed</h2>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div class="insta-feed-container">
