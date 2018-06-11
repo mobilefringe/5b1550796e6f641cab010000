@@ -372,46 +372,46 @@ footer {
 }
 
 /* *** HOME *** */
-.home_banner_container {
-    position: relative;
-    .banner_image {
-        margin-bottom: 40px;
-        height: 500px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50%;
-    }
-    .slick-dots {
-        margin: 0;
-        padding: 0;
-        display: block;
-        position: absolute;
-        bottom: 50px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 0;
-        line-height: 0;
-        cursor: pointer;
-        z-index: 99;
-        li {
-            padding: 0 5px;
-            display: inline-block;
-            button {
-                margin: 0;
-                padding: 0;
-                width: 16px;
-                height: 16px;
-                border: 2px solid #FFF;
-                border-radius: 20px;
-                background-color: transparent;
-                font-size: 0;
-            }
-        }
-        .slick-active button {
-            background-color: $primary;
-        }
-    }
-}
+// .home_banner_container {
+//     position: relative;
+//     .banner_image {
+//         margin-bottom: 40px;
+//         height: 500px;
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         background-position: 50%;
+//     }
+//     .slick-dots {
+//         margin: 0;
+//         padding: 0;
+//         display: block;
+//         position: absolute;
+//         bottom: 50px;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//         font-size: 0;
+//         line-height: 0;
+//         cursor: pointer;
+//         z-index: 99;
+//         li {
+//             padding: 0 5px;
+//             display: inline-block;
+//             button {
+//                 margin: 0;
+//                 padding: 0;
+//                 width: 16px;
+//                 height: 16px;
+//                 border: 2px solid #FFF;
+//                 border-radius: 20px;
+//                 background-color: transparent;
+//                 font-size: 0;
+//             }
+//         }
+//         .slick-active button {
+//             background-color: $primary;
+//         }
+//     }
+// }
 .feature_item {
     img {
         max-width: 100%
