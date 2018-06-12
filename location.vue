@@ -62,7 +62,7 @@
                     var temp_repo = this.findRepoByName('Location Images');
                     console.log(temp_repo)
                     if(temp_repo) {
-                        this.pageImages = temp_repo.images[0];
+                        this.pageImages = temp_repo.images;
                     }
                     console.log(response)
                     this.main = response[1].data;
