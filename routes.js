@@ -22,7 +22,7 @@ define([], function () {
             path: '/contact-us',
             component: view('default'),
             meta: {
-                breadcrumb: 'Center Information'
+                breadcrumb: 'Contact Us'
             },
             children: [
                 {
