@@ -162,7 +162,7 @@ define([], function () {
                     path: ':id',
                     component: view('promotion_details'),
                     meta: {
-                        pageName: 'Promotions',
+                        breadcrumb: 'Promotion Details',
                     },
                     name: 'promotionDetails',
                     props: true
