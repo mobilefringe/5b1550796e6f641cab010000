@@ -81,13 +81,14 @@ define([], function () {
         {
             path: '/location',
             component: view('default'),
+            meta: {
+                breadcrumb: 'Location',
+            },
             children: [
                 {   
                     path: '',
                     component: view('location'),
-                    meta: {
-                        pageName: 'Location',
-                    },
+                    
                     name: 'location'
                 }
             ]
