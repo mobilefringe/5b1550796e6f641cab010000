@@ -17,8 +17,12 @@
                     <div class="row" v-if="currentPromo">
                         <div class="col-md-8">
                             <h4 class="event_name">{{ currentPromo.name }}</h4>
-                            <p class="event_dates"><span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span></p>
-                            <p class="event_dates">Location</p>
+                            <p class="event_dates">
+                                <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
+                                <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
+                                <br>
+                                LOocation
+                            </p>
                             <div class="promo_desc" v-html="currentPromo.rich_description"></div>
                             <router-link to="/promotions">
         		                <div class="animated_btn">Back to Sales & Promotions</div>    
@@ -32,7 +36,7 @@
                                         <i class="fab fa-twitter"></i>
                                     </network>
                                     <network network="email">
-                                        <i class="fa fa-envelope"></i>
+                                        <i class="fas fa-envelope"></i>
                                     </network>
                                 </div>
                             </social-sharing>
