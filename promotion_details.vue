@@ -75,7 +75,6 @@
 					if (this.currentPromo === null || this.currentPromo === undefined) {
 						this.$router.replace({ path: '/promotions' });
 					}
-					console.log(this.$breadcrumbs)
 					this.$breadcrumbs[1].meta.breadcrumb = this.currentPromo.name
 					this.dataLoaded = true;
 				}, error => {
