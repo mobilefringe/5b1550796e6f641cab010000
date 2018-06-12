@@ -28,7 +28,7 @@
                 <div class="main_container">
                     <div class="row">
                         <div class="col-md-6">
-                            <!--<div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>-->
+                            <div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>
                         </div>
                         <div class="col-md-6">
                             <!--<div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>-->
@@ -60,7 +60,7 @@
                         this.pageImages = temp_repo.images;
                     }
                     this.main = response[1].data;
-                    this.address = response[1].data.subpages[0]
+                    this.amenities = response[1].data.subpages
                     this.dataLoaded = true;
                 });
             },
