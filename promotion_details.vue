@@ -14,8 +14,8 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-
-                        <div class="details_col_9" v-if="currentPromo">
+                    <div class="row" v-if="currentPromo">
+                        <div class="col-md-8">
                             <router-link to="/events-and-promotions">
                                 <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
                             </router-link>
@@ -41,7 +41,10 @@
                                 </div>
                             </social-sharing>
                         </div>
-                    <!--</div>-->
+                        <div class="col-md-4">
+                            
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
