@@ -54,8 +54,13 @@
             },
             created() {
                 this.loadData().then(response => {
+                    var temp_repo = this.findRepoByName('Center Images');
+                    console.log(temp_repo)
+                    if(temp_repo) {
+                        this.pageImages = temp_repo.images;
+                    }
                     console.log(response)
-                    // this.currentPage = response[0].data;
+                    this.main = response[1].data;
                     this.dataLoaded = true;
                 });
             },
