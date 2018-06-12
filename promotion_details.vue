@@ -19,8 +19,10 @@
                             <h4 class="event_name">{{ currentPromo.name }}</h4>
                             <p class="event_dates"><span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span></p>
                             <p class="event_dates">Location</p>
-                            
                             <div class="promo_desc" v-html="currentPromo.rich_description"></div>
+                            <router-link class="pull-right" to="/stores">
+        		                <div class="animated_btn">Back to Sales & Promotions</div>    
+        		            </router-link>
                             <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
                                 <div class="social_share">
                                     <p>Share</p>
