@@ -35,20 +35,20 @@ define([], function () {
         {
             path: '/events',
             component: view('default'),
+            meta: {
+                breadcrumb: 'Events',
+            },
             children: [
                 {
                     path: '',
                     component: view('events'),
-                    meta: {
-                        breadcrumb: 'Events',
-                    },
                     name: 'events'
                 },
                 {
                     path: ':id',
                     component: view('event_details'),
                     meta: {
-                        pageName: 'Events',
+                        breadcrumb: 'Event Details',
                     },
                     name: 'eventDetails',
                     props: true
