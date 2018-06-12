@@ -8,8 +8,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue-simple-spinner"], function (Vue, Vuex, Spinner) {
-        Vue.component("vue-simple-spinner", Spinner);
+    define(["Vue", "vuex"], function (Vue, Vuex) {
         return Vue.component("loading-spinner", {
             template: template, // the variable template will be injected,
             data: function () {
