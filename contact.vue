@@ -35,9 +35,14 @@
                                     <input id="email" v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000" placeholder="Email">
                                     <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
                                 </div>
-                                <div class="col-xs-12" :class="{'has-error': errors.has('subject')}">
+                                <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('phone')}">
+                                    <label class="accessibility" for="phone">Phone</label>
+                                    <input id="phone" v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Phone">
+                                    <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('phone') }}</span>
+                                </div>
+                                <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('subject')}">
                                     <label class="accessibility" for="subject">Subject</label>
-                                    <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000">
+                                    <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Subject">
                                     <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('subject') }}</span>
                                 </div>
                                 <div class="col-xs-12" :class="{'has-error': errors.has('message')}">
