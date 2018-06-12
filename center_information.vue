@@ -58,6 +58,7 @@
                     }
                     this.main = response[1].data;
                     this.amenities = response[1].data.subpages
+                    console.log(this.amenities)
                     this.dataLoaded = true;
                 });
             },
