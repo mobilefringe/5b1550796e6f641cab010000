@@ -43,14 +43,18 @@
             data: function () {
                 return {
                     dataLoaded: false,
-                    currentPage: null,
+                    main: null,
+                    address: null,
+                    directions: null,
                     siteInfo: site
                 }
             },
             created() {
                 this.loadData().then(response => {
                     console.log(response)
-                    // this.currentPage = response[0].data;
+                    this.main = response[1].data;
+                    this.address = response[1].data.subpages[0]
+                    this.directions = response[1].data.subpages[1]
                     this.dataLoaded = true;
                 });
             },
