@@ -5,6 +5,20 @@ define([], function () {
             component: view('home')
         },
         {
+            path: '/center-information',
+            component: view('default'),
+            meta: {
+                breadcrumb: 'Center Information'
+            },
+            children: [
+                {   
+                    path: '',
+                    component: view('center-info'),
+                    name: 'center-info'
+                }
+            ]
+        },
+        {
             path: '/contact-us',
             component: view('default'),
             children: [
