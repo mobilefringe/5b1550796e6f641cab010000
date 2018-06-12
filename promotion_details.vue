@@ -21,8 +21,6 @@
                             <p class="event_dates">
                                 <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
                                 <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
-                                <br>
-                                Location
                             </p>
                             <div class="event_desc" v-html="currentPromo.rich_description"></div>
                             <div class="row margin_30">
