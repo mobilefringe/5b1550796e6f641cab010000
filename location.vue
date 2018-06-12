@@ -53,6 +53,10 @@
             },
             created() {
                 this.loadData().then(response => {
+                    var temp_repo = this.findRepoByName('Location Images');
+                    if(temp_repo) {
+                        this.pageBanner = temp_repo.images[0];
+                    }
                     console.log(response)
                     this.main = response[1].data;
                     this.address = response[1].data.subpages[0]
