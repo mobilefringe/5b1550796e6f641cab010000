@@ -24,7 +24,7 @@
                             
                         </div>
                         <div class="col-md-8">
-                            <form class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
+                            <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
                                 <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('name')}">
                                     <label class="accessibility" for="name">Name</label>
                                     <input id="name" v-model="form_data.name" v-validate="'required|true'" class="form-control" :class="{'input': true}" name="name" type="text" data-vv-delay="1000" placeholder="Name">
