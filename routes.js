@@ -21,13 +21,13 @@ define([], function () {
         {
             path: '/contact-us',
             component: view('default'),
+            meta: {
+                breadcrumb: 'Center Information'
+            },
             children: [
                 {
                     path: '',
                     component: view('contact'),
-                    meta: {
-                        pageName: 'Contact Us',
-                    },
                     name: 'contact'
                 }
             ]
