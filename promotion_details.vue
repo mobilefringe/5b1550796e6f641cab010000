@@ -54,6 +54,11 @@
     </div>
 </template>
 
+<style>
+    .event_desc {
+        margin-bottom: 60px;
+    }
+</style>
 <script>
     define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, VueLazyload, SocialSharing, site) {
         Vue.use(VueLazyload);
