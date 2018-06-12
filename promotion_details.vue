@@ -31,7 +31,6 @@
                 		            </router-link>    
                                 </div>
                             </div>
-                            
                             <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
                                 <div class="social_share">
                                     <network network="facebook">
@@ -76,6 +75,7 @@
 					if (this.currentPromo === null || this.currentPromo === undefined) {
 						this.$router.replace({ path: '/promotions' });
 					}
+					console.log(this.$breadcrumbs)
 				// 	this.$breadcrumbs[1].meta.breadcrumb = this.currentPromo.name
 					this.dataLoaded = true;
 				}, error => {
