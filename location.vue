@@ -48,7 +48,8 @@
                     main: null,
                     address: null,
                     directions: null,
-                    siteInfo: site
+                    pageImages: null
+                    // siteInfo: site
                 }
             },
             created() {
