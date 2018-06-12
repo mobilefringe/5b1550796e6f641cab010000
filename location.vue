@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="page_content" v-if="main" v-html="main.body"></div>
+                            <div v-if="main" v-html="main.body"></div>
                         </div>
                     </div>
                 </div>
@@ -26,10 +26,10 @@
                 <div class="main_container">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="page_content" v-if="address" v-html="address.body"></div>
+                            <div v-if="address" v-html="address.body"></div>
                         </div>
                         <div class="col-md-6">
-                            <div class="page_content" v-if="directions" v-html="directions.body"></div>
+                            <div v-if="directions" v-html="directions.body"></div>
                         </div>
                     </div>
                 </div>
