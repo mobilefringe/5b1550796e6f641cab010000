@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <!--<div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>-->
+                            <div v-if="main" v-html="main.body"></div>
                         </div>
                     </div>
                 </div>
@@ -59,8 +59,8 @@
                     if(temp_repo) {
                         this.pageImages = temp_repo.images;
                     }
-                    console.log(response)
                     this.main = response[1].data;
+                    this.address = response[1].data.subpages[0]
                     this.dataLoaded = true;
                 });
             },
