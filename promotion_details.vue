@@ -68,7 +68,7 @@
 					if (this.currentPromo === null || this.currentPromo === undefined) {
 						this.$router.replace({ path: '/promotions' });
 					}
-					this.$breadcrumbs[1].meta.breadcrumb = this.currentPromo.name
+				// 	this.$breadcrumbs[1].meta.breadcrumb = this.currentPromo.name
 					this.dataLoaded = true;
 				}, error => {
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
