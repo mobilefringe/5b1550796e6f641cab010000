@@ -46,7 +46,7 @@
                                     <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('subject') }}</span>
                                 </div>
                                 <div class="col-xs-12" :class="{'has-error': errors.has('message')}">
-                                    <label for="message">Message</label>
+                                    <label class="accessibility" for="message">Message</label>
                                     <textarea id="message" v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" data-vv-delay="1000"></textarea>
                                     <span v-show="errors.has('message')" class="form-control-feedback">{{ errors.first('message') }}</span>
                                 </div>
