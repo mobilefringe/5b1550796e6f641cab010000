@@ -31,6 +31,9 @@
                                     <network network="twitter">
                                         <i class="fab fa-twitter"></i>
                                     </network>
+                                    <network network="email">
+                                        <i class="fa fa-envelope"></i>
+                                    </network>
                                 </div>
                             </social-sharing>
                         </div>
