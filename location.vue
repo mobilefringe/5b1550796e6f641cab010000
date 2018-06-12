@@ -33,6 +33,11 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <div class="" v-if="pageImages" v-for="item in pageImages">
+                        <img :src="item.image_url" alt="" />   
+                    </div>
+                </div>
             </div>
         </transition>
     </div>
@@ -57,7 +62,7 @@
                     var temp_repo = this.findRepoByName('Location Images');
                     console.log(temp_repo)
                     if(temp_repo) {
-                        this.pageBanner = temp_repo.images[0];
+                        this.pageImages = temp_repo.images[0];
                     }
                     console.log(response)
                     this.main = response[1].data;
