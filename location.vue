@@ -66,7 +66,9 @@
             },
             computed: {
                 ...Vuex.mapGetters([
-                    'property'
+                    'property',
+                    'repos',
+                    'findRepoByName'
                 ]),
                 getPropertyAddress() {
                     return this.property.name + ' ' + this.property.address1 + ' ' + this.property.city + ' ' + this.property.country + ' ' +this.property.province_state + ' ' + this.property.province_state
