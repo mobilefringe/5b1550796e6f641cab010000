@@ -473,30 +473,30 @@ footer {
     	transform: translate(0%, 0%);
     }
 }
-.social_share {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    p {
-        margin: 0;
-        text-transform: uppercase;
-    }
-    .fab {
-        padding-left: 10px;
-        font-size: 25px;
-        color: $secondary;
-        transition: color 0.3s ease;
-        &:hover {
-            color: $primary;
-            cursor: pointer;
-        }
-    }
-}
+// .social_share {
+//     display: -webkit-box;
+//     display: -webkit-flex;
+//     display: -ms-flexbox;
+//     display: flex;
+//     -webkit-box-align: center;
+//     -webkit-align-items: center;
+//     -ms-flex-align: center;
+//     align-items: center;
+//     p {
+//         margin: 0;
+//         text-transform: uppercase;
+//     }
+//     .fab {
+//         padding-left: 10px;
+//         font-size: 25px;
+//         color: $secondary;
+//         transition: color 0.3s ease;
+//         &:hover {
+//             color: $primary;
+//             cursor: pointer;
+//         }
+//     }
+// }
 // .animated_btn {
 //     padding: 7.5px 0;
 //     min-width: 200px;
