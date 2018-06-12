@@ -23,7 +23,7 @@
                                 <br>
                                 Location
                             </p>
-                            <div class="promo_desc" v-html="currentPromo.rich_description"></div>
+                            <div class="event_desc" v-html="currentPromo.rich_description"></div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <router-link to="/promotions">
