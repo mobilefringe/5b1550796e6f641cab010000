@@ -49,6 +49,7 @@
             },
             created() {
                 this.loadData().then(response => {
+                    console.log(response)
                     // this.currentPage = response[0].data;
                     this.dataLoaded = true;
                 });
