@@ -27,7 +27,7 @@
                             <div class="row margin_30">
                                 <div class="col-md-12">
                                     <router-link to="/promotions">
-                		                <div class="animated_btn pull-left">Back to Sales & Promotions</div>    
+                		                <div class="animated_btn pull-left">Back to Events</div>    
                 		            </router-link>    
                                 </div>
                             </div>
