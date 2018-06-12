@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header">
                     <div class="main_container position_relative">
-                        <h2>Sales & Promotions</h2>
+                        <h2>Events</h2>
                     </div>
                 </div>
                 <div class="main_container">
@@ -54,56 +54,6 @@
         </transition>
     </div>
 </template>
-
-<!--<template>-->
-    <div> <!-- Without an outer container div this component template will not render -->
-<!--        <loading-spinner v-if="!dataLoaded"></loading-spinner>-->
-<!--        <transition name="fade">-->
-<!--            <div v-if="dataLoaded" v-cloak>-->
-<!--                <div class="inside_header_background">-->
-<!--                    <div class="main_container">-->
-<!--                        <h2>Events</h2>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="main_container mobile_padding margin_30">-->
-<!--                    <div class="details_row">-->
-<!--                        <div class="details_col_3 hidden_phone">-->
-<!--                            <img class="img_max" src="http://placehold.it/440x1200" alt="" />    -->
-<!--                        </div>-->
-<!--                        <div class="details_col_9" v-if="currentEvent">-->
-<!--                            <router-link to="/events-and-promotions">-->
-<!--                                <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>-->
-<!--                            </router-link>-->
-<!--                            <img v-lazy="currentEvent.image_url" :alt="'Event: ' + currentEvent.name" class="margin_20 img_max"/>-->
-<!--                            <h3 class="promo_name">{{ currentEvent.name }}</h3>-->
-<!--                            <p class="promo_store_name">-->
-<!--                                <router-link v-if="currentEvent.eventable_type == 'Store'" :to="'/stores/'+ currentEvent.store.slug">-->
-<!--                                    {{ currentEvent.store.name }}-->
-<!--                                </router-link>-->
-<!--                                <span v-else>{{ property.name }}</span>-->
-<!--                                <span>| </span>-->
-<!--                                <span v-if="isMultiDay(currentEvent)" class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}} to {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>-->
-<!--                                <span v-else class="promo_date">{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>-->
-<!--                            </p>-->
-<!--                            <div class="promo_desc" v-html="currentEvent.rich_description"></div>-->
-<!--                            <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" :twitter-user="siteInfo.twitterHandle" :media="currentEvent.image_url" inline-template>-->
-<!--                                <div class="social_share">-->
-<!--                                    <p>Share</p>-->
-<!--                                    <network network="facebook">-->
-<!--                                        <i class="fab fa-facebook"></i>-->
-<!--                                    </network>-->
-<!--                                    <network network="twitter">-->
-<!--                                        <i class="fab fa-twitter"></i>-->
-<!--                                    </network>-->
-<!--                                </div>-->
-<!--                            </social-sharing>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </transition>-->
-<!--    </div>-->
-<!--</template>-->
 
 <script>
 	define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, VueLazyload, SocialSharing, site) {
