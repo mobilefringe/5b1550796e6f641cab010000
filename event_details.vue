@@ -75,6 +75,7 @@
 					if (this.currentEvent === null || this.currentEvent === undefined) {
 						this.$router.replace({ name: '404' });
 					}
+					this.$breadcrumbs[1].meta.breadcrumb = this.currentEvent.name
 					this.dataLoaded = true;
 				}, error => {
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
