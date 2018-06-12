@@ -44,6 +44,9 @@ require.config({
         'hammer' : 'https://codecloud.cdn.speedyrails.net/sites/59bac7db6e6f644f22ba0000/text/javascript/1484859750000/hammer.min',
         'mapplic-png-map' : 'https://mmvue.codecloudapp.com/mapplic_png.vue?noext',
         'loader': 'https://mmvue.codecloudapp.com/loader.vue?noext',
+        //google map dependcies
+        'google-map-api': 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCukCjH3fsuDYBdI44hZKL43m60jEToJjY',
+        'google_map': 'https://mmvue.codecloudapp.com/google_map.vue?noext',
     }
 });
 
