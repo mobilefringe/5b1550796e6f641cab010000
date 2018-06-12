@@ -28,7 +28,7 @@
                 <div class="main_container">
                     <div class="row">
                         <div class="col-md-6" v-if="amenities" v-for="item in amenities">
-                            <div v-html="amenities.body"></div>
+                            <div v-html="item.body"></div>
                         </div>
                     </div>
                 </div>
