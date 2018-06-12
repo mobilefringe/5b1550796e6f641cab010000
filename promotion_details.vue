@@ -24,7 +24,7 @@
                                 Location
                             </p>
                             <div class="event_desc" v-html="currentPromo.rich_description"></div>
-                            <div class="row">
+                            <div class="row margin_30">
                                 <div class="col-md-12">
                                     <router-link to="/promotions">
                 		                <div class="animated_btn pull-left">Back to Sales & Promotions</div>    
