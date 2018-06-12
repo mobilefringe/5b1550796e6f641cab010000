@@ -25,7 +25,7 @@
                             <div class="col-md-8">
                                 <h4 class="event_name">{{ event.name }}</h4>
                                 <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(event)">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ event.start_date | moment("MMMM D", timezone)}}</span></p>
-                                <div class="event_desc" v-html="event.description"></div>
+                                <div class="event_desc" v-html="event.description_short"></div>
                             </div>
                         </div>
                         <div v-else>
@@ -75,7 +75,7 @@
                                 value.image_url = "http://placehold.it/400x400";
                             }
                             
-                            value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
+                            value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
                             showEvents.push(value);
                         }
