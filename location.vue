@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div style="height: 400px;">
-                <google-map :property="property" :zoom="12"></google-map>
+                <google-map :property="property" :zoom="16"></google-map>
                 </div>
                 <!--<iframe title="Map" width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  :src="'http://maps.google.nl/maps?q=' + getPropertyAddress + '&amp;hl=en&amp;ie=UTF8&amp;t=v&amp;hnear=' + getPropertyAddress + '&amp;z=16&amp;output=embed'"></iframe>-->
                 <div class="main_container">
