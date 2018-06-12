@@ -47,7 +47,8 @@
             data: function () {
                 return {
                     dataLoaded: false,
-                    currentPage: null,
+                    main: null,
+                    amenities: null,
                     siteInfo: site
                 }
             },
@@ -68,7 +69,7 @@
             methods: {
                 loadData: async function () {
                     try {
-                        let results = await Promise.all([this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/milton-directions.json"})]);
+                        let results = await Promise.all([this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/cerritos-center-information.json"})]);
                         return results;
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
