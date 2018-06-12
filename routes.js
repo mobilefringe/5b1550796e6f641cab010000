@@ -13,7 +13,7 @@ define([], function () {
             children: [
                 {   
                     path: '',
-                    component: view('center-info'),
+                    component: view('center_information'),
                     name: 'center-info'
                 }
             ]
