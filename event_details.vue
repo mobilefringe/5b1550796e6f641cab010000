@@ -23,7 +23,7 @@
                                 <br>
                                 Location
                             </p>
-                            <div class="event_desc" v-html="currentEvent.rich_description"></div>
+                            <div class="event_desc event_details" v-html="currentEvent.rich_description"></div>
                             <div class="row margin_30">
                                 <div class="col-md-12">
                                     <router-link to="/promotions">
@@ -54,12 +54,6 @@
         </transition>
     </div>
 </template>
-
-<style>
-    .event_desc {
-        margin-bottom: 60px;
-    }
-</style>
 
 <script>
 	define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, VueLazyload, SocialSharing, site) {
