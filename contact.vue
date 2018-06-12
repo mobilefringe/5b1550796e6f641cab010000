@@ -99,7 +99,7 @@
             created() {
                 this.loadData().then(response => {
                     // this.currentPage = response[0].data;
-                    this.dataLoaded = true;
+                    // this.dataLoaded = true;
                 });
             },
             computed: {
