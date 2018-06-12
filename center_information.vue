@@ -33,7 +33,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6" v-if="amenities" v-for="item in amenities">
-                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.title }}</p>
                             <div v-html="item.body"></div>
                         </div>
                     </div>
