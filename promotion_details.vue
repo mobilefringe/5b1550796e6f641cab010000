@@ -21,12 +21,17 @@
                                 <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
                                 <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
                                 <br>
-                                LOocation
+                                Location
                             </p>
                             <div class="promo_desc" v-html="currentPromo.rich_description"></div>
-                            <router-link to="/promotions">
-        		                <div class="animated_btn">Back to Sales & Promotions</div>    
-        		            </router-link>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <router-link to="/promotions">
+                		                <div class="animated_btn">Back to Sales & Promotions</div>    
+                		            </router-link>    
+                                </div>
+                            </div>
+                            
                             <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
                                 <div class="social_share">
                                     <network network="facebook">
