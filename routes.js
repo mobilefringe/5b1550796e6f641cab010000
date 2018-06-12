@@ -82,13 +82,12 @@ define([], function () {
             path: '/location',
             component: view('default'),
             meta: {
-                breadcrumb: 'Location',
+                breadcrumb: 'Location'
             },
             children: [
                 {   
                     path: '',
                     component: view('location'),
-                    
                     name: 'location'
                 }
             ]
