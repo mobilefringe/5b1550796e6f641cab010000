@@ -14,16 +14,16 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div class="row" v-if="currentPromo">
+                    <div class="row" v-if="currentEvent">
                         <div class="col-md-8">
-                            <h4 class="event_name">{{ currentPromo.name }}</h4>
+                            <h4 class="event_name">{{ currentEvent.name }}</h4>
                             <p class="event_dates">
-                                <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
-                                <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
+                                <span v-if="isMultiDay(currentEvent)">{{ currentEvent.start_date | moment("MMMM D", timezone)}} to {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>
+                                <span v-else>{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
                                 <br>
                                 Location
                             </p>
-                            <div class="event_desc" v-html="currentPromo.rich_description"></div>
+                            <div class="event_desc" v-html="currentEvent.rich_description"></div>
                             <div class="row margin_30">
                                 <div class="col-md-12">
                                     <router-link to="/promotions">
@@ -31,7 +31,7 @@
                 		            </router-link>    
                                 </div>
                             </div>
-                            <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
+                            <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" :twitter-user="siteInfo.twitterHandle" :media="currentEvent.image_url" inline-template>
                                 <div class="social_share">
                                     <network network="facebook">
                                         <i class="fab fa-facebook"></i>
@@ -46,7 +46,7 @@
                             </social-sharing>
                         </div>
                         <div class="col-md-4">
-                            <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>    
+                            <img v-lazy="currentEvent.image_url" :alt="'Promotion: ' + currentEvent.name" class="margin_20 img_max"/>    
                         </div>
                     </div>
                 </div>
