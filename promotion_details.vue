@@ -25,7 +25,6 @@
         		            </router-link>
                             <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
                                 <div class="social_share">
-                                    <p>Share</p>
                                     <network network="facebook">
                                         <i class="fab fa-facebook"></i>
                                     </network>
