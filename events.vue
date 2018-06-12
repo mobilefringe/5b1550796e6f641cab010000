@@ -26,6 +26,9 @@
                                 <h4 class="event_name">{{ event.name }}</h4>
                                 <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(event)">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ event.start_date | moment("MMMM D", timezone)}}</span></p>
                                 <div class="event_desc" v-html="event.description_short"></div>
+                                <router-link :to="{ name: 'eventDetails', params: { id: item.slug }}">
+                                    <p class="event_link">Event Details <i class="fas fa-angle-double-right"></i></p>
+                                </router-link>
                             </div>
                         </div>
                         <div v-else>
