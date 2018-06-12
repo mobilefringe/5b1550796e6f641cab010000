@@ -16,18 +16,10 @@
                     </div>
                     <div class="row" v-if="currentPromo">
                         <div class="col-md-8">
-                            <router-link to="/events-and-promotions">
-                                <div class="inside_page_header"><i class="fa fa-caret-left"></i> Back to List</div>
-                            </router-link>
-                            <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>
-                            <h3 class="promo_name">{{ currentPromo.name }}</h3>
-                            <p class="promo_store_name">
-                                <router-link v-if="currentPromo.promotionable_type == 'Store'" :to="'/stores/'+ currentPromo.store.slug">{{ currentPromo.store.name }}</router-link>
-                                <span v-else>{{ property.name }}</span>
-                                <span>| </span>
-                                <span v-if="isMultiDay(currentPromo)" class="promo_date">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
-                                <span v-else class="promo_date">{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
-                            </p>
+                            <h4 class="event_name">{{ currentPromo.name }}</h4>
+                            <p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
+                            <p class="event_dates">Location</p>
+                            
                             <div class="promo_desc" v-html="currentPromo.rich_description"></div>
                             <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
                                 <div class="social_share">
@@ -42,7 +34,7 @@
                             </social-sharing>
                         </div>
                         <div class="col-md-4">
-                            
+                            <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>    
                         </div>
                     </div>
                 </div>
