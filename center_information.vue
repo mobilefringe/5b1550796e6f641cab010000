@@ -28,7 +28,7 @@
                 <div class="main_container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="center">Amenities</h3>
+                            <h3 class="center title">Amenities</h3>
                         </div>
                     </div>
                     <div class="row">
