@@ -132,43 +132,29 @@ define([], function () {
                 }
             ]
         },
-        {
-            path: '/promotions-and-events',
-            component: view('default'),
-            children: [
-                {
-                    path: '',
-                    component: view('promotions-and-events'),
-                    meta: {
-                        pageName: 'Promotions & Events',
-                    },
-                    name: 'promotions-and-events'
-                }
-            ]
-        },
-        {
-            path: '/promotions',
-            component: view('default'),
-            meta: {
-                breadcrumb: 'Sales & Promotions',
-            },
-            children: [
-                {
-                    path: '',
-                    component: view('promotions'),
-                    name: 'promotions'
-                },
-                {
-                    path: ':id',
-                    component: view('promotion_details'),
-                    meta: {
-                        breadcrumb: 'Promotion Details',
-                    },
-                    name: 'promotionDetails',
-                    props: true
-                }
-            ]
-        },
+        // {
+        //     path: '/promotions',
+        //     component: view('default'),
+        //     meta: {
+        //         breadcrumb: 'Sales & Promotions',
+        //     },
+        //     children: [
+        //         {
+        //             path: '',
+        //             component: view('promotions'),
+        //             name: 'promotions'
+        //         },
+        //         {
+        //             path: ':id',
+        //             component: view('promotion_details'),
+        //             meta: {
+        //                 breadcrumb: 'Promotion Details',
+        //             },
+        //             name: 'promotionDetails',
+        //             props: true
+        //         }
+        //     ]
+        // },
         {
             path: '/stores',
             component: view('default'),
@@ -189,7 +175,30 @@ define([], function () {
                     },
                     name: 'storeDetails',
                     props: true
-                }
+                },
+                {
+                    path: '/promotions',
+                    component: view('default'),
+                    meta: {
+                        breadcrumb: 'Sales & Promotions',
+                    },
+                    children: [
+                        {
+                            path: '',
+                            component: view('promotions'),
+                            name: 'promotions'
+                        },
+                        {
+                            path: ':id',
+                            component: view('promotion_details'),
+                            meta: {
+                                breadcrumb: 'Promotion Details',
+                            },
+                            name: 'promotionDetails',
+                            props: true
+                        }
+                    ]
+                },
             ]
         },
         {
