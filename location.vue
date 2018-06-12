@@ -54,6 +54,7 @@
             created() {
                 this.loadData().then(response => {
                     var temp_repo = this.findRepoByName('Location Images');
+                    console.log(temp_repo)
                     if(temp_repo) {
                         this.pageBanner = temp_repo.images[0];
                     }
