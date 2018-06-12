@@ -27,11 +27,8 @@
                 </div>
                 <div class="main_container">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <!--<div class="page_content" v-if="currentPage" v-html="currentPage.body"></div>-->
+                        <div class="col-md-6" v-if="amenities" v-for="item in amenities">
+                            <div v-html="amenities.body"></div>
                         </div>
                     </div>
                 </div>
