@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <!--<div class="contact_page_body" v-html="currentPage.body"></div>-->
+                            <div v-html="main.body"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -100,8 +100,6 @@
                 this.loadData().then(response => {
                     console.log(response)
                     this.main = response[0].data
-                    this.contactInfo = response[0].data.subpages[0];
-                    // this.currentPage = response[0].data;
                     this.dataLoaded = true;
                 });
             },
