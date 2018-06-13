@@ -21,7 +21,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <!--<div v-html="contactInfo.body"></div>    -->
+                            <div v-html="contactInfo.body"></div>    
                         </div>
                         <div class="col-md-8">
                             <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
@@ -100,6 +100,7 @@
                 this.loadData().then(response => {
                     console.log(response)
                     this.main = response[0].data
+                    this.contactInfo = response[0].data.subpages[0];
                     this.dataLoaded = true;
                 });
             },
