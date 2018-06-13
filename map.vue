@@ -27,7 +27,13 @@
                                 ></v-select>
                             </div>
                             <div class="map_search">
-                                <search-component v-model="storeSearch" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :threshold="1">
+                                <search-component 
+                                    v-model="storeSearch" 
+                                    :list="processedStores" 
+                                    :suggestion-attribute="suggestionAttribute" 
+                                    @select="onOptionSelect" 
+                                    :threshold="1"
+                                >
                                     <template slot="item" scope="option">
                                         <article class="media">
                                             <p>{{ option.data.name }}</p>
