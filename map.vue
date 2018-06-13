@@ -89,7 +89,9 @@
             computed: {
                 ...Vuex.mapGetters([
                     'property',
-                    'processedStores'
+                    'processedStores',
+                    "processedCategories",
+                    "storesByCategoryName",
                 ]),
                 allStores() {
                     this.processedStores.map(function(store){
