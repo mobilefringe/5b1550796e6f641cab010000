@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('email')}">
                                         <label class="accessibility" for="email">Email</label>
-                                        <input id="email" v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000" placeholder="Email">
+                                        <input id="email" v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000" placeholder="Email *">
                                         <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('subject')}">
                                         <label class="accessibility" for="subject">Subject</label>
-                                        <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Subject">
+                                        <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Subject *">
                                         <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('subject') }}</span>
                                     </div>
                                 </div>
