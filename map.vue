@@ -139,7 +139,13 @@
                 },
                 dropPin(store) {
                     this.pngMapRef.showLocation(store.id);
-                }
+                },
+                onOptionSelect(option) {
+                    this.$nextTick(function() {
+                        this.storeSearch = ""
+                    });
+                    this.$refs.mapplic_ref.showLocation(option.svgmap_region);
+                },
             }
         });
     });
