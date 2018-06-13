@@ -15,7 +15,7 @@
                         </div>
                     </div>
         		    <div class="row margin_40">
-        		        <div class="col-md-6">
+        		        <div class="col-md-6 clearfix">
         		            <button class="animated_btn stores_btn" @click="toggleView()">{{ toggleText }}</button>
         		            <router-link to="/map">
         		                <div class="animated_btn stores_btn">
@@ -23,7 +23,7 @@
         		                </div>    
         		            </router-link>
         		        </div>
-        		        <div class="col-md-6">
+        		        <div class="col-md-6 clearfix">
         		            <div class="store_search">
             					<search-component :list="allStores" placeholder="Search" suggestion-attribute="name" v-model="search_result" @select="onOptionSelect" class="text-left">
             						<template slot="item" scope="option" class="manual">
