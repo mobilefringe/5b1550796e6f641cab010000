@@ -21,12 +21,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            
+                            <router-link to="/map">
+        		                <div class="animated_btn stores_btn">
+        		                    Center Map
+        		                </div>    
+        		            </router-link>    
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div v-if="main" v-html="main.body"></div>
+                            <div v-if="leasing" v-html="leasing.body"></div>
                         </div>
                     </div>
                 </div>
@@ -62,7 +66,6 @@
                     console.log(response)
                     this.main = response[1].data;
                     this.address = response[1].data.subpages[0]
-                    this.directions = response[1].data.subpages[1]
                     this.dataLoaded = true;
                 });
             },
