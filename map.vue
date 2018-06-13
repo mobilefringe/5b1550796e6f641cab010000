@@ -1,0 +1,106 @@
+<template>
+    <div> <!-- without an outer container div this component template will not render -->
+        <loading-spinner v-if="!dataLoaded"></loading-spinner>
+        <transition name="fade">
+            <div v-if="dataLoaded" v-cloak>
+                <div class="inside_page_header">
+                    <div class="main_container position_relative">
+                        <h2>Center Map</h2>
+                    </div>
+                </div>
+                <div class="main_container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <breadcrumb></breadcrumb>
+                        </div>
+                    </div>
+                    <div class="row">
+                 
+                        <div class="details_col_3">
+                            <div class="hidden_phone">
+                                <h3 class="inside_page_title">Find Store</h3>
+                                <div class="store_list_container hidden-mobile" v-if="allStores">
+                                    <p class="store_name" v-for="store in allStores" v-on:click="dropPin(store)">{{store.name}}</p>
+                                </div>
+                            </div>
+                            <div class="visible_phone">
+                                <v-select 
+                                    :options="allStores" 
+                                    :placeholder="'Select A Store'" 
+                                    :searchable="false" 
+                                    :label="'name'" 
+                                    :on-change="dropPin"
+                                ></v-select>
+                            </div>
+                        </div>
+                        <div class="details_col_9">
+                            <mapplic-png-map ref="pngmap_ref" :height="700" :hovertip="true" :storelist="allStores" :floorlist="floorList" :bindLocationOpened="true" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" :showPin="true" tooltiplabel="View Store Details"></mapplic-png-map>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+    </div>
+</template>
+<script>
+    define(["Vue", "vuex", "vue-select", "vue!mapplic-png-map"], function(Vue, Vuex, VueSelect, MapplicComponent) {
+        Vue.component('v-select', VueSelect.VueSelect);
+        return Vue.component("stores-component", {
+            template: template, // the variable template will be injected
+            data: function() {
+                return {
+                    dataLoaded: false,
+                }
+            },
+            created (){
+                this.loadData().then(response => {
+                    this.dataLoaded = true;
+                });
+            },
+            computed: {
+                ...Vuex.mapGetters([
+                    'property',
+                    'processedStores'
+                ]),
+                allStores() {
+                    this.processedStores.map(function(store){
+                        store.zoom = 1;
+                    })
+                    return this.processedStores;
+                },
+                getPNGurl() {
+                    return "https://www.mallmaverick.com" + this.property.map_url;
+                },
+                pngMapRef() {
+                    return this.$refs.pngmap_ref;
+                },
+                floorList () {
+                    var floor_list = [];
+                    
+                    var floor_1 = {};
+                    floor_1.id = "first-floor";
+                    floor_1.title = "Floor 1";
+                    floor_1.map = this.getPNGurl;
+                    floor_1.z_index = 1;
+                    floor_1.show = true;
+                    
+                    floor_list.push(floor_1);
+                    return floor_list;
+                }
+            },
+            methods: {
+                loadData: async function () {
+                    try {
+                        let results = await Promise.all([this.$store.dispatch("getData", "repos")]);
+                        return results;
+                    } catch (e) {
+                        console.log("Error loading data: " + e.message);
+                    }
+                },
+                dropPin(store) {
+                    this.pngMapRef.showLocation(store.id);
+                }
+            }
+        });
+    });
+</script>
