@@ -21,7 +21,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <div v-html="contactInfo.body"></div>    
+                            <div class="margin_60" v-html="contactInfo.body"></div>    
                         </div>
                         <div class="col-md-8">
                             <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
