@@ -23,7 +23,7 @@
                         <div class="col-md-12">
                             <router-link to="/map">
         		                <div class="animated_btn stores_btn">
-        		                    Center Map
+        		                    Leasing Booklet
         		                </div>    
         		            </router-link>    
                         </div>
