@@ -87,6 +87,23 @@
                     })
                     return this.processedStores;
                 },
+                allCategories() {
+                    var categories = this.storesByCategoryName
+                    var categoryData = [];
+                    _.forEach(categories, function(value, key) {
+                        var name = key
+                        var id = key
+                        if(name != null && id != null){
+                            var object = {
+                                'label': name,
+                                'value': name
+                            }
+                            categoryData.push(object)
+                        }
+                    });
+                    categoryData.unshift('All');
+                    return categoryData 
+                },
                 getPNGurl() {
                     return "https://www.mallmaverick.com" + this.property.map_url;
                 },
