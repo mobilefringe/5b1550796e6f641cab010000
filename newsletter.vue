@@ -12,8 +12,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <breadcrumb></breadcrumb>
-                            <p class="inside_page_link">Be the first to know about upcoming events and special announcements from {{ property.name }}!</p>
-
+                            <div v-html=""></div>
                             <form class="newsletter_form form-horizontal" action="//mobilefringe.createsend.com/t/d/s/vjklyu/" method="post" @submit.prevent="validateBeforeSubmit">
                                 <div class="row">
                                     <div class="col-sm-6" >
@@ -95,6 +94,14 @@
                 ])
             },
             methods: {
+                loadData: async function () {
+                    try {
+                        let results = await Promise.all([this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/cerritos-newsletter.json"})]);
+                        return results;
+                    } catch (e) {
+                        console.log("Error loading data: " + e.message);
+                    }
+                }
                 validateBeforeSubmit(form) {
                     this.$validator.validateAll().then((result) => {
                         if (result) {
