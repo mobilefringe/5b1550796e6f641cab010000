@@ -21,11 +21,11 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <a :href="" target="_blank">
+                            <!--<a :href="" target="_blank">-->
         		                <div class="animated_btn leasing_btn">
         		                    Leasing Booklet
         		                </div>    
-        		            </a>    
+        		            <!--</a>    -->
                         </div>
                     </div>
                     <div class="row">
