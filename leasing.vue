@@ -65,7 +65,7 @@
                     }
                     console.log(response)
                     this.main = response[1].data;
-                    this.address = response[1].data.subpages[0]
+                    this.leasing = response[1].data.subpages[0]
                     this.dataLoaded = true;
                 });
             },
