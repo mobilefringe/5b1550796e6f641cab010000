@@ -17,7 +17,7 @@
                     <div class="row">
                  
                         <div class="col-md-4">
-                            <div class="category-select-container map">
+                            <div class="store_category">
                                 <v-select 
                                     v-if="allCategories"
                                     v-model="selected" 
@@ -26,7 +26,7 @@
                                     class="category-select"
                                 ></v-select>
                             </div>
-                            <div class="store-search-container">
+                            <div class="store_search">
                                 <search-component v-model="storeSearch" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :threshold="1">
                                     <template slot="item" scope="option">
                                         <article class="media">
