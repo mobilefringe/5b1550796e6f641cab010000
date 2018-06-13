@@ -21,7 +21,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="margin_60" v-html="contactInfo.body"></div>    
+                            <div class="margin_60 padding_60" v-html="contactInfo.body"></div>    
                         </div>
                         <div class="col-md-8">
                             <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
@@ -81,7 +81,7 @@
     </div>
 </template>
 <script>
-    define(["Vue", "vuex", "vue-meta", "vee-validate"], function (Vue, Vuex, Meta, VeeValidate) {
+    define(["Vue", "vuex", "vue-meta", "vee-validate", "vue-recaptcha"], function (Vue, Vuex, Meta, VeeValidate) {
         Vue.use(Meta);
         Vue.use(VeeValidate);
         return Vue.component("contact-component", {
