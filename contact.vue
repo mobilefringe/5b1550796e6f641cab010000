@@ -89,16 +89,18 @@
             data: function data() {
                 return {
                     dataLoaded: false,
+                    main: null,
+                    contactInfo: null,
                     form_data: {},
-                    loginPending: null,
                     formSuccess: false,
                     formError: false,
-                    time: new Date()
                 }
             },
             created() {
                 this.loadData().then(response => {
                     console.log(response)
+                    this.main = response[0].data
+                    this.contactInfo = response[0].data.subpages[0];
                     // this.currentPage = response[0].data;
                     this.dataLoaded = true;
                 });
