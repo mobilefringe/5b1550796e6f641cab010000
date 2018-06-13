@@ -38,11 +38,11 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('phone')}">
-                                        <label class="accessibility" for="phone">Phone</label>
-                                        <input id="phone" v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" data-vv-delay="1000" placeholder="Phone">
-                                        <span v-show="errors.has('phone')" class="form-control-feedback">{{ errors.first('phone') }}</span>
-                                    </div>
+                                    <!--<div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('phone')}">-->
+                                    <!--    <label class="accessibility" for="phone">Phone</label>-->
+                                    <!--    <input id="phone" v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" data-vv-delay="1000" placeholder="Phone">-->
+                                    <!--    <span v-show="errors.has('phone')" class="form-control-feedback">{{ errors.first('phone') }}</span>-->
+                                    <!--</div>-->
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('subject')}">
                                         <label class="accessibility" for="subject">Subject</label>
                                         <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Subject">
@@ -98,7 +98,6 @@
             },
             created() {
                 this.loadData().then(response => {
-                    console.log(response)
                     this.main = response[0].data
                     this.contactInfo = response[0].data.subpages[0];
                     this.dataLoaded = true;
