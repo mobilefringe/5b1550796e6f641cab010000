@@ -24,44 +24,72 @@
                             <div class="margin_60 padding_60" v-html="contactInfo.body"></div>    
                         </div>
                         <div class="col-md-8">
-                            <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
-                                <div class="row">
-                                    <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('name')}">
-                                        <label class="accessibility" for="name">Name</label>
-                                        <input id="name" v-model="form_data.name" v-validate="'required|true'" class="form-control" :class="{'input': true}" name="name" type="text" data-vv-delay="1000" placeholder="Name">
-                                        <span v-show="errors.has('name')" class="form-control-feedback">{{ errors.first('name') }}</span>
-                                    </div>
-                                    <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('email')}">
-                                        <label class="accessibility" for="email">Email</label>
-                                        <input id="email" v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000" placeholder="Email">
-                                        <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
-                                    </div>
+                            <form class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
+                                <div class="col-xs-12 col-md-6 margin_20" :class="{'has-error': errors.has('name')}">
+                                    <label for="name">Name</label>
+                                    <input v-model="form_data.name" v-validate="'required|alpha_spaces'" class="form-control" :class="{'input': true}" name="name" type="text" data-vv-delay="1000">
+                                    <span v-show="errors.has('name')" class="form-control-feedback">{{ errors.first('name') }}</span>
                                 </div>
-                                <div class="row">
+                                <div class="col-xs-12 col-md-6 margin_20" :class="{'has-error': errors.has('email')}">
+                                    <label for="email">Email</label>
+                                    <input v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000">
+                                    <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
+                                </div>
+                                <div class="col-xs-12 margin_20" :class="{'has-error': errors.has('subject')}">
+                                    <label for="subject">Subject</label>
+                                    <input v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000">
+                                    <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('subject') }}</span>
+                                </div>
+                                <div class="col-xs-12 margin_20" :class="{'has-error': errors.has('message')}">
+                                    <label for="message">Message</label>
+                                    <textarea v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" data-vv-delay="1000"></textarea>
+                                    <span v-show="errors.has('message')" class="form-control-feedback">{{ errors.first('message') }}</span>
+                                </div>
+                                <div class="col-xs-12">
+                                    <button class="animated_btn" type="submit" :disabled="formSuccess">
+                                        Send <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </form>
+                                
+                            <!--<form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">-->
+                            <!--    <div class="row">-->
+                            <!--        <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('name')}">-->
+                            <!--            <label class="accessibility" for="name">Name</label>-->
+                            <!--            <input id="name" v-model="form_data.name" v-validate="'required|true'" class="form-control" :class="{'input': true}" name="name" type="text" data-vv-delay="1000" placeholder="Name">-->
+                            <!--            <span v-show="errors.has('name')" class="form-control-feedback">{{ errors.first('name') }}</span>-->
+                            <!--        </div>-->
+                            <!--        <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('email')}">-->
+                            <!--            <label class="accessibility" for="email">Email</label>-->
+                            <!--            <input id="email" v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" data-vv-delay="1000" placeholder="Email">-->
+                            <!--            <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>-->
+                            <!--        </div>-->
+                            <!--    </div>-->
+                            <!--    <div class="row">-->
                                     <!--<div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('phone')}">-->
                                     <!--    <label class="accessibility" for="phone">Phone</label>-->
                                     <!--    <input id="phone" v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" data-vv-delay="1000" placeholder="Phone">-->
                                     <!--    <span v-show="errors.has('phone')" class="form-control-feedback">{{ errors.first('phone') }}</span>-->
                                     <!--</div>-->
-                                    <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('subject')}">
-                                        <label class="accessibility" for="subject">Subject</label>
-                                        <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Subject">
-                                        <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('subject') }}</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12" :class="{'has-error': errors.has('message')}">
-                                        <label class="accessibility" for="message">Message</label>
-                                        <textarea id="message" v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" data-vv-delay="1000"></textarea>
-                                        <span v-show="errors.has('message')" class="form-control-feedback">{{ errors.first('message') }}</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <button class="submit animated_btn" type="submit" :disabled="formSuccess">Submit</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <!--        <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('subject')}">-->
+                            <!--            <label class="accessibility" for="subject">Subject</label>-->
+                            <!--            <input id="subject" v-model="form_data.subject" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="subject" type="text" data-vv-delay="1000" placeholder="Subject">-->
+                            <!--            <span v-show="errors.has('subject')" class="form-control-feedback">{{ errors.first('subject') }}</span>-->
+                            <!--        </div>-->
+                            <!--    </div>-->
+                            <!--    <div class="row">-->
+                            <!--        <div class="col-xs-12" :class="{'has-error': errors.has('message')}">-->
+                            <!--            <label class="accessibility" for="message">Message</label>-->
+                            <!--            <textarea id="message" v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" data-vv-delay="1000"></textarea>-->
+                            <!--            <span v-show="errors.has('message')" class="form-control-feedback">{{ errors.first('message') }}</span>-->
+                            <!--        </div>-->
+                            <!--    </div>-->
+                            <!--    <div class="row">-->
+                            <!--        <div class="col-xs-12">-->
+                            <!--            <button class="submit animated_btn" type="submit" :disabled="formSuccess">Submit</button>-->
+                            <!--        </div>-->
+                            <!--    </div>-->
+                            <!--</form>-->
                             <br/>
                             <div id="send_contact_success" class="alert alert-success" role="alert" v-show="formSuccess">
                                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
