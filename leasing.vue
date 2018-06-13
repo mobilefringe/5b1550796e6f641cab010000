@@ -30,7 +30,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div v-if="leasing" v-html="leasing.body"></div>
+                            <div class="leasing_contact" v-if="leasing" v-html="leasing.body"></div>
                         </div>
                     </div>
                 </div>
