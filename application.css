@@ -601,17 +601,17 @@ hr{
 }
 
 /* *** MAP *** */
-.store_list_container {
-    padding: 0 10px;
-    max-height: 648px;
-    overflow-y: scroll;
-    border: 1px solid #d8d8d8;
-    .store_name {
-        margin: 10px 0;
-        font-size: 1.125rem;
-        line-height: 1.5rem;
-    }
-}
+// .store_list_container {
+//     padding: 0 10px;
+//     max-height: 648px;
+//     overflow-y: scroll;
+//     border: 1px solid #d8d8d8;
+//     .store_name {
+//         margin: 10px 0;
+//         font-size: 1.125rem;
+//         line-height: 1.5rem;
+//     }
+// }
 .mapplic-element {
     border: 1px solid #d8d8d8;
 }
