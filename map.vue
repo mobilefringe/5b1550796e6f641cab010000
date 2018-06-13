@@ -95,6 +95,7 @@
                     'processedStores',
                     "processedCategories",
                     "storesByCategoryName",
+                    'findCategoryByName'
                 ]),
                 allStores() {
                     this.processedStores.map(function(store){
