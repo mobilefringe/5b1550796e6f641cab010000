@@ -16,7 +16,26 @@
                     </div>
                     <div class="row">
                  
-                        <div class="details_col_3">
+                        <div class="col-md-3">
+                            <div class="category-select-container map">
+                                <v-select 
+                                    v-if="allCategories"
+                                    v-model="selected" 
+                                    :options="allCategories" 
+                                    :searchable="false" 
+                                    class="category-select"
+                                ></v-select>
+                            </div>
+                            <div class="store-search-container">
+                                <search-component v-model="storeSearch" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :threshold="1">
+                                    <template slot="item" scope="option">
+                                        <article class="media">
+                                            <p>{{ option.data.name }}</p>
+                                        </article>
+                                    </template>
+                                </search-component>
+                                <i id="store-search-icon" class="fa fa-search" aria-hidden="true"></i>
+                            </div>
                             <div class="hidden_phone">
                                 <h3 class="inside_page_title">Find Store</h3>
                                 <div class="store_list_container hidden-mobile" v-if="allStores">
