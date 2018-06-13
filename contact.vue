@@ -35,8 +35,7 @@
                                         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                         <span class="sr-only">Error:</span>
                                         There was an error when trying to submit your request. Please try again later.
-                                    </div>   
-                                    <br/>
+                                    </div>
                                 </div>
                             </transition>
                             <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
