@@ -106,9 +106,6 @@
     .store_logo_container:hover .store_tag {
         display: none;
     }
-    .listView {
-        column-count: 2;
-    }
 </style>
 <script>
     define(["Vue", "vuex", "vue-select", "vue!search-component", "masonry" , "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, SearchComponent, masonry, VueMasonryPlugin) {
