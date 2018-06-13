@@ -107,12 +107,12 @@
                     return this.processedCategories;
                 },
                 dropDownCats() {
-                    console.log(this.processedCategories)
                     var cats = _.map(this.processedCategories, 'name');
                     cats.unshift('All');
                     return cats;
                 },
                 filterByCategory() {
+                    console.log(this.selectedCat;)
                     category_id = this.selectedCat;
                     if (category_id == "All" || category_id == null || category_id == undefined) {
                         category_id = "All";
