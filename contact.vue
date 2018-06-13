@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div v-html="main.body"></div>
+                            <div class="margin_60" v-html="main.body"></div>
                         </div>
                     </div>
                     <div class="row">
