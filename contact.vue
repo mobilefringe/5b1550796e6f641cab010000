@@ -24,17 +24,21 @@
                             <div class="margin_60 padding_60" v-html="contactInfo.body"></div>    
                         </div>
                         <div class="col-md-8">
-                            <div id="send_contact_success" class="alert alert-success" role="alert" v-show="formSuccess">
-                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                <span class="sr-only">Success</span>
-                                Thank you for contacting us. A member from our team will contact you shortly.
-                            </div>
-                            <div id="send_contact_error" class="alert alert-danger" role="alert" v-show="formError">
-                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                <span class="sr-only">Error:</span>
-                                There was an error when trying to submit your request. Please try again later.
-                            </div>   
-                            <br/>
+                            <transition name="fade">
+                                <div>
+                                    <div id="send_contact_success" class="alert alert-success" role="alert" v-show="formSuccess">
+                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                        <span class="sr-only">Success</span>
+                                        Thank you for contacting us. A member from our team will contact you shortly.
+                                    </div>
+                                    <div id="send_contact_error" class="alert alert-danger" role="alert" v-show="formError">
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">Error:</span>
+                                        There was an error when trying to submit your request. Please try again later.
+                                    </div>   
+                                    <br/>
+                                </div>
+                            </transition>
                             <form id="contact_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
                                 <div class="row">
                                     <div class="col-xs-12 col-md-6" :class="{'has-error': errors.has('name')}">
