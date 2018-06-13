@@ -48,8 +48,8 @@
         		        </div>
         		    </div>
         			<!-- Logo View -->
-        			<div v-if="logoView">
-            			<div class="margin_60" v-masonry transition-duration="0.3s" item-selector=".stores-grid-item">
+        			<div v-if="logoView" class="margin_60">
+            			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item">
                             <transition-group name="custom-classes-transition" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div">
                                 <div v-masonry-tile  v-for="(store, index) in filteredStores" :key="index" class="stores-grid-item">
                             	    <div class="store_logo_container">
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <!-- List View -->
-                    <div v-if="listView" class="listView">
+                    <div v-if="listView" class="margin_60 listView">
                         <transition-group name="custom-classes-transition" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div">
                             <div v-for="(store, index) in filteredStores" :key="index">
                     			<div class="store_name">
