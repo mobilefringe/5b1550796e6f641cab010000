@@ -69,6 +69,10 @@
             data: function() {
                 return {
                     dataLoaded: false,
+                    selected: "Select a Category",
+                    suggestionAttribute: "name",
+                    storeSearch: null,
+                    currentSelection: null,
                 }
             },
             created (){
