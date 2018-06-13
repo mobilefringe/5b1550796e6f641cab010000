@@ -79,7 +79,6 @@
                     dataLoaded: false,
                     selectedCat: null,
                     filteredStores: null,
-                    selected: "Select a Category",
                     suggestionAttribute: "name",
                     storeSearch: null,
                     currentSelection: null,
