@@ -101,6 +101,7 @@
                 },
                 allCategories() {
                     var categories = this.storesByCategoryName
+                    console.log(this.storesByCategoryName)
                     var categoryData = [];
                     _.forEach(categories, function(value, key) {
                         var name = key
