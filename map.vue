@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                  
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="category-select-container map">
                                 <v-select 
                                     v-if="allCategories"
@@ -52,7 +52,7 @@
                                 ></v-select>
                             </div>
                         </div>
-                        <div class="details_col_9">
+                        <div class="col-md-8">
                             <mapplic-png-map ref="pngmap_ref" :height="700" :hovertip="true" :storelist="allStores" :floorlist="floorList" :bindLocationOpened="true" :svgWidth="property.map_image_width" :svgHeight="property.map_image_height" :showPin="true" tooltiplabel="View Store Details"></mapplic-png-map>
                         </div>
                     </div>
