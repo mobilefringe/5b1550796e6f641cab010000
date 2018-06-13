@@ -21,11 +21,11 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <router-link to="/map">
-        		                <div class="animated_btn stores_btn">
+                            <a :href="" target="_blank">
+        		                <div class="animated_btn leasing_btn">
         		                    Leasing Booklet
         		                </div>    
-        		            </router-link>    
+        		            </a>    
                         </div>
                     </div>
                     <div class="row">
