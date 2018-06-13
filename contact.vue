@@ -92,8 +92,10 @@
                     main: null,
                     contactInfo: null,
                     form_data: {},
+                    loginPending: null,
                     formSuccess: false,
                     formError: false,
+                    time: new Date()
                 }
             },
             created() {
