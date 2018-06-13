@@ -24,7 +24,7 @@
                             <div class="margin_60 padding_60" v-html="contactInfo.body"></div>    
                         </div>
                         <div class="col-md-8">
-                            <transition name="fade">
+                            <transition name="fadeInUp">
                                 <div>
                                     <div id="send_contact_success" class="alert alert-success" role="alert" v-show="formSuccess">
                                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
