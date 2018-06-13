@@ -38,7 +38,6 @@ require.config({
         'bootstrap-vue' : 'https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue',
         'masonry' : 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min',
         'vue-masonry-plugin' : 'https://cdn.jsdelivr.net/npm/vue-masonry@0.10.16/dist/vue-masonry-plugin',
-        'vue-recaptcha' : 'https://unpkg.com/vue-recaptcha@latest/dist/vue-recaptcha.min',
         //mappplic-png--map dependencies
         'mousewheel' : 'https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min',
         'mapplic' : 'https://mmvue.codecloudapp.com/mapplic',
