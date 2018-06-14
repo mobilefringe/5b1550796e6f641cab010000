@@ -57,23 +57,23 @@
         							        </div>
         							    </li>
         					        </ul>
-        						    <div class="mobile_nav_content">
-        						        <div class="header_social">
-            							    <span class="social_icon" v-for="item in social_media">
-                                                <a :href="item.url" target="_blank">
-                                                    <div>
-                                                        <p class="accessibility">{{item.name}}</p>
-                                                        <i :class="item.iconClass" aria-hidden="true"></i>
-                                                    </div>
-                                                </a>
-                                            </span>
-                                        </div>
-                                        <div class="mobile_property_address center">
-                                            <p>{{ property.name }}<br>
-                                                <a :href="siteInfo.googleMapsURL" target="_blank">{{ getPropertyAddress }}</a>
-                                            </p>
-                                        </div>
-        							</div>
+        						 <!--   <div class="mobile_nav_content">-->
+        						 <!--       <div class="header_social">-->
+            			<!--				    <span class="social_icon" v-for="item in social_media">-->
+               <!--                                 <a :href="item.url" target="_blank">-->
+               <!--                                     <div>-->
+               <!--                                         <p class="accessibility">{{item.name}}</p>-->
+               <!--                                         <i :class="item.iconClass" aria-hidden="true"></i>-->
+               <!--                                     </div>-->
+               <!--                                 </a>-->
+               <!--                             </span>-->
+               <!--                         </div>-->
+               <!--                         <div class="mobile_property_address center">-->
+               <!--                             <p>{{ property.name }}<br>-->
+               <!--                                 <a :href="siteInfo.googleMapsURL" target="_blank">{{ getPropertyAddress }}</a>-->
+               <!--                             </p>-->
+               <!--                         </div>-->
+        							<!--</div>-->
         						</nav>
         				    </transition>
         				</div>
