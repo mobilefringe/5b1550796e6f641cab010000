@@ -42,8 +42,8 @@
                                                     <b-card-header header-tag="header" class="p-1" role="tab">
                                                         <b-btn block @click="item.show_sub_menu = !item.show_sub_menu" :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" :aria-expanded="item.show_sub_menu ? 'true' : 'false'">
                                                             {{$t(item.name)}}
-                                                            <i v-if="item.show_sub_menu"  class="fa-angle-down"></i>
-                                                            <i v-else  class="fa fa-angle-right"></i>
+                                                            <i v-if="item.show_sub_menu"  class="fas fa-angle-down"></i>
+                                                            <i v-else  class="fas fa-angle-right"></i>
                                                         </b-btn>
                                                     </b-card-header>
                                                     <b-collapse v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
