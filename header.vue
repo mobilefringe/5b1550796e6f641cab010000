@@ -36,7 +36,9 @@
         					    <nav id="mobile_nav" v-show="showMenu" class="">
         					        <ul>
         					            <li v-for="(item,key) in menu_items" class="menu_item">
-        							        <router-link :to="item.href" v-if="item.sub_menu == undefined">{{$t(item.name)}}</router-link>
+        							        <router-link :to="item.href" v-if="item.sub_menu == undefined">
+        							            <div class="btn-block">{{$t(item.name)}}</div>
+    							            </router-link>
         							        <div v-else>
         							            <b-card no-body class="mb-1">
                                                     <b-card-header header-tag="header" class="p-1" role="tab">
