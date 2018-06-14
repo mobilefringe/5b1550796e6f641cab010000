@@ -46,7 +46,7 @@
                                                             <i v-else  class="fas fa-angle-right"></i>
                                                         </b-btn>
                                                     </b-card-header>
-                                                    <transition name="fade">
+                                                    <transition name="fadeIn">
                                                         <b-collapse v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
                                                             <b-card-body v-for="sub_menu in item.sub_menu">
                                                                 <p class="card-text">
