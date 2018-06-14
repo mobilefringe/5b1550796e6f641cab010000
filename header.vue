@@ -32,7 +32,7 @@
     						</ul>
     					</nav>
     					<div class="nav_container visible_phone">
-    					    <transition name="custom-classes-transition" enter-active-class="animated slideInDown" leave-active-class="animated slideOutUp">
+    					    <transition name="custom-classes-transition" enter-active-class="animated slideInRight" leave-active-class="animated slideOutRight">
         					    <nav id="mobile_nav" v-show="showMenu" class="">
         					        <ul>
         					            <li v-for="(item,key) in menu_items" class="menu_item">
