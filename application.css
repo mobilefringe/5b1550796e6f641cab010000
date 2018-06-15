@@ -550,14 +550,14 @@ hr{
 //     font-size: 1.375rem;
 //     color: $text;;
 // }
-.inside_page_title {
-    margin-bottom: 10px;
-    font-family: Georgia;
-    font-style: italic;
-    font-size: 1.375rem;
-    line-height: 1.375rem;
-    color: $primary;
-}
+// .inside_page_title {
+//     margin-bottom: 10px;
+//     font-family: Georgia;
+//     font-style: italic;
+//     font-size: 1.375rem;
+//     line-height: 1.375rem;
+//     color: $primary;
+// }
 .inside_page_toggle {
     header {
         margin: 0;
