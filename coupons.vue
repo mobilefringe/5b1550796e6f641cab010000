@@ -110,26 +110,26 @@
                         return true
                     }
                 },
-                handleButton: function () {
-                    if(!this.moreEventsFetched){
-                        this.moreEvents = this.promoList;
-                        this.events = this.moreEvents.splice(0, 3);
-                        this.moreEventsFetched = true;
-                    } else {
-                        var nextEvents = this.moreEvents.splice(0, 3);
-                        // Add 3 more posts to posts array
-                        var vm = this;
-                        _.forEach(nextEvents, function(value, key) {
-                            vm.events.push(value);
-                        });
-                    }
-                    if(this.promoList.length === 0){
-                        this.noMoreEvents = true
-                        this.noEvents = true
-                    } else {
+                // handleButton: function () {
+                //     if(!this.moreEventsFetched){
+                //         this.moreEvents = this.promoList;
+                //         this.events = this.moreEvents.splice(0, 3);
+                //         this.moreEventsFetched = true;
+                //     } else {
+                //         var nextEvents = this.moreEvents.splice(0, 3);
+                //         // Add 3 more posts to posts array
+                //         var vm = this;
+                //         _.forEach(nextEvents, function(value, key) {
+                //             vm.events.push(value);
+                //         });
+                //     }
+                //     if(this.promoList.length === 0){
+                //         this.noMoreEvents = true
+                //         this.noEvents = true
+                //     } else {
 
-                    }
-                }
+                //     }
+                // }
             }
         });
     });
