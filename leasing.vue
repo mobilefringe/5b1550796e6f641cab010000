@@ -69,7 +69,7 @@
                     if(temp_repo2) {
                         this.pageImages = temp_repo2.images;
                     }
-                    console.log(response)
+
                     this.main = response[1].data;
                     this.leasingInfo = response[1].data.subpages[0]
                     this.dataLoaded = true;
