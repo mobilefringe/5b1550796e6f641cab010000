@@ -39,7 +39,7 @@
 </template>
               
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload) {
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load", "json!coupons.json"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload, coupons) {
         Vue.use(VueLazyload);
         return Vue.component("coupons-component", {
             template: template, // the variable template will be injected,
