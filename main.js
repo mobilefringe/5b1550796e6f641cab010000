@@ -85,13 +85,14 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                         href: "",
                         sub_menu: [
                             {
+                                name: "Directory",
+                                href: "/stores"
+                            },
+                            {
                                 name: "Center Map",
                                 href: "/map"
                             },
-                            {
-                                name: "Shopping",
-                                href: "/stores"
-                            },
+                            
                             {
                                 name: "Dining",
                                 href: "/stores"
