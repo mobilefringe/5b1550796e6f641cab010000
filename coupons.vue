@@ -132,6 +132,7 @@
                 },
                 selectCoupon(item){
                     console.log(item)
+                    this.selectedCoupon = true;
                 }
                 // handleButton: function () {
                 //     if(!this.moreEventsFetched){
