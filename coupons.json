@@ -1,5 +1,5 @@
 {
-    {
+    "0" : {
         id: "117442",
         name: "Complimentary 3 Day Pass and 1 Personal Training Session",
         description: " First time users only. Must be 18 or older. Valid at Peninsula Shopping Center location only. One coupon per person. Not valid with any other offer. Restrictions may appy. See store for details. Coupon must be presented at time of purchase or service. Expires 8-15-18 ",
@@ -30,7 +30,7 @@
         is_special_promo: false,
         property_id: 177
     },
-    {
+    "1" : {
         id: "117928",
         name: "Buy Any Cone, Get One for 99¢",
         description: " Code: SRM-3590. *99¢ cone must be of equal or lesser value. Valid at Peninsula Shopping Center location only. 
