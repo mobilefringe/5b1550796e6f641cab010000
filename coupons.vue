@@ -74,7 +74,7 @@
             },
             created (){
                 this.loadData().then(response => {
-                    console.log(this.couponsFullList)
+                    // console.log(this.couponsFullList)
                     // this.handleButton();
                     this.dataLoaded = true;
                 });
