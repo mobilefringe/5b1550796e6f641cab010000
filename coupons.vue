@@ -14,37 +14,24 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <!--<transition-group name="list" tag="div">-->
-                    <!--    <div v-if="events" v-for="item in events" key="item">-->
-                    <!--        <div class="row event_container">-->
-                    <!--            <div class="col-sm-6 col-md-4">-->
-                    <!--                <img :src="item.image_url" :alt="'Event: ' + item.name" class="event_img img_max" />   -->
-                    <!--            </div>-->
-                    <!--            <div class="col-sm-6 col-md-8">-->
-                    <!--                <p class="event_store_name">{{ item.store.name }}</p>-->
-                    <!--                <h4 class="event_name">{{ item.name }}</h4>-->
-                    <!--                <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>-->
-                    <!--                <div class="event_desc" v-html="item.description_short"></div>-->
-                    <!--                <router-link :to="{ name: 'promotionDetails', params: { id: item.slug }}">-->
-                    <!--                    <p class="event_link">Promotion Details <i class="fas fa-angle-double-right"></i></p>-->
-                    <!--                </router-link>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--    <div v-else>-->
-                    <!--        <div class="row">-->
-                    <!--            <div class="col-md-12">-->
-                    <!--                <p>Sorry, there are no Promotions posted at this time. Please check back soon!</p>    -->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--</transition-group>-->
-                    <!--<div class="row margin_60">-->
-                    <!--    <div class="col-md-12">-->
-                    <!--        <button class="animated_btn event_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>-->
-                    <!--        <p v-if="noEvents">No More Posts</p>-->
-                    <!--    </div>-->
-                    <!--</div>-->
+                    <div class="row">
+                        <div v-for="item in couponList" class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="row" id="{{id}}">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="product-front">
+                                        <img src="{{image_url}}" alt="" />
+                                    </div>
+                                </div>	
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <img src="//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png" class="basket_image add-to-basket" alt="" is_in_cart="false">
+                            	    <p>{{store_name}}</p>
+                                	<h4>{{name}}</h4>
+                                	<p>{{dates}}</p>
+                                    <a class="add-cart-large" href="/online_offers/{{slug}}">View Details</a>                          
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
@@ -52,8 +39,7 @@
 </template>
               
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load", "bootstrap-vue"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload, BootstrapVue) {
-        Vue.use(BootstrapVue);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload) {
         Vue.use(VueLazyload);
         return Vue.component("coupons-component", {
             template: template, // the variable template will be injected,
@@ -80,6 +66,9 @@
                     'timezone',
                     'processedPromos'
                 ]),
+                couponList: function coupons() {
+                    
+                },
                 promoList: function promos() {
                     var vm = this;
                     var showPromos = [];
