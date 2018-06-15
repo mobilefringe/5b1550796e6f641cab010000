@@ -64,7 +64,7 @@
                     if(temp_repo1) {
                         this.leasingBooklet = temp_repo1.images[0].image_url;
                     }
-                    
+                    console.log(this.leasingBooklet)
                     var temp_repo2 = this.findRepoByName('Leasing Images');
                     console.log(temp_repo2)
                     if(temp_repo2) {
