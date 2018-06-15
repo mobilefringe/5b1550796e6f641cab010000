@@ -27,7 +27,7 @@
                         <div v-for="(item, index) in couponList" class="col-md-6 col-sm-6 col-xs-12">
                             <div id="{{ item.id}} " @click="selectedCoupon = !selectedCoupon" class="row coupon_container">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="product-front">
+                                    <div class="coupon_img">
                                         <!--<img class="img_max" :src="item.image_url" alt="" />-->
                                         <img class="img_max" src="https://placehold.it/200" />
                                     </div>
