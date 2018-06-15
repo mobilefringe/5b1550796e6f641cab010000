@@ -31,6 +31,29 @@ define([], function () {
                     ]
                 },
                 {
+                    path: '/coupons',
+                    component: view('default'),
+                    meta: {
+                        breadcrumb: 'Coupons',
+                    },
+                    children: [
+                        {
+                            path: '',
+                            component: view('coupons'),
+                            name: 'coupons'
+                        },
+                        {
+                            path: ':id',
+                            component: view('coupon_details'),
+                            meta: {
+                                breadcrumb: 'Coupon Details',
+                            },
+                            name: 'couponDetails',
+                            props: true
+                        }
+                    ]
+                },
+                {
                     path: '/leasing',
                     component: view('default'),
                     children: [
@@ -60,21 +83,6 @@ define([], function () {
                 },
             ]
         },
-        
-        {
-            path: '/dine',
-            component: view('default'),
-            children: [
-                {
-                    path: '',
-                    component: view('dine'),
-                    meta: {
-                        pageName: 'Dine',
-                    },
-                    name: 'dine'
-                }
-            ]
-        },
         {
             path: '/events',
             component: view('default'),
@@ -99,30 +107,6 @@ define([], function () {
             ]
         },
         {
-            path: '/jobs',
-            component: view('default'),
-            children: [
-                {
-                    path: '',
-                    component: view('jobs'),
-                    meta: {
-                        pageName: 'Careers',
-                    },
-                    name: 'jobs'
-                },
-                {
-                    path: ':id',
-                    component: view('job_details'),
-                    meta: {
-                        pageName: 'Careers',
-                    },
-                    name: 'jobDetails',
-                    props: true
-                }
-            ]
-        },
-        
-        {
             path: '/location',
             component: view('default'),
             meta: {
@@ -137,21 +121,6 @@ define([], function () {
             ]
         },
         {
-            path: '/map',
-            component: view('default'),
-            children: [
-                {   
-                    path: '',
-                    component: view('map'),
-                    meta: {
-                        pageName: 'Centre Map',
-                    },
-                    name: 'map'
-                }
-            ]
-        },
-        
-        {
             path: '/pages',
             component: view('default'),
             children: [
@@ -163,29 +132,6 @@ define([], function () {
                 }
             ]
         },
-        // {
-        //     path: '/promotions',
-        //     component: view('default'),
-        //     meta: {
-        //         breadcrumb: 'Sales & Promotions',
-        //     },
-        //     children: [
-        //         {
-        //             path: '',
-        //             component: view('promotions'),
-        //             name: 'promotions'
-        //         },
-        //         {
-        //             path: ':id',
-        //             component: view('promotion_details'),
-        //             meta: {
-        //                 breadcrumb: 'Promotion Details',
-        //             },
-        //             name: 'promotionDetails',
-        //             props: true
-        //         }
-        //     ]
-        // },
         {
             path: '/stores',
             component: view('default'),
@@ -206,6 +152,20 @@ define([], function () {
                     },
                     name: 'storeDetails',
                     props: true
+                },
+                {
+                    path: '/map',
+                    component: view('default'),
+                    children: [
+                        {   
+                            path: '',
+                            component: view('map'),
+                            meta: {
+                                pageName: 'Centre Map',
+                            },
+                            name: 'map'
+                        }
+                    ]
                 },
                 {
                     path: '/promotions',
@@ -233,7 +193,6 @@ define([], function () {
             ]
         },
         {
-            
             path: '/404',
             name: '404',
             component: view('notfoundcomponent')
