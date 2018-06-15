@@ -65,7 +65,10 @@
                     var temp_repo = this.findRepoByName('Center Information Images');
                     console.log(temp_repo)
                     if(temp_repo) {
-                        this.pageImages = temp_repo.images;
+                        var three_imgs = _.slice(temp_repo.images, [0], [2])
+                        this.pageImages = three_imgs;
+                        var one_img = temp_repo.images[3];
+                        this.lowerBanner = one_img;
                     }
                     this.main = response[1].data;
                     this.amenities = response[1].data.subpages
