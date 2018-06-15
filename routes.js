@@ -30,6 +30,20 @@ define([], function () {
                         }
                     ]
                 },
+                {
+                    path: '/leasing',
+                    component: view('default'),
+                    children: [
+                        {
+                            path: '',
+                            component: view('leasing'),
+                            meta: {
+                                breadcrumb: 'Leasing'
+                            },
+                            name: 'leasing'
+                        }
+                    ]
+                },
             ]
         },
         
@@ -93,20 +107,7 @@ define([], function () {
                 }
             ]
         },
-        {
-            path: '/leasing',
-            component: view('default'),
-            meta: {
-                breadcrumb: 'Leasing'
-            },
-            children: [
-                {
-                    path: '',
-                    component: view('leasing'),
-                    name: 'leasing'
-                }
-            ]
-        },
+        
         {
             path: '/location',
             component: view('default'),
