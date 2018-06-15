@@ -44,7 +44,7 @@
 </template>
 
 <script>
-	define(["Vue", "vuex", "json!site.json"], function(Vue, Vuex, site) {
+	define(["Vue", "vuex"], function(Vue, Vuex) {
 		return Vue.component("center-info-component", {
             template: template, // the variable template will be injected
             data: function () {
@@ -52,7 +52,7 @@
                     dataLoaded: false,
                     main: null,
                     amenities: null,
-                    siteInfo: site
+                    pageImages: null,
                 }
             },
             created() {
