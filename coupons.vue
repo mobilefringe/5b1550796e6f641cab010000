@@ -18,7 +18,7 @@
         		        <div class="col-md-12 clearfix">
         		            <router-link to="/coupon-basket">
         		                <div class="animated_btn coupon_btn">
-        		                    My Basket <span class="basket_number">0</span>
+        		                    My Basket (<span class="basket_number">0</span>)
         		                </div>    
         		            </router-link>
         		        </div>
