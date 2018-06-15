@@ -15,10 +15,17 @@
                         </div>
                     </div>
                     <div class="row margin_40">
-        		        <div class="col-md-12 clearfix">
+        		        <div class="col-md-6 clearfix">
+        		            <router-link to="/coupons">
+        		                <div class="animated_btn coupon_btn">
+        		                    Back to Coupons
+        		                </div>    
+        		            </router-link>
+        		        </div>
+        		        <div class="col-md-6 clearfix">
         		            <router-link to="/coupon-basket">
         		                <div class="animated_btn coupon_btn">
-        		                    My Basket
+        		                    Print Coupons
         		                </div>    
         		            </router-link>
         		        </div>
