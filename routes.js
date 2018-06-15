@@ -156,6 +156,9 @@ define([], function () {
                 {
                     path: '/map',
                     component: view('default'),
+                    meta: {
+                        pageName: 'Centre Map',
+                    },
                     children: [
                         {   
                             path: '',
