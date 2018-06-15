@@ -46,7 +46,7 @@
             data: function () {
                 return {
                     dataLoaded: false,
-                    coupons: coupons,
+                    couponsFullList: coupons,
                     events: [],
                     moreEvents: [],
                     moreEventsFetched: false,
@@ -56,7 +56,7 @@
             },
             created (){
                 this.loadData().then(response => {
-                    console.log(this.coupons)
+                    console.log(this.couponsFullList)
                     this.handleButton();
                     this.dataLoaded = true;
                 });
