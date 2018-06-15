@@ -19,7 +19,8 @@
                             <div class="row" >
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="product-front">
-                                        <img :src="item.image_url" alt="" />
+                                        <!--<img :src="item.image_url" alt="" />-->
+                                        <img src="https://placehold.it/200" />
                                     </div>
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
