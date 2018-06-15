@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                         <div v-for="item in couponList" class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="row" id="{{ item.id }}">
+                            <div class="row" >
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="product-front">
                                         <img :src="item.image_url" alt="" />
