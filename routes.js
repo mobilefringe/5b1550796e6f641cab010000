@@ -15,26 +15,24 @@ define([], function () {
                     path: '',
                     component: view('center_information'),
                     name: 'center-info'
-                }
-            ]
-        },
-        {
-            path: '/contact-us',
-            component: view('default'),
-            meta: {
-                breadcrumb: 'Center Information'
-            },
-            children: [
+                },
                 {
-                    path: '',
-                    component: view('contact'),
-                    meta: {
-                        breadcrumb: 'Contact Us'
-                    },
-                    name: 'contact'
-                }
+                    path: '/contact-us',
+                    component: view('default'),
+                    children: [
+                        {
+                            path: '',
+                            component: view('contact'),
+                            meta: {
+                                breadcrumb: 'Contact Us'
+                            },
+                            name: 'contact'
+                        }
+                    ]
+                },
             ]
         },
+        
         {
             path: '/dine',
             component: view('default'),
