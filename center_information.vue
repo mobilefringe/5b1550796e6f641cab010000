@@ -70,6 +70,7 @@
 
                         var one_img = temp_repo.images[3];
                         this.lowerBanner = one_img;
+                        console.log(this.lowerBanner)
                     }
                     
                     this.main = response[1].data;
