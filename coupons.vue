@@ -16,20 +16,20 @@
                     </div>
                     <div class="row">
                         <div v-for="item in couponList" class="col-md-6 col-sm-6 col-xs-12">
-                            <!--<div class="row" id="{{id}}">-->
-                            <!--    <div class="col-md-6 col-sm-6 col-xs-12">-->
-                            <!--        <div class="product-front">-->
-                            <!--            <img src="{{image_url}}" alt="" />-->
-                            <!--        </div>-->
-                            <!--    </div>	-->
-                            <!--    <div class="col-md-6 col-sm-6 col-xs-12">-->
-                            <!--        <img src="//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png" class="basket_image add-to-basket" alt="" is_in_cart="false">-->
-                            <!--	    <p>{{store_name}}</p>-->
-                            <!--    	<h4>{{name}}</h4>-->
-                            <!--    	<p>{{dates}}</p>-->
-                            <!--        <a class="add-cart-large" href="/online_offers/{{slug}}">View Details</a>                          -->
-                            <!--    </div>-->
-                            <!--</div> -->
+                            <div class="row" id="{{ item.id }}">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="product-front">
+                                        <img :src="item.image_url" alt="" />
+                                    </div>
+                                </div>	
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <img src="//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png" class="basket_image add-to-basket" alt="" is_in_cart="false">
+                            	    <!--<p>{{store_name}}</p>-->
+                                	<h4>{{ item.name }}</h4>
+                                	<p>{{ item.dates }}</p>
+                                    <a class="add-cart-large" :href="/online_offers/+ item.slug">View Details</a>                          
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
