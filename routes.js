@@ -170,13 +170,13 @@ define([], function () {
                 {
                     path: '/promotions',
                     component: view('default'),
-                    meta: {
-                        breadcrumb: 'Sales & Promotions',
-                    },
                     children: [
                         {
                             path: '',
                             component: view('promotions'),
+                            meta: {
+                                breadcrumb: 'Sales & Promotions',
+                            },
                             name: 'promotions'
                         },
                         {
