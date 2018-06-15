@@ -36,14 +36,15 @@
                                     <div class="coupon_content">
                                         <i v-if="!selectedCoupon" class="fas fa-shopping-basket"></i>
                                         <i v-else class="fas fa-check"></i>
-                                        <p>Store Name</p>
-                                    	<h4>{{ item.name_short }}</h4>
-                                    	<p class="coupon_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
-                                        <router-link :to="{ name: 'couponDetails', params: { id: item.slug }}">
-                                            <p class="event_link">Coupon Details <i class="fas fa-angle-double-right"></i></p>
-                                        </router-link>
+                                        <div>
+                                            <p>Store Name</p>
+                                        	<h4>{{ item.name_short }}</h4>
+                                        	<p class="coupon_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
+                                            <router-link :to="{ name: 'couponDetails', params: { id: item.slug }}">
+                                                <p class="event_link">Coupon Details <i class="fas fa-angle-double-right"></i></p>
+                                            </router-link>
+                                        </div>
                                     </div>
-                            	    
                                 </div>
                             </div> 
                         </div>
