@@ -69,7 +69,7 @@
                         var three_imgs = _.slice(temp_repo.images, [0], [3])
                         this.pageImages = three_imgs;
                         console.log(this.pageImages)
-                        var one_img = temp_repo.images[3];
+                        var one_img = temp_repo.images[4];
                         this.lowerBanner = one_img;
                         console.log(this.lowerBanner)
                     }
