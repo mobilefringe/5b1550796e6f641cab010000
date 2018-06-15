@@ -41,8 +41,7 @@
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_content">
-                                        <i v-if="!selectedCoupon" class="fas fa-shopping-basket"></i>
-                                        <i v-else class="fas fa-check"></i>
+                                        <i class="fas fa-times"></i>
                                         <div>
                                             <p>Store Name</p>
                                         	<h4>{{ item.name_short }}</h4>
