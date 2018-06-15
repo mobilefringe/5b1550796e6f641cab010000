@@ -68,8 +68,10 @@
                     if(temp_repo) {
                         var three_imgs = _.slice(temp_repo.images, [0], [2])
                         this.pageImages = three_imgs;
+                        console.log(this.pageImages)
                         var one_img = temp_repo.images[3];
                         this.lowerBanner = one_img;
+                        console.log(this.lowerBanner)
                     }
                     this.main = response[1].data;
                     this.amenities = response[1].data.subpages
