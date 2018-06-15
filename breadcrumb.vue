@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <p class="page-breadcrumb">
-                <router-link to="/">Home</router-link> <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <router-link to="/">Home</router-link>
                 <breadcrumbs></breadcrumbs>
             </p>
         </div>
