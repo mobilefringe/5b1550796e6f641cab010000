@@ -104,6 +104,8 @@
                             
                             value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
+                            value.is_in_cart = false; 
+                            
                             showCoupons.push(value);
                         }
                     });
@@ -134,7 +136,6 @@
                     console.log(item)
                     // this.selectedCoupon = true;
                     var current_coupon_id = item.id;
-                    console.log(current_coupon_id)
                     if ($(el).attr("is_in_cart") === "false") {
     
                         $(el).attr("is_in_cart", "true");
