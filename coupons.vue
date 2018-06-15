@@ -24,11 +24,14 @@
                                     </div>
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <img src="//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png" class="basket_image add-to-basket" alt="" is_in_cart="false">
-                            	    <p>Store Name</p>
-                                	<h4>{{ item.name_short }}</h4>
-                                	<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
-                                    <a class="add-cart-large" :href="/online_offers/+ item.slug">Coupon Details<i class="fas fa-angle-double-right"></i></a>                          
+                                    <div class="coupon_content">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <p>Store Name</p>
+                                    	<h4>{{ item.name_short }}</h4>
+                                    	<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
+                                        <a class="add-cart-large" :href="/online_offers/+ item.slug">Coupon Details<i class="fas fa-angle-double-right"></i></a>                          
+                                    </div>
+                            	    
                                 </div>
                             </div> 
                         </div>
