@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="location_image_container">
-                    <div class="location_image" v-if="pageImages" v-for="item in pageImages">
+                    <div class="location_image" v-if="lowerBanner" v-for="item in lowerBanner">
                         <img :src="item.image_url" alt="" />   
                     </div>
                 </div>
