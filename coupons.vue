@@ -14,6 +14,15 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
+                    <div class="row margin_40">
+        		        <div class="col-md-12 clearfix">
+        		            <router-link to="/coupon-basket">
+        		                <div class="animated_btn stores_btn">
+        		                    Center Map
+        		                </div>    
+        		            </router-link>
+        		        </div>
+        		    </div>
                     <div class="row">
                         <div v-for="(item, index) in couponList" class="col-md-6 col-sm-6 col-xs-12">
                             <div id="{{ item.id}} " @click="selectedCoupon = !selectedCoupon" class="row coupon_container">
