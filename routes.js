@@ -209,5 +209,5 @@ define([], function () {
     */
     function view(name) {
         return function(resolve) { require(['vue!' + name + '.vue'], resolve); }
-    };
+    }
 });
