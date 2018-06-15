@@ -136,18 +136,16 @@
                     console.log(item)
                     // this.selectedCoupon = true;
                     var current_coupon_id = item.id;
-                    if ($(el).attr("is_in_cart") === "false") {
-    
-                        $(el).attr("is_in_cart", "true");
-                        $(el).attr("src", "//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508347595000/CheckmarkGreen.png");
-                        $(el).parent().parent().addClass("green_selected_box");
+                    if (item.is_in_cart === false) {
+                        item.is_in_cart = true;
                         //  $(".basket_number").text(parseInt($(".basket_number").text())+1);
     
                         selected_coupon_id.push(current_coupon_id);
                     } else {
-                        $(el).attr("is_in_cart", "false");
-                        $(el).attr("src", "//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png");
-                        $(el).parent().parent().removeClass("green_selected_box");
+                        item.is_in_cart = false;
+                        // $(el).attr("is_in_cart", "false");
+                        // $(el).attr("src", "//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png");
+                        // $(el).parent().parent().removeClass("green_selected_box");
     
                         //remove coupon from list variable
                         selected_coupon_id = $.grep(selected_coupon_id, function(val, i) {
@@ -159,26 +157,6 @@
                     Cookies.set('coupon_ids', JSON.stringify(selected_coupon_id));
                     $(".basket_number").text((Object.keys(selected_coupon_id).length));
                 }
-                // handleButton: function () {
-                //     if(!this.moreEventsFetched){
-                //         this.moreEvents = this.promoList;
-                //         this.events = this.moreEvents.splice(0, 3);
-                //         this.moreEventsFetched = true;
-                //     } else {
-                //         var nextEvents = this.moreEvents.splice(0, 3);
-                //         // Add 3 more posts to posts array
-                //         var vm = this;
-                //         _.forEach(nextEvents, function(value, key) {
-                //             vm.events.push(value);
-                //         });
-                //     }
-                //     if(this.promoList.length === 0){
-                //         this.noMoreEvents = true
-                //         this.noEvents = true
-                //     } else {
-
-                //     }
-                // }
             }
         });
     });
