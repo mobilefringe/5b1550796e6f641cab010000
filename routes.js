@@ -163,9 +163,6 @@ define([], function () {
                         {   
                             path: '',
                             component: view('map'),
-                            meta: {
-                                pageName: 'Centre Map',
-                            },
                             name: 'map'
                         }
                     ]
