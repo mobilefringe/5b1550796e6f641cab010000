@@ -68,11 +68,32 @@
                     'processedPromos'
                 ]),
                 couponList: function coupons() {
+                    var vm = this;
+                    var showCoupons = [];
+                    _.forEach(this.couponsFullList, function(value, key) {
+                        var today = moment.tz(this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        if (today >= showOnWebDate) {
+                            if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
+                                value.store.image_url = "http://placehold.it/400x400";
+                            }
+                            
+                            if (_.includes(value.image_url, 'missing')) {
+                                value.image_url = "http://placehold.it/400x400";
+                            }
+                            
+                            value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
+                            
+                            showCoupons.push(value);
+                        }
+                    });
+                    var sortedCoupons = _.orderBy(showCoupons, [function(o) { return o.end_date; }]);
                     
+                    return sortedCoupons;    
                 },
                 promoList: function promos() {
                     var vm = this;
-                    var showPromos = [];
+                    var sortedCoupons = [];
                     _.forEach(this.processedPromos, function(value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
