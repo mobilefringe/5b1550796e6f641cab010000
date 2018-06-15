@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="location_image_container">
-                    <div class="location_image" v-if="lowerBanner">
+                    <div v-if="lowerBanner">
                         <img class="img_max" :src="lowerBanner.image_url" alt="" />   
                     </div>
                 </div>
