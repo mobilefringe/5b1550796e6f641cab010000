@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header">
                     <div class="main_container position_relative">
-                        <h2>Coupon Basket</h2>
+                        <h2>My Basket</h2>
                     </div>
                 </div>
                 <div class="main_container">
@@ -14,37 +14,41 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <!--<transition-group name="list" tag="div">-->
-                    <!--    <div v-if="events" v-for="item in events" key="item">-->
-                    <!--        <div class="row event_container">-->
-                    <!--            <div class="col-sm-6 col-md-4">-->
-                    <!--                <img :src="item.image_url" :alt="'Event: ' + item.name" class="event_img img_max" />   -->
-                    <!--            </div>-->
-                    <!--            <div class="col-sm-6 col-md-8">-->
-                    <!--                <p class="event_store_name">{{ item.store.name }}</p>-->
-                    <!--                <h4 class="event_name">{{ item.name }}</h4>-->
-                    <!--                <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>-->
-                    <!--                <div class="event_desc" v-html="item.description_short"></div>-->
-                    <!--                <router-link :to="{ name: 'promotionDetails', params: { id: item.slug }}">-->
-                    <!--                    <p class="event_link">Promotion Details <i class="fas fa-angle-double-right"></i></p>-->
-                    <!--                </router-link>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--    <div v-else>-->
-                    <!--        <div class="row">-->
-                    <!--            <div class="col-md-12">-->
-                    <!--                <p>Sorry, there are no Promotions posted at this time. Please check back soon!</p>    -->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--</transition-group>-->
-                    <!--<div class="row margin_60">-->
-                    <!--    <div class="col-md-12">-->
-                    <!--        <button class="animated_btn event_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>-->
-                    <!--        <p v-if="noEvents">No More Posts</p>-->
-                    <!--    </div>-->
-                    <!--</div>-->
+                    <div class="row margin_40">
+        		        <div class="col-md-12 clearfix">
+        		            <router-link to="/coupon-basket">
+        		                <div class="animated_btn coupon_btn">
+        		                    My Basket
+        		                </div>    
+        		            </router-link>
+        		        </div>
+        		    </div>
+                    <div class="row">
+                        <div v-for="(item, index) in couponList" class="col-md-6 col-sm-6 col-xs-12">
+                            <div id="{{ item.id}} " @click="selectedCoupon = !selectedCoupon" class="row coupon_container">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="coupon_img">
+                                        <!--<img class="img_max" :src="item.image_url" alt="" />-->
+                                        <img class="img_max" src="https://placehold.it/200" />
+                                    </div>
+                                </div>	
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="coupon_content">
+                                        <i v-if="!selectedCoupon" class="fas fa-shopping-basket"></i>
+                                        <i v-else class="fas fa-check"></i>
+                                        <div>
+                                            <p>Store Name</p>
+                                        	<h4>{{ item.name_short }}</h4>
+                                        	<p class="coupon_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
+                                            <router-link :to="{ name: 'couponDetails', params: { id: item.slug }}">
+                                                <p class="event_link">Coupon Details <i class="fas fa-angle-double-right"></i></p>
+                                            </router-link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
@@ -52,15 +56,15 @@
 </template>
               
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load", "bootstrap-vue"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload, BootstrapVue) {
-        Vue.use(BootstrapVue);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load", "json!coupons.json"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload, coupons) {
         Vue.use(VueLazyload);
-        return Vue.component("coupons-component", {
+        return Vue.component("coupon-basket-component", {
             template: template, // the variable template will be injected,
             data: function () {
                 return {
                     dataLoaded: false,
-
+                    couponsFullList: coupons,
+                    selectedCoupon: false,
                     events: [],
                     moreEvents: [],
                     moreEventsFetched: false,
@@ -70,7 +74,8 @@
             },
             created (){
                 this.loadData().then(response => {
-                    this.handleButton();
+                    console.log(this.couponsFullList)
+                    // this.handleButton();
                     this.dataLoaded = true;
                 });
             },
@@ -80,10 +85,10 @@
                     'timezone',
                     'processedPromos'
                 ]),
-                promoList: function promos() {
+                couponList: function coupons() {
                     var vm = this;
-                    var showPromos = [];
-                    _.forEach(this.processedPromos, function(value, key) {
+                    var showCoupons = [];
+                    _.forEach(this.couponsFullList, function(value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
@@ -95,16 +100,16 @@
                                 value.image_url = "http://placehold.it/400x400";
                             }
                             
+                            value.name_short = _.truncate(value.name, { 'length': 30, 'separator': ' ' });
+                            
                             value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
-                            showPromos.push(value);
+                            showCoupons.push(value);
                         }
                     });
-                    var sortedPromos = _.orderBy(showPromos, [function(o) { return o.end_date; }]);
-                    if (sortedPromos.length > 0) {
-                        this.togglePromos = true;
-                    }
-                    return sortedPromos;
+                    var sortedCoupons = _.orderBy(showCoupons, [function(o) { return o.end_date; }]);
+                    
+                    return sortedCoupons;    
                 }
             },
             methods: {
@@ -115,36 +120,36 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                isMultiDay(promo) {
+                isMultiDay(item) {
                     var timezone = this.timezone
-                    var start_date = moment(promo.start_date).tz(timezone).format("MM-DD-YYYY")
-                    var end_date = moment(promo.end_date).tz(timezone).format("MM-DD-YYYY")
+                    var start_date = moment(item.start_date).tz(timezone).format("MM-DD-YYYY")
+                    var end_date = moment(item.end_date).tz(timezone).format("MM-DD-YYYY")
                     if (start_date === end_date) {
                         return false
                     } else {
                         return true
                     }
                 },
-                handleButton: function () {
-                    if(!this.moreEventsFetched){
-                        this.moreEvents = this.promoList;
-                        this.events = this.moreEvents.splice(0, 3);
-                        this.moreEventsFetched = true;
-                    } else {
-                        var nextEvents = this.moreEvents.splice(0, 3);
-                        // Add 3 more posts to posts array
-                        var vm = this;
-                        _.forEach(nextEvents, function(value, key) {
-                            vm.events.push(value);
-                        });
-                    }
-                    if(this.promoList.length === 0){
-                        this.noMoreEvents = true
-                        this.noEvents = true
-                    } else {
+                // handleButton: function () {
+                //     if(!this.moreEventsFetched){
+                //         this.moreEvents = this.promoList;
+                //         this.events = this.moreEvents.splice(0, 3);
+                //         this.moreEventsFetched = true;
+                //     } else {
+                //         var nextEvents = this.moreEvents.splice(0, 3);
+                //         // Add 3 more posts to posts array
+                //         var vm = this;
+                //         _.forEach(nextEvents, function(value, key) {
+                //             vm.events.push(value);
+                //         });
+                //     }
+                //     if(this.promoList.length === 0){
+                //         this.noMoreEvents = true
+                //         this.noEvents = true
+                //     } else {
 
-                    }
-                }
+                //     }
+                // }
             }
         });
     });
