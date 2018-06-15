@@ -39,7 +39,9 @@
                                         <p>Store Name</p>
                                     	<h4>{{ item.name_short }}</h4>
                                     	<p class="coupon_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
-                                        <a class="add-cart-large" :href="/online_offers/+ item.slug">Coupon Details<i class="fas fa-angle-double-right"></i></a>                          
+                                        <router-link :to="{ name: 'couponDetails', params: { id: item.slug }}">
+                                            <p class="event_link">Coupon Details <i class="fas fa-angle-double-right"></i></p>
+                                        </router-link>
                                     </div>
                             	    
                                 </div>
