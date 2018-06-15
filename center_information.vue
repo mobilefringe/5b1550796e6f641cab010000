@@ -58,6 +58,7 @@
                     main: null,
                     amenities: null,
                     pageImages: null,
+                    lowerBanner: null
                 }
             },
             created() {
