@@ -17,7 +17,7 @@
                     <div class="row margin_40">
         		        <div class="col-md-6 clearfix">
         		            <router-link to="/coupons">
-        		                <div class="animated_btn coupon_btn">
+        		                <div class="animated_btn basket_btn">
         		                    Back to Coupons
         		                </div>    
         		            </router-link>
