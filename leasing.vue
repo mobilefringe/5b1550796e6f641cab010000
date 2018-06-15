@@ -30,7 +30,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="leasing_contact" v-if="leasing" v-html="leasing.body"></div>
+                            <div class="leasing_contact" v-if="leasingInfo" v-html="leasingInfo.body"></div>
                         </div>
                     </div>
                 </div>
@@ -52,20 +52,27 @@
                 return {
                     dataLoaded: false,
                     main: null,
-                    leasing: null,
+                    leasingInfo: null,
+                    leasingBooklet: null,
                     pageImages: null
                 }
             },
             created() {
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Location Images');
-                    console.log(temp_repo)
-                    if(temp_repo) {
-                        this.pageImages = temp_repo.images;
+                    var temp_repo1 = this.findRepoByName('Leasing Booklet');
+                    console.log(temp_repo1)
+                    if(temp_repo1) {
+                        this.pageImages = temp_repo1.images;
+                    }
+                    
+                    var temp_repo2 = this.findRepoByName('Leasing Images');
+                    console.log(temp_repo2)
+                    if(temp_repo2) {
+                        this.pageImages = temp_repo2.images;
                     }
                     console.log(response)
                     this.main = response[1].data;
-                    this.leasing = response[1].data.subpages[0]
+                    this.leasingInfo = response[1].data.subpages[0]
                     this.dataLoaded = true;
                 });
             },
