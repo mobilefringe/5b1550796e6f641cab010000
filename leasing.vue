@@ -65,7 +65,6 @@
                     }
 
                     var temp_repo2 = this.findRepoByName('Leasing Images');
-                    console.log(temp_repo2)
                     if(temp_repo2) {
                         this.pageImages = temp_repo2.images;
                     }
