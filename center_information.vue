@@ -57,14 +57,13 @@
             },
             created() {
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Center Images');
+                    var temp_repo = this.findRepoByName('Center Information Images');
                     console.log(temp_repo)
                     if(temp_repo) {
                         this.pageImages = temp_repo.images;
                     }
                     this.main = response[1].data;
                     this.amenities = response[1].data.subpages
-                    console.log(this.amenities)
                     this.dataLoaded = true;
                 });
             },
