@@ -18,7 +18,7 @@
         		        <div class="col-md-12 clearfix">
         		            <router-link to="/coupon-basket">
         		                <div class="animated_btn coupon_btn">
-        		                    My Basket
+        		                    My Basket <span class="basket_number"></span>
         		                </div>    
         		            </router-link>
         		        </div>
@@ -138,7 +138,7 @@
                     var current_coupon_id = item.id;
                     if (item.is_in_cart === false) {
                         item.is_in_cart = true;
-                        //  $(".basket_number").text(parseInt($(".basket_number").text())+1);
+                         $(".basket_number").text(parseInt($(".basket_number").text())+1);
     
                         selected_coupon_id.push(current_coupon_id);
                     } else {
