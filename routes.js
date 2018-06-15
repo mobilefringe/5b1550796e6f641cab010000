@@ -44,6 +44,20 @@ define([], function () {
                         }
                     ]
                 },
+                {
+                    path: '/newsletter',
+                    component: view('default'),
+                    children: [
+                        {
+                            path: '',
+                            component: view('newsletter'),
+                            meta: {
+                                breadcrumb: 'Newsletter Sign-Up',
+                            },
+                            name: 'newsletter'
+                        }
+                    ]
+                },
             ]
         },
         
@@ -136,20 +150,7 @@ define([], function () {
                 }
             ]
         },
-        {
-            path: '/newsletter',
-            component: view('default'),
-            meta: {
-                breadcrumb: 'Newsletter Sign-Up',
-            },
-            children: [
-                {
-                    path: '',
-                    component: view('newsletter'),
-                    name: 'newsletter'
-                }
-            ]
-        },
+        
         {
             path: '/pages',
             component: view('default'),
