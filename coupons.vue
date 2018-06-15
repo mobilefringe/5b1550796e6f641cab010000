@@ -25,8 +25,8 @@
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_content">
-                                        <i class="fas fa-shopping-basket"></i>
-                                        <i class="fas fa-check"></i>
+                                        <i v-if="!selectedCoupon" class="fas fa-shopping-basket"></i>
+                                        <i v-else class="fas fa-check"></i>
                                         <p>Store Name</p>
                                     	<h4>{{ item.name_short }}</h4>
                                     	<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
