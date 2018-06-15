@@ -2,7 +2,7 @@
     <div v-if="dataLoaded" id="overlay">
         <div class="loading-container">
             <div class="loader"></div>
-            <p class="center">{{ property.name }} is Loading...</p>
+            <p class="main_container center">{{ property.name }} is Loading...</p>
         </div>
     </div>
 </template>
