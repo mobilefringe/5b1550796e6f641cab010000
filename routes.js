@@ -156,13 +156,13 @@ define([], function () {
                 {
                     path: '/map',
                     component: view('default'),
-                    meta: {
-                        pageName: 'Centre Map',
-                    },
                     children: [
                         {   
                             path: '',
                             component: view('map'),
+                            meta: {
+                                breadcrumb: 'Centre Map',
+                            },
                             name: 'map'
                         }
                     ]
