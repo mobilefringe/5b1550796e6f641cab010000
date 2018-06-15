@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                         <div v-for="item in couponList" class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="row coupon_container">
+                            <div @click="selectedCoupon = !selectedCoupon" class="row coupon_container">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="product-front">
                                         <!--<img :src="item.image_url" alt="" />-->
@@ -26,6 +26,7 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_content">
                                         <i class="fas fa-shopping-basket"></i>
+                                        <i class="fas fa-check"></i>
                                         <p>Store Name</p>
                                     	<h4>{{ item.name_short }}</h4>
                                     	<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
@@ -51,6 +52,7 @@
                 return {
                     dataLoaded: false,
                     couponsFullList: coupons,
+                    selectedCoupon: false,
                     events: [],
                     moreEvents: [],
                     moreEventsFetched: false,
