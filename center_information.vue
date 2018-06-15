@@ -40,7 +40,8 @@
                 </div>
                 <div class="location_image_container">
                     <div v-if="lowerBanner">
-                        <img class="img_max" :src="lowerBanner.image_url" alt="" />   
+                        <img class="img_max" :src="lowerBanner.image_url" alt="" /> 
+                        <h1>{{ lowerBanner.name }}</h1>
                     </div>
                 </div>
             </div>
