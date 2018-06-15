@@ -24,8 +24,8 @@
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <img src="//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png" class="basket_image add-to-basket" alt="" is_in_cart="false">
-                            	    <!--<p>{{store_name}}</p>-->
-                                	<h4>{{ item.name }}</h4>
+                            	    <p>Store Name</p>
+                                	<h4>{{ item.name_short }}</h4>
                                 	<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
                                     <a class="add-cart-large" :href="/online_offers/+ item.slug">Coupon Details<i class="fas fa-angle-double-right"></i></a>                          
                                 </div>
@@ -81,6 +81,8 @@
                             if (_.includes(value.image_url, 'missing')) {
                                 value.image_url = "http://placehold.it/400x400";
                             }
+                            
+                            value.name_short = _.truncate(value.name, { 'length': 30, 'separator': ' ' });
                             
                             value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
