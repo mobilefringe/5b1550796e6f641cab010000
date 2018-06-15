@@ -59,7 +59,7 @@ define([], function () {
                     children: [
                         {
                             path: '',
-                            component: view('coupons_basket'),
+                            component: view('coupon_basket'),
                             meta: {
                                 breadcrumb: 'My Basket',
                             },
