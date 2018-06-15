@@ -27,7 +27,7 @@
                             	    <!--<p>{{store_name}}</p>-->
                                 	<h4>{{ item.name }}</h4>
                                 	<p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MM/DD/YYY", timezone)}} - {{ item.end_date | moment("MM/DD/YYY", timezone)}}</span><span v-else>{{ item.start_date | moment("MM/DD/YYY", timezone)}}</span></p>
-                                    <a class="add-cart-large" :href="/online_offers/+ item.slug">View Coupon Details</a>                          
+                                    <a class="add-cart-large" :href="/online_offers/+ item.slug">Coupon Details<i class="fas fa-angle-double-right"></i></a>                          
                                 </div>
                             </div> 
                         </div>
