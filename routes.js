@@ -33,13 +33,13 @@ define([], function () {
                 {
                     path: '/coupons',
                     component: view('default'),
-                    meta: {
-                        breadcrumb: 'Coupons',
-                    },
                     children: [
                         {
                             path: '',
                             component: view('coupons'),
+                            meta: {
+                                breadcrumb: 'Coupons',
+                            },
                             name: 'coupons'
                         },
                         {
@@ -50,6 +50,20 @@ define([], function () {
                             },
                             name: 'couponDetails',
                             props: true
+                        }
+                    ]
+                },
+                {
+                    path: '/coupon-basket',
+                    component: view('default'),
+                    children: [
+                        {
+                            path: '',
+                            component: view('coupons_basket'),
+                            meta: {
+                                breadcrumb: 'Coupons',
+                            },
+                            name: 'coupons'
                         }
                     ]
                 },
