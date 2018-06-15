@@ -61,7 +61,7 @@ define([], function () {
                             path: '',
                             component: view('coupons_basket'),
                             meta: {
-                                breadcrumb: 'Coupons',
+                                breadcrumb: 'My Basket',
                             },
                             name: 'coupons'
                         }
