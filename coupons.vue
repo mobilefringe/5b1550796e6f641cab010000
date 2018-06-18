@@ -160,7 +160,7 @@
                         // Cookies.set('coupon_ids', '');
                         // Cookies.set('coupon_ids', JSON.stringify(this.selected_coupon_id));
                         // $(".basket_number").text((Object.keys(this.selected_coupon_id).length));
-                    });
+
                 }
             }
         });
