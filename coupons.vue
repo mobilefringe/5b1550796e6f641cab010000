@@ -65,6 +65,7 @@
                     dataLoaded: false,
                     couponsFullList: coupons,
                     selectedCoupon: false,
+                    selected_coupon_id: [],
                     events: [],
                     moreEvents: [],
                     moreEventsFetched: false,
