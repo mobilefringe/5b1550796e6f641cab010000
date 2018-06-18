@@ -155,9 +155,9 @@
                         }
                         console.log("Selected Coupons ", this.selected_coupon_id)
                         //add updated coupon list to localstorage
-                        Cookies.set('coupon_ids', '');
-                        Cookies.set('coupon_ids', JSON.stringify(this.selected_coupon_id));
-                        $(".basket_number").text((Object.keys(this.selected_coupon_id).length));
+                        // Cookies.set('coupon_ids', '');
+                        // Cookies.set('coupon_ids', JSON.stringify(this.selected_coupon_id));
+                        // $(".basket_number").text((Object.keys(this.selected_coupon_id).length));
                     });
                 }
             }
