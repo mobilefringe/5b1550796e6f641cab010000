@@ -61,7 +61,7 @@
 <script>
     define(["Vue", "vuex", "jquery", "vee-validate", "json!site.json"], function(Vue, Vuex, $, VeeValidate, site) {
         Vue.use(VeeValidate);
-        return Vue.component("newsletter-component", {
+        return Vue.component("test-component", {
             template: template, // the variable template will be injected
             data: function() {
                 return {
