@@ -32,7 +32,7 @@
         		    </div>
                     <div class="row">
                         <div v-for="(item, index) in couponList" class="col-md-6 col-sm-6 col-xs-12">
-                            <div :id="item.id" @click="selectedCoupon = !selectedCoupon" class="row coupon_container">
+                            <div :id="item.id" @click="selectedCoupon()" class="row coupon_container">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_img">
                                         <!--<img class="img_max" :src="item.image_url" alt="" />-->
