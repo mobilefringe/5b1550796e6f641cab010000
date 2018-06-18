@@ -32,7 +32,7 @@
         		    </div>
                     <div class="row">
                         <div v-for="(item, index) in couponList" v-on:remove="couponList.splice(index, 1)" class="col-md-6 col-sm-6 col-xs-12">
-                            <div :id="item.id" @click="$emit(\'remove\')" class="row coupon_container">
+                            <div :id="item.id" class="row coupon_container">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_img">
                                         <!--<img class="img_max" :src="item.image_url" alt="" />-->
@@ -41,7 +41,7 @@
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_content">
-                                        <i class="fas fa-times"></i>
+                                        <i @click="$emit(\'remove\')" class="fas fa-times"></i>
                                         <div>
                                             <p>Store Name</p>
                                         	<h4>{{ item.name_short }}</h4>
