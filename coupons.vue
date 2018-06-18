@@ -135,28 +135,30 @@
                 },
                 selectCoupon(item){
                     // this.selectedCoupon = true;
-                    var current_coupon_id = item.id;
-                    if (item.is_in_cart === false) {
-                        item.is_in_cart = true;
-                         $(".basket_number").text(parseInt($(".basket_number").text())+1);
-    
-                        this.selected_coupon_id.push(current_coupon_id);
-                    } else {
-                        item.is_in_cart = false;
-                        // $(el).attr("is_in_cart", "false");
-                        // $(el).attr("src", "//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png");
-                        // $(el).parent().parent().removeClass("green_selected_box");
-                        $(".basket_number").text(parseInt($(".basket_number").text())-1);
-                        //remove coupon from list variable
-                        this.selected_coupon_id = $.grep(this.selected_coupon_id, function(val, i) {
-                            return (val !== current_coupon_id);
-                        });
-                    }
-                    console.log("Selected Coupons ", this.selected_coupon_id)
-                    //add updated coupon list to localstorage
-                    Cookies.set('coupon_ids', '');
-                    Cookies.set('coupon_ids', JSON.stringify(this.selected_coupon_id));
-                    $(".basket_number").text((Object.keys(this.selected_coupon_id).length));
+                    this.$nextTick(function() {
+                        var current_coupon_id = item.id;
+                        if (item.is_in_cart === false) {
+                            item.is_in_cart = true;
+                            $(".basket_number").text(parseInt($(".basket_number").text())+1);
+        
+                            this.selected_coupon_id.push(current_coupon_id);
+                        } else {
+                            item.is_in_cart = false;
+                            // $(el).attr("is_in_cart", "false");
+                            // $(el).attr("src", "//codecloud.cdn.speedyrails.net/sites/59d7b1c56e6f64669e8d0000/image/png/1508346683000/Basket@2x.png");
+                            // $(el).parent().parent().removeClass("green_selected_box");
+                            $(".basket_number").text(parseInt($(".basket_number").text())-1);
+                            //remove coupon from list variable
+                            this.selected_coupon_id = $.grep(this.selected_coupon_id, function(val, i) {
+                                return (val !== current_coupon_id);
+                            });
+                        }
+                        console.log("Selected Coupons ", this.selected_coupon_id)
+                        //add updated coupon list to localstorage
+                        Cookies.set('coupon_ids', '');
+                        Cookies.set('coupon_ids', JSON.stringify(this.selected_coupon_id));
+                        $(".basket_number").text((Object.keys(this.selected_coupon_id).length));
+                    });
                 }
             }
         });
