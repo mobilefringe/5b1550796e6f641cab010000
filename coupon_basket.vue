@@ -66,6 +66,7 @@
         Vue.use(VueLazyload);
         return Vue.component("coupon-basket-component", {
             template: template, // the variable template will be injected,
+            props: ['selected'],
             data: function () {
                 return {
                     dataLoaded: false,
@@ -80,6 +81,7 @@
             },
             created (){
                 this.loadData().then(response => {
+                    console.log(this.selected)
                     console.log(this.couponsFullList)
                     // this.handleButton();
                     this.dataLoaded = true;
