@@ -41,7 +41,7 @@
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_content">
-                                        <i @click="$emit(\'remove\')" class="fas fa-times"></i>
+                                        <i v-on:click="$emit(\'remove\')" class="fas fa-times"></i>
                                         <div>
                                             <p>Store Name</p>
                                         	<h4>{{ item.name_short }}</h4>
