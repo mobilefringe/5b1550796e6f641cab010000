@@ -21,14 +21,14 @@ body {
 [v-cloak] {
     display: none;
 }
-a {
-    color: inherit;
-    transition: color 0.3s ease;
-    &:hover {
-        color: $primary;
-        text-decoration: none;
-    }
-}
+// a {
+//     color: inherit;
+//     transition: color 0.3s ease;
+//     &:hover {
+//         color: $primary;
+//         text-decoration: none;
+//     }
+// }
 hr{
    max-width: 100%;
    border-top: 2px solid #eee;
