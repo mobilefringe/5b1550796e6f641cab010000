@@ -71,7 +71,7 @@
                 return {
                     dataLoaded: false,
                     couponsFullList: coupons,
-                    selectedCoupon: false,
+                    
                     events: [],
                     moreEvents: [],
                     moreEventsFetched: false,
