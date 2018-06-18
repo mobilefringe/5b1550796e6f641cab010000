@@ -34,7 +34,7 @@
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_content">
-                                        <i v-if="!selectedCoupon" class="fas fa-shopping-basket"></i>
+                                        <i v-if="!item.is_in_cart" class="fas fa-shopping-basket"></i>
                                         <i v-else class="fas fa-check"></i>
                                         <div>
                                             <p>Store Name</p>
@@ -118,7 +118,7 @@
             methods: {
                 loadData: async function () {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "events"), this.$store.dispatch("getData","promotions")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "events"), this.$store.dispatch("getData", "promotions")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
@@ -134,7 +134,6 @@
                     }
                 },
                 selectCoupon(item){
-                    console.log(item)
                     // this.selectedCoupon = true;
                     var current_coupon_id = item.id;
                     if (item.is_in_cart === false) {
