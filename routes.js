@@ -63,7 +63,7 @@ define([], function () {
                             meta: {
                                 breadcrumb: 'My Basket',
                             },
-                            name: 'coupon_basket'
+                            name: 'couponBasket'
                         }
                     ]
                 },
