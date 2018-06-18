@@ -63,7 +63,8 @@ define([], function () {
                             meta: {
                                 breadcrumb: 'My Basket',
                             },
-                            name: 'couponBasket'
+                            name: 'couponBasket',
+                            props: true
                         }
                     ]
                 },
