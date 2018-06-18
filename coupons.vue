@@ -34,8 +34,9 @@
                                 </div>	
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="coupon_content">
-                                        <i v-if="!item.is_in_cart" class="fas fa-shopping-basket"></i>
-                                        <i v-else class="fas fa-check"></i>
+                                        <i v-if="item.is_in_cart"  class="fas fa-check"></i>
+                                        <i v-else class="fas fa-shopping-basket"></i>
+                                        
                                         <div>
                                             <p>Store Name</p>
                                         	<h4>{{ item.name_short }}</h4>
