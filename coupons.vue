@@ -141,7 +141,7 @@
                         item.is_in_cart = true;
                          $(".basket_number").text(parseInt($(".basket_number").text())+1);
     
-                        selected_coupon_id.push(current_coupon_id);
+                        this.selected_coupon_id.push(current_coupon_id);
                     } else {
                         item.is_in_cart = false;
                         // $(el).attr("is_in_cart", "false");
@@ -149,14 +149,14 @@
                         // $(el).parent().parent().removeClass("green_selected_box");
                         $(".basket_number").text(parseInt($(".basket_number").text())-1);
                         //remove coupon from list variable
-                        selected_coupon_id = $.grep(selected_coupon_id, function(val, i) {
+                        this.selected_coupon_id = $.grep(this.selected_coupon_id, function(val, i) {
                             return (val !== current_coupon_id);
                         });
                     }
                     //add updated coupon list to localstorage
                     Cookies.set('coupon_ids', '');
-                    Cookies.set('coupon_ids', JSON.stringify(selected_coupon_id));
-                    $(".basket_number").text((Object.keys(selected_coupon_id).length));
+                    Cookies.set('coupon_ids', JSON.stringify(this.selected_coupon_id));
+                    $(".basket_number").text((Object.keys(this.selected_coupon_id).length));
                 }
             }
         });
