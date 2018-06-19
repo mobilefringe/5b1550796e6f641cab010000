@@ -170,7 +170,9 @@
                     //Init
                     this.getWindowWidth();
                 });
-                
+                if (typeof this.$redrawVueMasonry === 'function') {
+                    this.$redrawVueMasonry()
+                }
             },
             computed: {
                 ...Vuex.mapGetters([
