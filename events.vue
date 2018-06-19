@@ -64,12 +64,26 @@
                     'processedEvents'
                 ]),
                 eventList: function events() {
+                    console.log(this.processedEvents)
                     var events = this.processedEvents;
                     var showEvents = [];
                     _.forEach(events, function (value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
+                            // var current_month = value.name[0];
+                            // if(store_initial.toLowerCase() == current_initial.toLowerCase()){
+                            //     val.data_initial = current_initial;
+                            //     store_initial = current_initial;
+                            //     val.initial = "";
+                            //     val.show = "display:none;";
+                            // } else {
+                            //     val.data_initial = current_initial;
+                            //     val.initial = current_initial;
+                            //     store_initial = current_initial;
+                            //     val.show = "display:block;";
+                            // }
+        
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
                                 value.store.image_url = "http://placehold.it/400x400";
                             }
