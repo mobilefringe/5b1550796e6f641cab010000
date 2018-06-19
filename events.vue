@@ -76,10 +76,10 @@
                             var start_month = moment.tz(value.start_date, this.timezone).format("MM-YYYY");
                             // console.log("End Month ", end_month)
                             
-                            if (month_heading == start_month){
-                                value.month = "";
-                                value.show_month = false;
-                            } else {
+                            // if (month_heading == start_month){
+                            //     value.month = "";
+                            //     value.show_month = false;
+                            // } else {
                                 if (start_month <= today_month) {
                                     value.month = moment.tz(this.timezone).format("MMMM YYYY");
                                     month_heading = today_month;
@@ -88,8 +88,8 @@
                                     month_heading = start_month;
                                 }
                                     
-                                value.show_month = true;
-                            }
+                            //     value.show_month = true;
+                            // }
 
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
                                 value.store.image_url = "http://placehold.it/400x400";
@@ -104,6 +104,9 @@
                             showEvents.push(value);
                         }
                     });
+                    
+                    showEvents = _.groupBy(showEvents, event => (event.month);
+                    console.log("Events ", showEvents)
                     showEvents = _.orderBy(showEvents, function (o) { return o.end_date });
                     return showEvents
                 }
