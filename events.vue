@@ -104,7 +104,7 @@
                             showEvents.push(value);
                         }
                     });
-
+                    events = _.orderBy(events, function (o) { return o.end_date });
                     return events
                 }
             },
