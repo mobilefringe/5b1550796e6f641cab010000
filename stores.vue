@@ -150,7 +150,7 @@
                 });
             },
             watch: {
-                filterByCategory: function() {
+                selectedCat: function() {
                     // this.$nextTick(function() {
                         this.$redrawVueMasonry();
                     // });    
