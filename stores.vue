@@ -179,7 +179,6 @@
                 ]),
                 allStores() {
                     var store_list = this.processedStores
-                    console.log(this.processedStores)
                     var vm = this;
                     var hover_image = "";
                     _.forEach(store_list, function(value, key) {
