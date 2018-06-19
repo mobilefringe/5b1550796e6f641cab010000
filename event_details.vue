@@ -14,39 +14,45 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div class="row margin_60" v-if="currentEvent">
-                        <div class="col-md-8">
-                            <h4 class="event_name">{{ currentEvent.name }}</h4>
-                            <p class="event_dates">
-                                <span v-if="isMultiDay(currentEvent)">{{ currentEvent.start_date | moment("MMMM D", timezone)}} to {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>
-                                <span v-else>{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
-                                <br>
-                                Location
-                            </p>
-                            <div class="event_desc event_details" v-html="currentEvent.rich_description"></div>
-                            <div class="row margin_30">
-                                <div class="col-md-12">
-                                    <router-link to="/promotions">
-                		                <div class="animated_btn pull-left">Back to Events</div>    
-                		            </router-link>    
-                                </div>
+                    <div  v-if="currentEvent">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4 class="event_name">{{ currentEvent.name }}</h4>
+                                <p class="event_dates">
+                                    <span v-if="isMultiDay(currentEvent)">{{ currentEvent.start_date | moment("MMMM D", timezone)}} to {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>
+                                    <span v-else>{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
+                                    <br>
+                                    Location
+                                </p>
+                                <div class="event_desc event_details" v-html="currentEvent.rich_description"></div>
                             </div>
-                            <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" :twitter-user="siteInfo.twitterHandle" :media="currentEvent.image_url" inline-template>
-                                <div class="social_share">
-                                    <network network="facebook">
-                                        <i class="fab fa-facebook"></i>
-                                    </network>
-                                    <network network="twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </network>
-                                    <network network="email">
-                                        <i class="fas fa-envelope"></i>
-                                    </network>
-                                </div>
-                            </social-sharing>
+                            <div class="col-md-4">
+                                <img v-lazy="currentEvent.image_url" :alt="'Promotion: ' + currentEvent.name" class="margin_20 img_max"/>    
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <img v-lazy="currentEvent.image_url" :alt="'Promotion: ' + currentEvent.name" class="margin_20 img_max"/>    
+                        <div class="row margin_60">
+                            <div class="col-md-12">
+                                <div class="row margin_30">
+                                    <div class="col-md-12">
+                                        <router-link to="/promotions">
+                    		                <div class="animated_btn pull-left">Back to Events</div>    
+                    		            </router-link>    
+                                    </div>
+                                </div>
+                                <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.title" :description="currentEvent.body" :quote="truncate(currentEvent.body)" :twitter-user="siteInfo.twitterHandle" :media="currentEvent.image_url" inline-template>
+                                    <div class="social_share">
+                                        <network network="facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </network>
+                                        <network network="twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </network>
+                                        <network network="email">
+                                            <i class="fas fa-envelope"></i>
+                                        </network>
+                                    </div>
+                                </social-sharing>
+                            </div>
                         </div>
                     </div>
                 </div>
