@@ -76,27 +76,29 @@
                             var end_month = moment.tz(value.end_date, this.timezone).format("MM-YYYY");
                             console.log("End Month ", end_month)
                             
-                            // if(month_heading == end_month){
-                            //     // val.data_initial = end_month;
-                            //     month_heading = end_month;
-
-                            //     value.show_month = false;
-                            // } else {
-                            //     // val.data_initial = end_month;
-                            //     value.month = end_month;
-                            //     month_heading = end_month;
-                            //     value.show_month = true;
-                            // }
-        
-                            if (month_heading != end_month) {
+                            var current_initial = val.name[0];
+                            console.log("Current ", current_initial)
+                            if (month_heading == end_month){
+                                // val.data_initial = end_month;
+                                month_heading = end_month;
+                                value.month = "";
+                                value.show_month = false;
+                            } else {
+                                // val.data_initial = end_month;
                                 value.month = end_month;
                                 month_heading = end_month;
-                                value.show_month = true;    
-                            } else {
-                                month_heading = end_month;
-
-                                value.show_month = false;    
+                                val.show_month = true;
                             }
+        
+                            // if (month_heading != end_month) {
+                            //     value.month = end_month;
+                            //     month_heading = end_month;
+                            //     value.show_month = true;    
+                            // } else {
+                            //     month_heading = end_month;
+
+                            //     value.show_month = false;    
+                            // }
         
         
         
