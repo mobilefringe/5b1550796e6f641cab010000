@@ -49,7 +49,7 @@
         		    </div>
         			<!-- Logo View -->
         			<div v-if="logoView" class="margin_60">
-            			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item">
+            			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item" origin-top="false">
                             <transition-group name="custom-classes-transition" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div">
                                 <div v-masonry-tile  v-for="(store, index) in filteredStores" :key="index" class="stores-grid-item">
                             	    <div class="store_logo_container">
@@ -204,14 +204,6 @@
                     cats.unshift('All');
                     return cats;
                 },
-                // getPNGurl() {
-                //     return "https://www.mallmaverick.com" + this.property.map_url;
-                // },
-                // svgMapRef() {
-                //     return _.filter(this.$children, function(o) {
-                //         return (o.$el.className == "svg-map")
-                //     })[0];
-                // },
                 filterByCategory() {
                     category_id = this.selectedCat;
                     if (category_id == "All" || category_id == null || category_id == undefined) {
@@ -238,9 +230,7 @@
             methods: {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
                         let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData", "repos")]);
-                        
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
@@ -258,12 +248,6 @@
                         this.logoView = true;
                         this.listView = false;
                     } 
-                },
-                updateSVGMap(map) {
-                    this.map = map;
-                },
-                addLandmark(store) {
-                    this.svgMapRef.addMarker(store);
                 },
                 getWindowWidth(event) {
                     this.windowWidth = window.innerWidth;
