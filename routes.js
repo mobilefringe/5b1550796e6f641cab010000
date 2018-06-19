@@ -186,8 +186,8 @@ define([], function () {
                     path: '/promotions',
                     component: view('default'),
                     meta: {
-                                breadcrumb: 'Sales & Promotions',
-                            },
+                        breadcrumb: 'Sales & Promotions',
+                    },
                     children: [
                         {
                             path: '',
