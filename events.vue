@@ -17,7 +17,7 @@
                     <div class="row margin_60">
                         <div v-if="eventList" v-for="event in eventList">
                             <div class="col-md-12">
-                                <h3 class="event_date_heading">{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
+                                <h3 v-if="event.show_month" class="event_date_heading">{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
                             </div>
                             <div class="col-md-4">
                                 <img :src="event.image_url" :alt="'Event: ' + event.name" class="img_max" />   
@@ -67,23 +67,24 @@
                     console.log(this.processedEvents)
                     var events = this.processedEvents;
                     var showEvents = [];
+                    var month_heading = ""
                     _.forEach(events, function (value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
                             var end_month = moment.tz(value.end_date, this.timezone).format("MM-YYYY");
                             console.log(end_month)
-                            // if(store_initial.toLowerCase() == current_initial.toLowerCase()){
-                            //     val.data_initial = current_initial;
-                            //     store_initial = current_initial;
-                            //     val.initial = "";
-                            //     val.show = "display:none;";
-                            // } else {
-                            //     val.data_initial = current_initial;
-                            //     val.initial = current_initial;
-                            //     store_initial = current_initial;
-                            //     val.show = "display:block;";
-                            // }
+                            if(month_heading == end_month){
+                                // val.data_initial = end_month;
+                                // store_initial = end_month;
+
+                                value.show_month = false;
+                            } else {
+                                // val.data_initial = end_month;
+                                value.month = end_month;
+                                // store_initial = end_month;
+                                value.show_month = true;
+                            }
         
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
                                 value.store.image_url = "http://placehold.it/400x400";
