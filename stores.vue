@@ -135,7 +135,7 @@
             },
             watch: {
                 selectedCat: function() {
-                    console.log("Hello!")
+                    console.log("Hello!", this)
                     this.$nextTick(function() {
                         this.$redrawVueMasonry();
                     });    
