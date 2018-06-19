@@ -78,13 +78,13 @@
                             
                             if (month_heading == end_month){
                                 // val.data_initial = end_month;
-                                month_heading = end_month;
+                                // month_heading = end_month;
                                 value.month = "";
                                 value.show_month = false;
                             } else {
                                 // val.data_initial = end_month;
                                 value.month = end_month;
-                                // month_heading = end_month;
+                                month_heading = end_month;
                                 value.show_month = true;
                             }
         
