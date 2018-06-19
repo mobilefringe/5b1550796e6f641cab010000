@@ -14,7 +14,7 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div class="row" v-if="currentEvent">
+                    <div class="row margin_60" v-if="currentEvent">
                         <div class="col-md-8">
                             <h4 class="event_name">{{ currentEvent.name }}</h4>
                             <p class="event_dates">
