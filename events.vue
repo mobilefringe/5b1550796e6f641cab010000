@@ -118,7 +118,7 @@
                     // var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date });
                     
                     // return sortedEvents
-                    return Events
+                    return events
                 }
             },
             methods: {
