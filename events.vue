@@ -73,7 +73,8 @@
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
                             var end_month = moment.tz(value.end_date, this.timezone).format("MM-YYYY");
-                            console.log(end_month)
+                            console.log("End Month ", end_month)
+                            console.log("Month Heading ", month_heading )
                             if(month_heading == end_month){
                                 // val.data_initial = end_month;
                                 // store_initial = end_month;
