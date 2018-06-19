@@ -219,9 +219,6 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                changeMode(mode) {
-                    this.listMode = mode;
-                },
                 toggleView() {
                     if (this.logoView) {
                         this.toggleText = "Display as Logos"
