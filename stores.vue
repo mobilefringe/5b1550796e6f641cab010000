@@ -150,6 +150,9 @@
                 });
             },
             watch: {
+                filterByCategory: function() {
+                    
+                },
                 windowWidth: function() {
                     if (this.windowWidth <= 768) {
                         this.mobile_store = true;
@@ -225,9 +228,6 @@
                     if(el) {
                         el.classList.remove("open");
                     }
-                    this.$nextTick(function() {
-                        this.$redrawVueMasonry();
-                    });
                 }
             },
             methods: {
