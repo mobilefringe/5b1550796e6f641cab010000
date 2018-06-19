@@ -49,7 +49,7 @@
         		    </div>
         			<!-- Logo View -->
         			<div v-if="logoView" class="margin_60">
-            			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item" origin-top="false">
+            			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item">
                             <transition-group name="custom-classes-transition" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut" tag="div">
                                 <div v-masonry-tile  v-for="(store, index) in filteredStores" :key="index" class="stores-grid-item">
                             	    <div class="store_logo_container">
