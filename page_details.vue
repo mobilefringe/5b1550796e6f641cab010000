@@ -14,7 +14,7 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row margin_60">
                         <div class="col-md-12">
                             <div class="page_body" v-html="currentPage.body"></div>
                         </div>
