@@ -142,6 +142,9 @@ define([], function () {
                 {
                     path: ':id',
                     component: view('page_details'),
+                    meta: {
+                        breadcrumb: 'Page Details',
+                    },
                     name: 'pageDetails',
                     props: true
                 }
@@ -192,7 +195,6 @@ define([], function () {
                         {
                             path: '',
                             component: view('promotions'),
-                            
                             name: 'promotions'
                         },
                         {
