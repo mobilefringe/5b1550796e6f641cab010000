@@ -65,8 +65,6 @@
                     'processedEvents'
                 ]),
                 eventList: function events() {
-                    console.log(this.processedEvents)
-                    // var events = this.processedEvents;
                     var events = _.orderBy(this.processedEvents, function (o) { return o.end_date });
                     var showEvents = [];
                     var month_heading = "";
@@ -79,29 +77,14 @@
                             console.log("End Month ", end_month)
                             
                             if (month_heading == end_month){
-                                // val.data_initial = end_month;
-                                // month_heading = end_month;
                                 value.month = "";
                                 value.show_month = false;
                             } else {
-
                                 value.month = end_month;
-                                month_heading = end_month;
+                                month_heading = moment.tz(value.end_date, this.timezone).format("MMMM YYYY");
                                 value.show_month = true;
                             }
-        
-                            // if (month_heading != end_month) {
-                            //     value.month = end_month;
-                            //     month_heading = end_month;
-                            //     value.show_month = true;    
-                            // } else {
-                            //     month_heading = end_month;
 
-                            //     value.show_month = false;    
-                            // }
-        
-        
-        
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
                                 value.store.image_url = "http://placehold.it/400x400";
                             }
@@ -115,9 +98,7 @@
                             showEvents.push(value);
                         }
                     });
-                    // var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date });
-                    
-                    // return sortedEvents
+
                     return events
                 }
             },
