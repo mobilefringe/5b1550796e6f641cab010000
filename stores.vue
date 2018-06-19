@@ -229,6 +229,7 @@
                     if(el) {
                         el.classList.remove("open");
                     }
+                    this.$redrawVueMasonry();
                 }
             },
             methods: {
