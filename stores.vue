@@ -135,7 +135,7 @@
             },
             watch: {
                 selectedCat: function() {
-                    console.log("Hello!", this)
+                    console.log("Hello!", VueMasonryPlugin)
                     this.$nextTick(function() {
                         this.$redrawVueMasonry();
                     });    
