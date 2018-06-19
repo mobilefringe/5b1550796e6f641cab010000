@@ -90,23 +90,7 @@
 	    </transition>
 	</div>
 </template>
-<style>
-    .store_details {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: none;
-        background-color: rgba(255, 255, 255, 0.4);
-        transition: all 0.3s ease;
-    }
-    .store_logo_container:hover .store_tag {
-        display: none;
-    }
-</style>
+
 <script>
     define(["Vue", "vuex", "vue-select", "vue!search-component", "masonry" , "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, SearchComponent, masonry, VueMasonryPlugin) {
         Vue.component('v-select', VueSelect.VueSelect);
