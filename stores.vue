@@ -138,6 +138,7 @@
                     console.log("Hello!", Vue.prototype)
                     // this.$nextTick(function() {
                         Vue.prototype.$redrawVueMasonry()
+                        window.resize();
                     // });    
                 },
                 windowWidth: function() {
