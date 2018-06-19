@@ -64,7 +64,7 @@
                     'processedEvents'
                 ]),
                 eventList: function events() {
-                    var events = _.orderBy(this.processedEvents, function (o) { return o.end_date });
+                    var events = _.orderBy(this.processedEvents, function (o) { return o.start_date });
                     var showEvents = [];
                     var month_heading = "";
                     _.forEach(events, function (value, key) {
