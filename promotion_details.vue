@@ -14,39 +14,45 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div class="row" v-if="currentPromo">
-                        <div class="col-md-8">
-                            <p v-if="currentPromo.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
-                            <p v-else class="event_store_name">{{ currentPromo.store.name }}</p>
-                            <h4 class="event_name">{{ currentPromo.name }}</h4>
-                            <p class="event_dates">
-                                <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
-                                <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
-                            </p>
-                            <div class="event_desc event_details" v-html="currentPromo.rich_description"></div>
-                            <div class="row margin_30">
-                                <div class="col-md-12">
-                                    <router-link to="/promotions">
-                		                <div class="animated_btn pull-left">Back to Sales & Promotions</div>    
-                		            </router-link>    
-                                </div>
+                    <div v-if="currentPromo">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p v-if="currentPromo.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
+                                <p v-else class="event_store_name">{{ currentPromo.store.name }}</p>
+                                <h4 class="event_name">{{ currentPromo.name }}</h4>
+                                <p class="event_dates">
+                                    <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} to {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
+                                    <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
+                                </p>
+                                <div class="event_desc event_details" v-html="currentPromo.rich_description"></div>
                             </div>
-                            <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
-                                <div class="social_share margin_60">
-                                    <network network="facebook">
-                                        <i class="fab fa-facebook"></i>
-                                    </network>
-                                    <network network="twitter">
-                                        <i class="fab fa-twitter"></i>
-                                    </network>
-                                    <network network="email">
-                                        <i class="fas fa-envelope"></i>
-                                    </network>
-                                </div>
-                            </social-sharing>
+                            <div class="col-md-4">
+                                <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>    
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>    
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row margin_30">
+                                    <div class="col-md-12">
+                                        <router-link to="/promotions">
+                    		                <div class="animated_btn pull-left">Back to Sales & Promotions</div>    
+                    		            </router-link>    
+                                    </div>
+                                </div>
+                                <social-sharing v-if="currentPromo" :url="shareURL(currentPromo.slug)" :title="currentPromo.title" :description="currentPromo.body" :quote="truncate(currentPromo.body)" :twitter-user="siteInfo.twitterHandle" :media="currentPromo.image_url" inline-template>
+                                    <div class="social_share margin_60">
+                                        <network network="facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </network>
+                                        <network network="twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </network>
+                                        <network network="email">
+                                            <i class="fas fa-envelope"></i>
+                                        </network>
+                                    </div>
+                                </social-sharing>
+                            </div>
                         </div>
                     </div>
                 </div>
