@@ -80,8 +80,8 @@
                                 value.month = "";
                                 value.show_month = false;
                             } else {
-                                value.month = end_month;
-                                month_heading = moment.tz(value.end_date, this.timezone).format("MMMM YYYY");
+                                value.month = moment.tz(value.end_date, this.timezone).format("MMMM YYYY");
+                                month_heading = end_month;
                                 value.show_month = true;
                             }
 
