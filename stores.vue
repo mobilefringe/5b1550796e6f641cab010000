@@ -160,10 +160,15 @@
             },
             mounted() {
                 this.$nextTick(function() {
+                    if (typeof this.$redrawVueMasonry === 'function') {
+                        this.$redrawVueMasonry()
+                    }
+      
                     window.addEventListener('resize', this.getWindowWidth);
                     //Init
                     this.getWindowWidth();
                 });
+                
             },
             computed: {
                 ...Vuex.mapGetters([
