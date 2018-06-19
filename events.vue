@@ -87,7 +87,7 @@
                                 // val.data_initial = end_month;
                                 value.month = end_month;
                                 month_heading = end_month;
-                                val.show_month = true;
+                                value.show_month = true;
                             }
         
                             // if (month_heading != end_month) {
