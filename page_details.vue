@@ -9,11 +9,11 @@
                     </div>
                 </div>
                 <div class="main_container">
-                    <!--<div class="row">-->
-                    <!--    <div class="col-md-12">-->
-                    <!--        <breadcrumb></breadcrumb>-->
-                    <!--    </div>-->
-                    <!--</div>-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <breadcrumb></breadcrumb>
+                        </div>
+                    </div>
                     <div class="row margin_60">
                         <div class="col-md-12">
                             <div class="page_body" v-html="currentPage.body"></div>
@@ -54,6 +54,8 @@
                     var _this = this;
                     this.$store.dispatch('LOAD_PAGE_DATA', { url: this.property.mm_host + "/pages/" + this.id + ".json" }).then(function (response) {
                         _this.currentPage = response.data;
+                        console.log(_this.$breadcrumbs)
+                        // _this.$breadcrumbs[2].meta.breadcrumb = this.currentPromo.name
                         _this.dataLoaded = true;
                     }, function (error) {
                         console.error( "Could not retrieve data from server. Please check internet connection and try again.");
