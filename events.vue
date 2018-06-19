@@ -70,17 +70,24 @@
                     _.forEach(events, function (value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        var today_month = moment.tz(this.timezone).format("MM-YYYY");
                         if (today >= showOnWebDate) {
                             console.log("Month Heading ", month_heading )
-                            var end_month = moment.tz(value.end_date, this.timezone).format("MM-YYYY");
+                            var start_month = moment.tz(value.start_date, this.timezone).format("MM-YYYY");
                             console.log("End Month ", end_month)
                             
-                            if (month_heading == end_month){
+                            if (month_heading == start_month){
                                 value.month = "";
                                 value.show_month = false;
                             } else {
-                                value.month = moment.tz(value.end_date, this.timezone).format("MMMM YYYY");
-                                month_heading = end_month;
+                                if (start_month <= today_month) {
+                                    value.month = moment.tz(this.timezone).format("MMMM YYYY");
+                                    month_heading = today_month;
+                                } else {
+                                    value.month = moment.tz(value.start_date, this.timezone).format("MMMM YYYY");
+                                    month_heading = start_month;
+                                }
+                                    
                                 value.show_month = true;
                             }
 
