@@ -53,6 +53,7 @@ VueMasonryPlugin.install = function (Vue, options) {
       })
 
       const masonryRedrawHandler = function (eventData) {
+          console.log("Inside Handler")
         masonryDraw()
       }
 
