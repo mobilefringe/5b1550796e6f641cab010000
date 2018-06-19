@@ -151,7 +151,9 @@
             },
             watch: {
                 filterByCategory: function() {
-                    
+                    this.$nextTick(function() {
+                        this.$redrawVueMasonry();
+                    });    
                 },
                 windowWidth: function() {
                     if (this.windowWidth <= 768) {
