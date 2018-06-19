@@ -14,7 +14,7 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row margin_60">
                         <div v-if="eventList" v-for="event in eventList">
                             <div class="col-md-12">
                                 <h3 class="event_date_heading">{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
