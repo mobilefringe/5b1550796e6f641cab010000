@@ -66,7 +66,8 @@
                 ]),
                 eventList: function events() {
                     console.log(this.processedEvents)
-                    var events = this.processedEvents;
+                    // var events = this.processedEvents;
+                    var events = _.orderBy(this.processedEvents, function (o) { return o.end_date });
                     var showEvents = [];
                     var month_heading = "";
                     _.forEach(events, function (value, key) {
@@ -114,11 +115,10 @@
                             showEvents.push(value);
                         }
                     });
-                    var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date });
-                    if (sortedEvents.length > 0) {
-                        this.toggleEvents = true;
-                    }
-                    return sortedEvents
+                    // var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date });
+                    
+                    // return sortedEvents
+                    return Events
                 }
             },
             methods: {
