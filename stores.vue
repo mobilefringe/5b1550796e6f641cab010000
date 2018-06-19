@@ -160,10 +160,6 @@
             },
             mounted() {
                 this.$nextTick(function() {
-                    if (typeof this.$redrawVueMasonry === 'function') {
-                        this.$redrawVueMasonry()
-                    }
-      
                     window.addEventListener('resize', this.getWindowWidth);
                     //Init
                     this.getWindowWidth();
@@ -192,9 +188,9 @@
                     this.filteredStores = store_list;
                     return store_list
                 },
-                allCatergories() {
-                    return this.processedCategories;
-                },
+                // allCatergories() {
+                //     return this.processedCategories;
+                // },
                 dropDownCats() {
                     var cats = _.map(this.processedCategories, 'name');
                     cats.unshift('All');
@@ -229,7 +225,9 @@
                     if(el) {
                         el.classList.remove("open");
                     }
-                    this.$redrawVueMasonry();
+                    this.$nextTick(function() {
+                        this.$redrawVueMasonry();
+                    });
                 }
             },
             methods: {
