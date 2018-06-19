@@ -151,6 +151,7 @@
             },
             watch: {
                 selectedCat: function() {
+                    console.log("Hello!")
                     this.$nextTick(function() {
                         this.$redrawVueMasonry();
                     });    
