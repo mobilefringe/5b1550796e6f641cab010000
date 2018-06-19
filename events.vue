@@ -67,7 +67,7 @@
                     console.log(this.processedEvents)
                     var events = this.processedEvents;
                     var showEvents = [];
-                    var month_heading = ""
+                    var month_heading = "";
                     _.forEach(events, function (value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
@@ -76,17 +76,29 @@
                             var end_month = moment.tz(value.end_date, this.timezone).format("MM-YYYY");
                             console.log("End Month ", end_month)
                             
-                            if(month_heading == end_month){
-                                // val.data_initial = end_month;
-                                month_heading = end_month;
+                            // if(month_heading == end_month){
+                            //     // val.data_initial = end_month;
+                            //     month_heading = end_month;
 
-                                value.show_month = false;
-                            } else {
-                                // val.data_initial = end_month;
+                            //     value.show_month = false;
+                            // } else {
+                            //     // val.data_initial = end_month;
+                            //     value.month = end_month;
+                            //     month_heading = end_month;
+                            //     value.show_month = true;
+                            // }
+        
+                            if (month_heading != end_month) {
                                 value.month = end_month;
                                 month_heading = end_month;
-                                value.show_month = true;
+                                value.show_month = true;    
+                            } else {
+                                month_heading = end_month;
+
+                                value.show_month = false;    
                             }
+        
+        
         
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
                                 value.store.image_url = "http://placehold.it/400x400";
