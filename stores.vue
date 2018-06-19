@@ -200,14 +200,14 @@
                     cats.unshift('All');
                     return cats;
                 },
-                getPNGurl() {
-                    return "https://www.mallmaverick.com" + this.property.map_url;
-                },
-                svgMapRef() {
-                    return _.filter(this.$children, function(o) {
-                        return (o.$el.className == "svg-map")
-                    })[0];
-                },
+                // getPNGurl() {
+                //     return "https://www.mallmaverick.com" + this.property.map_url;
+                // },
+                // svgMapRef() {
+                //     return _.filter(this.$children, function(o) {
+                //         return (o.$el.className == "svg-map")
+                //     })[0];
+                // },
                 filterByCategory() {
                     category_id = this.selectedCat;
                     if (category_id == "All" || category_id == null || category_id == undefined) {
