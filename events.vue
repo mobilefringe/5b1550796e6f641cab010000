@@ -17,7 +17,8 @@
                     <div class="row margin_60">
                         <div v-if="eventList" v-for="event in eventList">
                             <div class="col-md-12">
-                                <h3 v-if="event.show_month" class="event_date_heading">{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    
+                                <!--<h3 v-if="event.show_month" class="event_date_heading">{{ event.end_date | moment("MMMM YYYY", timezone)}}</h3>    -->
+                                <h3 v-if="event.show_month" class="event_date_heading">{{ event.month }}</h3> 
                             </div>
                             <div class="col-md-4">
                                 <img :src="event.image_url" :alt="'Event: ' + event.name" class="img_max" />   
@@ -82,8 +83,7 @@
                                 value.month = "";
                                 value.show_month = false;
                             } else {
-                                console.log(value.name)
-                                // val.data_initial = end_month;
+
                                 value.month = end_month;
                                 month_heading = end_month;
                                 value.show_month = true;
