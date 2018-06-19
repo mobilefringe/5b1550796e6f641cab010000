@@ -151,9 +151,9 @@
             },
             watch: {
                 selectedCat: function() {
-                    // this.$nextTick(function() {
+                    this.$nextTick(function() {
                         this.$redrawVueMasonry();
-                    // });    
+                    });    
                 },
                 windowWidth: function() {
                     if (this.windowWidth <= 768) {
