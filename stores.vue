@@ -137,6 +137,7 @@
                 selectedCat: function() {
                     console.log("Hello!", VueMasonryPlugin)
                     this.$nextTick(function() {
+                        VueMasonryPlugin.$redrawVueMasonry();
                         this.$redrawVueMasonry();
                     });    
                 },
