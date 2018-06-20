@@ -176,7 +176,7 @@
                     var vm = this;
                     var hover_image = "";
                     _.forEach(store_list, function(value, key) {
-                        value.image_url = "https://via.placeholder.com/500";
+                        // value.image_url = "https://via.placeholder.com/500";
                     });
                     this.filteredStores = store_list;
                     return store_list
