@@ -39,7 +39,7 @@
         							        <router-link :to="item.href" v-if="item.sub_menu == undefined">
         							            <div class="btn-block">{{$t(item.name)}}</div>
     							            </router-link>
-        							        <div v-else>
+        							        <div v-else role="tablist">
         							            <b-card no-body class="mb-1">
                                                     <b-card-header header-tag="header" class="p-1" role="tab">
                                                         <!--<b-btn block @click="item.show_sub_menu = !item.show_sub_menu" :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" :aria-expanded="item.show_sub_menu ? 'true' : 'false'" v-b-toggle.accordion1>-->
