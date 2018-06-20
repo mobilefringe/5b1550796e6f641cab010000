@@ -96,7 +96,7 @@
                             }
                         } else {
                             if (_.includes(this.currentEvent.event_image_url_abs, 'missing')) {
-                                this.currentEvent.image_url = "//codecloud.cdn.speedyrails.net/sites/5afdda1b6e6f643692370000/image/jpeg/1527800297000/PlaceHolder4.jpg";    
+                                this.currentEvent.image_url = "http://placehold.it/400x300";    
                             }
                         }
                     }
