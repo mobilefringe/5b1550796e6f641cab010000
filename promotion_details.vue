@@ -87,6 +87,21 @@
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
 				});
 			},
+			watch: {
+                currentPromo : function (){
+                    if(this.currentPromo != null) {
+                        if (this.currentPromo.promotionable_type === "Store"){
+                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
+                                this.currentPromo.image_url = this.currentPromo.store.store_front_url_abs; 
+                            }
+                        } else {
+                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
+                                this.currentPromo.image_url = "http://placehold.it/400x300";    
+                            }
+                        }
+                    }
+                }
+            },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
