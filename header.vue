@@ -47,7 +47,7 @@
                                                         <!--    <i v-if="item.show_sub_menu"  class="fas fa-angle-down"></i>-->
                                                         <!--    <i v-else  class="fas fa-angle-right"></i>-->
                                                         <!--</b-btn>-->
-                                                        <b-btn block href="#" v-b-toggle.$t(item.name) variant="info">
+                                                        <b-btn block href="#" v-b-toggle="$t(item.name)" variant="info">
                                                             {{$t(item.name)}}
                                                             <i v-if="item.show_sub_menu"  class="fas fa-angle-down"></i>
                                                             <i v-else  class="fas fa-angle-right"></i>
