@@ -44,7 +44,7 @@
 </template>
 
 <script>
-	define(["Vue", "vuex", "json!site.json", "vue!google_map"], function(Vue, Vuex, site, google_map ) {
+	define(["Vue", "vuex", "vue!google_map"], function(Vue, Vuex, google_map ) {
 		return Vue.component("location-component", {
             template: template, // the variable template will be injected
             data: function () {
@@ -54,17 +54,14 @@
                     address: null,
                     directions: null,
                     pageImages: null
-                    // siteInfo: site
                 }
             },
             created() {
                 this.loadData().then(response => {
                     var temp_repo = this.findRepoByName('Location Images');
-                    console.log(temp_repo)
                     if(temp_repo) {
                         this.pageImages = temp_repo.images;
                     }
-                    console.log(response)
                     this.main = response[1].data;
                     this.address = response[1].data.subpages[0]
                     this.directions = response[1].data.subpages[1]
