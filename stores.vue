@@ -181,9 +181,6 @@
                     this.filteredStores = store_list;
                     return store_list
                 },
-                // allCatergories() {
-                //     return this.processedCategories;
-                // },
                 dropDownCats() {
                     var cats = _.map(this.processedCategories, 'name');
                     cats.unshift('All');
