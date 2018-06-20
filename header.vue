@@ -49,7 +49,7 @@
                                                         </b-btn>
                                                     </b-card-header>
                                                     <transition name="slideInDown">
-                                                        <div>
+                                                        <!--<div>-->
                                                         <b-collapse v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
                                                         
                                                             <b-card-body v-for="sub_menu in item.sub_menu">
@@ -57,9 +57,9 @@
                                                                     <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
                                                                 </p>
                                                             </b-card-body>
-                                                            
+                                    
                                                         </b-collapse>
-                                                        </div>
+                                                        <!--</div>-->
                                                     </transition>
                                                 </b-card>
         							        </div>
