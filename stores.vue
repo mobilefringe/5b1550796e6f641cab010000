@@ -135,10 +135,8 @@
             },
             watch: {
                 selectedCat: function() {
-                    console.log("Hello!", Vue.prototype)
                     // this.$nextTick(function() {
-                        Vue.prototype.$redrawVueMasonry()
-                        // window.resize();
+                        Vue.prototype.$redrawVueMasonry();
                     // });    
                 },
                 windowWidth: function() {
