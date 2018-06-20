@@ -27,7 +27,7 @@
                     <p>{{ getPropertyAddress }}</p>
                     <p class="margin_40"><a :href="'tel:' + property.contact_phone">{{ property.contact_phone }}</a></p>
                     <div class="footer_links">
-                        <p><a href="" target="_blank">Code of Conduct</a> | <a href="" target="_blank">Privacy Policy</a></p>
+                        <p><a href="" target="_blank">Code of Conduct</a> | <a href="/pages/cerritos-privacy-policy/" target="_blank">Privacy Policy</a></p>
                     </div>
                 </div>
             </div>
