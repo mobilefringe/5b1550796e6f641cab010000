@@ -27,7 +27,7 @@
                                 <div class="event_desc event_details" v-html="currentPromo.rich_description"></div>
                             </div>
                             <div class="col-md-4">
-                                <a :href="sectionTwo.image_url" :data-lightbox="sectionTwo.name">
+                                <a :href="currentPromo.image_url" :data-lightbox="currentPromo.name">
                                     <img v-lazy="currentPromo.image_url" :alt="'Promotion: ' + currentPromo.name" class="margin_20 img_max"/>    
                                 </a>
                             </div>
