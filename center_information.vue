@@ -41,7 +41,6 @@
                 <div class="location_image_container">
                     <div v-if="lowerBanner">
                         <div class="location_banner" v-bind:style="{ backgroundImage: 'url(' + lowerBanner.image_url + ')' }"></div>
-                        <!--<img class="img_max" :src="lowerBanner.image_url" alt="" /> -->
                         <h1>{{ lowerBanner.name }}</h1>
                     </div>
                 </div>
