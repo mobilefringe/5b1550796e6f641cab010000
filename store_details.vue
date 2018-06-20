@@ -156,7 +156,7 @@
                 currentStore: function () {
                     console.log(this.currentStore)
                     if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
-                        this.currentStore.store_front_url_abs = "http://placehold.it/600x600"
+                        this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png"
                     }
                     
                     var vm = this;
@@ -180,7 +180,7 @@
                         var current_promo = vm.findPromoById(value);
                         
                         if (_.includes(current_promo.image_url, 'missing')) {
-                            current_promo.image_url = "http://placehold.it/1560x800/757575";
+                            current_promo.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
                         }
 
                         temp_promo.push(current_promo);
@@ -193,7 +193,7 @@
                         var current_event = vm.findEventById(value);
                         
                         if (_.includes(current_event.image_url, 'missing')) {
-                            current_event.image_url = "http://placehold.it/1560x800/757575";
+                            current_event.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
                         }
 
                         temp_event.push(current_event);
