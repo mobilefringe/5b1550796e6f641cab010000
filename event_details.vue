@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="main_container">
-                    <div class="row">
+                    <div class="row hidden-xs">
                         <div class="col-md-12">
                             <breadcrumb></breadcrumb>
                         </div>
