@@ -176,6 +176,9 @@
                     var vm = this;
                     var hover_image = "";
                     _.forEach(store_list, function(value, key) {
+                        if (_.includes(value.image_url, 'missing')) {
+                            value.image_url = "http://placehold.it/500x500";
+                        }
                         // value.image_url = "https://via.placeholder.com/500";
                     });
                     this.filteredStores = store_list;
