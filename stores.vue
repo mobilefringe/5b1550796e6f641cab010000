@@ -179,7 +179,6 @@
                         if (_.includes(value.image_url, 'missing')) {
                             value.image_url = "https://placehold.it/500x500";
                         }
-                        // value.image_url = "https://via.placeholder.com/500";
                     });
                     this.filteredStores = store_list;
                     return store_list
