@@ -55,15 +55,22 @@
                                                     </b-card-header>
                                                     <transition name="slideInDown">
                                                         <div>
-                                                        <b-collapse v-model="item.show_sub_menu" accordion="my-accordion" is-nav="true" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
-                                                        
-                                                            <b-card-body v-for="sub_menu in item.sub_menu">
-                                                                <p class="card-text">
-                                                                    <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
-                                                                </p>
-                                                            </b-card-body>
-                                    
-                                                        </b-collapse>
+                                                            <!--<b-collapse v-model="item.show_sub_menu" accordion="my-accordion" is-nav="true" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">-->
+                                                            
+                                                            <!--    <b-card-body v-for="sub_menu in item.sub_menu">-->
+                                                            <!--        <p class="card-text">-->
+                                                            <!--            <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>-->
+                                                            <!--        </p>-->
+                                                            <!--    </b-card-body>-->
+                                        
+                                                            <!--</b-collapse>-->
+                                                            <b-collapse id="$t(item.name)" accordion="my-accordion" role="tabpanel">
+                                                                <b-card-body>
+                                                                    <p class="card-text">
+                                                                        <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
+                                                                    </p>
+                                                                </b-card-body>
+                                                            </b-collapse>
                                                         </div>
                                                     </transition>
                                                 </b-card>
