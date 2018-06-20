@@ -50,7 +50,7 @@
                                                     </b-card-header>
                                                     <transition name="slideInDown">
                                                         <div>
-                                                        <b-collapse v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
+                                                        <b-collapse v-model="item.show_sub_menu" accordion="my-accordion" is-nav="true" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
                                                         
                                                             <b-card-body v-for="sub_menu in item.sub_menu">
                                                                 <p class="card-text">
