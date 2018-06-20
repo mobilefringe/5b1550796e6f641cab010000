@@ -39,15 +39,10 @@
         							        <router-link :to="item.href" v-if="item.sub_menu == undefined">
         							            <div class="btn-block">{{$t(item.name)}}</div>
     							            </router-link>
-        							        <div v-else role="tablist">
+        							        <div v-else>
         							            <b-card no-body class="mb-1">
                                                     <b-card-header header-tag="header" class="p-1" role="tab">
-                                                        <!--<b-btn block @click="item.show_sub_menu = !item.show_sub_menu" :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" :aria-expanded="item.show_sub_menu ? 'true' : 'false'" v-b-toggle.accordion1>-->
-                                                        <!--    {{$t(item.name)}}-->
-                                                        <!--    <i v-if="item.show_sub_menu"  class="fas fa-angle-down"></i>-->
-                                                        <!--    <i v-else  class="fas fa-angle-right"></i>-->
-                                                        <!--</b-btn>-->
-                                                        <b-btn block href="#" v-b-toggle="$t(item.name)" variant="info">
+                                                        <b-btn block @click="item.show_sub_menu = !item.show_sub_menu" :class="item.show_sub_menu ? 'collapsed' : null" :aria-controls="$t(item.name)" :aria-expanded="item.show_sub_menu ? 'true' : 'false'">
                                                             {{$t(item.name)}}
                                                             <i v-if="item.show_sub_menu"  class="fas fa-angle-down"></i>
                                                             <i v-else  class="fas fa-angle-right"></i>
@@ -55,22 +50,15 @@
                                                     </b-card-header>
                                                     <transition name="slideInDown">
                                                         <div>
-                                                            <!--<b-collapse v-model="item.show_sub_menu" accordion="my-accordion" is-nav="true" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">-->
+                                                        <b-collapse v-model="item.show_sub_menu" :id="$t(item.name)" :visible="item.show_sub_menu" :accordion="$t(item.name)" role="tabpanel" class="accordion_body">
+                                                        
+                                                            <b-card-body v-for="sub_menu in item.sub_menu">
+                                                                <p class="card-text">
+                                                                    <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
+                                                                </p>
+                                                            </b-card-body>
                                                             
-                                                            <!--    <b-card-body v-for="sub_menu in item.sub_menu">-->
-                                                            <!--        <p class="card-text">-->
-                                                            <!--            <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>-->
-                                                            <!--        </p>-->
-                                                            <!--    </b-card-body>-->
-                                        
-                                                            <!--</b-collapse>-->
-                                                            <b-collapse id="$t(item.name)" accordion="my-accordion" role="tabpanel" class="accordion_body">
-                                                                <b-card-body v-for="sub_menu in item.sub_menu">
-                                                                    <p class="card-text">
-                                                                        <router-link :to="sub_menu.href">{{$t(sub_menu.name)}}</router-link>
-                                                                    </p>
-                                                                </b-card-body>
-                                                            </b-collapse>
+                                                        </b-collapse>
                                                         </div>
                                                     </transition>
                                                 </b-card>
