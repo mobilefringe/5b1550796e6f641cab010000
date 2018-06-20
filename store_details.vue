@@ -154,7 +154,6 @@
                     this.updateCurrentStore(this.$route.params.id);
                 },
                 currentStore: function () {
-                    console.log(this.currentStore)
                     if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
                         this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png"
                     }
@@ -172,7 +171,6 @@
                         storeHours.push(hours);
                     });
                     this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
-                    console.log(this.storeHours)
                 
                     var vm = this;
                     var temp_promo = [];
@@ -203,9 +201,7 @@
                     var vm = this;
                     var temp_coupon = [];
                     _.forEach(this.currentStore.coupons, function(value, key) {
-                        console.log(value)
                         var current_coupon = vm.findCouponById(value);
-                        console.log(current_coupon)
                         // if (_.includes(current_coupon.image_url, 'missing')) {
                         //     current_coupon.image_url = "http://placehold.it/1560x800/757575";
                         // }
@@ -254,7 +250,6 @@
                 loadData: async function () {
                     try {
                         let results = await Promise.all([this.$store.dispatch("getData", "stores"), this.$store.dispatch("getData","events"), this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData","coupons")]);
-                        console.log(results)
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
