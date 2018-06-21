@@ -29,17 +29,6 @@
                                     <span v-else>{{ currentCoupon.start_date | moment("MM/DD/YYY", timezone)}}</span>
                                 </p>
                                 <div class="event_desc event_details" v-html="currentCoupon.rich_description"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="row margin_30">
-                                    <div class="col-md-12">
-                                        <router-link to="/promotions">
-                    		                <div class="animated_btn pull-left">Back to Sales & Promotions</div>    
-                    		            </router-link>    
-                                    </div>
-                                </div>
                                 <social-sharing v-if="currentCoupon" :url="shareURL(currentCoupon.slug)" :title="currentCoupon.title" :description="currentCoupon.body" :quote="truncate(currentCoupon.body)" :twitter-user="siteInfo.twitterHandle" :media="currentCoupon.image_url" inline-template>
                                     <div class="social_share margin_60">
                                         <network network="facebook">
