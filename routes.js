@@ -33,13 +33,14 @@ define([], function () {
                 {
                     path: '/coupons',
                     component: view('default'),
+                    meta: {
+                        breadcrumb: 'Coupons',
+                    },
                     children: [
                         {
                             path: '',
                             component: view('coupons'),
-                            meta: {
-                                breadcrumb: 'Coupons',
-                            },
+                            
                             name: 'coupons'
                         },
                         {
