@@ -35,9 +35,9 @@
                                         <router-link to="/promotions">
                     		                <div class="animated_btn pull-left">Add To Basket</div>    
                     		            </router-link>  
-                    		            <router-link to="/promotions">
-                    		                <div class="animated_btn pull-left">Print Coupon</div>    
-                    		            </router-link>  
+                    		            
+                		                <div @click="printPage()" class="animated_btn pull-left">Print Coupon</div>    
+                    		            
                                     </div>
                                 </div>
                                 <social-sharing v-if="currentCoupon" :url="shareURL(currentCoupon.slug)" :title="currentCoupon.title" :description="currentCoupon.body" :quote="truncate(currentCoupon.body)" :twitter-user="siteInfo.twitterHandle" :media="currentCoupon.image_url" inline-template>
