@@ -16,7 +16,11 @@
                     </div>
                     <div v-if="currentCoupon">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-2">
+                                <!--<img v-lazy="currentCoupon.image_url" :alt="'Promotion: ' + currentCoupon.name" class="margin_20 img_max"/>    -->
+                                <img v-lazy="https://placehold.it/500" :alt="'Coupon: ' + currentCoupon.name" class="margin_20 img_max"/>    
+                            </div>
+                            <div class="col-md-10">
                                 <!--<p v-if="currentCoupon.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>-->
                                 <!--<p v-else class="event_store_name">{{ currentCoupon.store.name }}</p>-->
                                 <h4 class="event_name">{{ currentCoupon.name }}</h4>
@@ -26,11 +30,7 @@
                                 </p>
                                 <div class="event_desc event_details" v-html="currentCoupon.rich_description"></div>
                             </div>
-                            <div class="col-md-4">
-                                <a :href="currentCoupon.image_url" :data-lightbox="currentCoupon.name">
-                                    <img v-lazy="currentCoupon.image_url" :alt="'Promotion: ' + currentCoupon.name" class="margin_20 img_max"/>    
-                                </a>
-                            </div>
+                            
                         </div>
                         <div class="row">
                             <div class="col-md-12">
