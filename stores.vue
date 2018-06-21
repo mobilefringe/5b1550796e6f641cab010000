@@ -111,17 +111,17 @@
                     listView: false
                 }
             },
-            beforeRouteUpdate(to, from, next) {
-                this.query = this.$route.query.category
-                if(this.query == "dining_full_service"){
-                  this.selectedCat = "Dining Full Service";
-                  this.filterByCategory();
-                } else {
-                    this.selectedCat = "All";
-                    this.filteredStores = this.allStores;
-                }
-                next();
-            },
+            // beforeRouteUpdate(to, from, next) {
+            //     this.query = this.$route.query.category
+            //     if(this.query == "dining_full_service"){
+            //       this.selectedCat = "Dining Full Service";
+            //       this.filterByCategory();
+            //     } else {
+            //         this.selectedCat = "All";
+            //         this.filteredStores = this.allStores;
+            //     }
+            //     next();
+            // },
             created (){
                 this.loadData().then(response => {
                     // var temp_repo = this.findRepoByName('Directory Banner').images;
