@@ -122,14 +122,14 @@
                     
                     this.dataLoaded = true;
                     
-                    // this.query = this.$route.query.category
-                    // if(this.query == "dining_full_service"){
-                    //   this.selectedCat = "Dining Full Service";
-                    //   this.filterByCategory();
-                    // } else {
-                    //     this.selectedCat = "All";
-                    //     this.filteredStores = this.allStores;
-                    // }
+                    this.query = this.$route.query.category
+                    if(this.query == "dining_full_service"){
+                      this.selectedCat = "Dining Full Service";
+                      this.filterByCategory();
+                    } else {
+                        this.selectedCat = "All";
+                        this.filteredStores = this.allStores;
+                    }
                 });
             },
             watch: {
