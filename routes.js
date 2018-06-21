@@ -43,27 +43,27 @@ define([], function () {
                             name: 'coupons'
                         },
                         {
+                            path: '/coupon-basket',
+                            component: view('default'),
+                            children: [
+                                {
+                                    path: '',
+                                    component: view('coupon_basket'),
+                                    meta: {
+                                        breadcrumb: 'My Basket',
+                                    },
+                                    name: 'couponBasket',
+                                    props: true
+                                }
+                            ]
+                        },
+                        {
                             path: ':id',
                             component: view('coupon_details'),
                             meta: {
                                 breadcrumb: 'Coupon Details',
                             },
                             name: 'couponDetails',
-                            props: true
-                        }
-                    ]
-                },
-                {
-                    path: '/coupon-basket',
-                    component: view('default'),
-                    children: [
-                        {
-                            path: '',
-                            component: view('coupon_basket'),
-                            meta: {
-                                breadcrumb: 'My Basket',
-                            },
-                            name: 'couponBasket',
                             props: true
                         }
                     ]
