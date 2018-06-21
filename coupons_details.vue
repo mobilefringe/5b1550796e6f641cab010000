@@ -78,10 +78,10 @@
                 }
             },
             created() {
-				this.$store.dispatch("getData", "promotions").then(response => {
+				this.$store.dispatch("getData", "coupons").then(response => {
 					this.currentCoupon = this.findPromoBySlug(this.id);
 					if (this.currentCoupon === null || this.currentCoupon === undefined) {
-						this.$router.replace({ path: '/promotions' });
+						this.$router.replace({ path: '/coupons' });
 					}
 					this.$breadcrumbs[2].meta.breadcrumb = this.currentCoupon.name
 					this.dataLoaded = true;
