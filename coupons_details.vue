@@ -64,7 +64,7 @@
 </template>
               
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "lightbox", "vue-lazy-load",  "vue-social-sharing"], function(Vue, Vuex, moment, tz, VueMoment, Lightbox, VueLazyload, SocialSharing) {
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "lightbox", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, Lightbox, VueLazyload, SocialSharing, site) {
         Vue.use(VueLazyload);
         Vue.component('social-sharing', SocialSharing);
         return Vue.component("coupon-details-component", {
