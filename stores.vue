@@ -122,15 +122,15 @@
                     
                     this.dataLoaded = true;
 
-                    // console.log(this.$route)
-                    // this.query = this.$route.query.category
-                    // if(this.query == "fast_food"){
-                    //   this.selectedCat = "Fast Food";
-                    //   this.filterByCategory();
-                    // } else {
-                    //     this.selectedCat = "All";
-                    //     this.filteredStores = this.allStores;
-                    // }
+                    console.log(this.$route)
+                    this.query = this.$route.query.category
+                    if(this.query == "fast_food"){
+                      this.selectedCat = "Fast Food";
+                      this.filterByCategory();
+                    } else {
+                        this.selectedCat = "All";
+                        this.filteredStores = this.allStores;
+                    }
                 });
             },
             watch: {
