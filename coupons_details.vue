@@ -152,6 +152,31 @@
 						return true
 					}
 				},
+			    function printPage(currentCoupon) {
+			        console.log(this.currentCoupon)
+                    var w = window.open();
+
+                    // var headers = $(".coupon_title").html();
+                    // var field= $(".coupon_image").html();
+                    // var field2= $(".coupon_store_date").html();
+                    // var field3= $(".coupon_info").html();
+                    
+                    // var html = "<!DOCTYPE HTML>";
+                    // html += '<html lang="en-us">';
+                    // html += '<head><style>body{text-align: left;} img{    max-width: 250px;    padding: 20px;}</style></head>';
+                    // html += "<body><div style='text-align:center;'><img src='//codecloud.cdn.speedyrails.net/sites/57f3de146e6f644974010000/image/png/undefined/psc_600x180_logo.png' style='width:200px;'/></div><div style='min-height: 300px;border-top: solid 1px #ccc;border-bottom: solid 1px #ccc;'><div style='width:50%;    display: inline-block;    vertical-align: top;'>";
+                
+                    // //check to see if they are null so "undefined" doesnt print on the page. <br>s optional, just to give space
+                    // if(field != null) html += field + "</div><div style='width:50%;    display: inline-block;'>";
+                    // if(headers != null) html += headers + "";
+                    // if(field2 != null) html += field2 + "";
+                    // if(field3 != null) html += field3 + "</div>";
+                    // html += "</div></body>";
+                    // w.document.write(html);
+                    // setTimeout(function(){ w.window.print(); }, 150);
+                    
+                    // w.document.close();
+                },
 				truncate(val_body) {
                     var truncate = _.truncate(val_body, { 'length': 99, 'separator': ' ' });
                     return truncate;
