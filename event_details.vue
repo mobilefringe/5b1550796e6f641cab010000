@@ -41,11 +41,6 @@
                     		            </router-link>    
                                     </div>
                                 </div>
-                                {{ shareURL(currentEvent.slug) }}
-                                {{ currentEvent.name }}
-                                {{currentEvent.description}}
-                                {{ truncate(currentEvent.description) }}
-                                {{ currentEvent.image_url }}
                                 <social-sharing v-if="currentEvent" :url="shareURL(currentEvent.slug)" :title="currentEvent.name" :description="currentEvent.description" :quote="truncate(currentEvent.description)" :twitter-user="siteInfo.twitterHandle" :media="currentEvent.image_url" inline-template>
                                     <div class="social_share">
                                         <network network="facebook">
