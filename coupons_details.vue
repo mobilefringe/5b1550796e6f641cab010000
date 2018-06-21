@@ -64,93 +64,73 @@
 </template>
               
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload) {
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "lightbox", "vue-lazy-load",  "vue-social-sharing", "json!site.json"], function(Vue, Vuex, moment, tz, VueMoment, Lightbox, VueLazyload, SocialSharing, site) {
         Vue.use(VueLazyload);
-        return Vue.component("coupons-details-component", {
+        Vue.component('social-sharing', SocialSharing);
+        return Vue.component("promo-details-component", {
             template: template, // the variable template will be injected,
-            data: function () {
+            props: ['id'],
+            data: function() {
                 return {
                     dataLoaded: false,
+                    currentCoupon: null,
+                    siteInfo: site
                 }
             },
-            created (){
-                this.loadData().then(response => {
-                    this.handleButton();
-                    this.dataLoaded = true;
-                });
+            created() {
+				this.$store.dispatch("getData", "promotions").then(response => {
+					this.currentCoupon = this.findPromoBySlug(this.id);
+					if (this.currentCoupon === null || this.currentCoupon === undefined) {
+						this.$router.replace({ path: '/promotions' });
+					}
+					this.$breadcrumbs[2].meta.breadcrumb = this.currentCoupon.name
+					this.dataLoaded = true;
+				}, error => {
+					console.error("Could not retrieve data from server. Please check internet connection and try again.");
+				});
+			},
+			watch: {
+                currentCoupon : function (){
+                    if(this.currentCoupon != null) {
+                        if (this.currentCoupon.promotionable_type === "Store"){
+                            if  (_.includes(this.currentCoupon.promo_image_url_abs, 'missing')) {
+                                this.currentCoupon.image_url = this.currentCoupon.store.store_front_url_abs; 
+                            }
+                        } else {
+                            if  (_.includes(this.currentCoupon.promo_image_url_abs, 'missing')) {
+                                this.currentCoupon.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";    
+                            }
+                        }
+                    }
+                }
             },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
-                    'processedPromos'
-                ]),
-                promoList: function promos() {
-                    var vm = this;
-                    var showPromos = [];
-                    _.forEach(this.processedPromos, function(value, key) {
-                        var today = moment.tz(this.timezone).format();
-                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
-                        if (today >= showOnWebDate) {
-                            if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
-                                value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
-                            }
-                            
-                            if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
-                            }
-                            
-                            value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
-                            
-                            showPromos.push(value);
-                        }
-                    });
-                    var sortedPromos = _.orderBy(showPromos, [function(o) { return o.end_date; }]);
-                    if (sortedPromos.length > 0) {
-                        this.togglePromos = true;
-                    }
-                    return sortedPromos;
-                }
+                    'findPromoBySlug'
+                ])
             },
             methods: {
-                loadData: async function () {
-                    try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "events"), this.$store.dispatch("getData","promotions")]);
-                    } catch (e) {
-                        console.log("Error loading data: " + e.message);
-                    }
+				isMultiDay(currentCoupon) {
+					var timezone = this.timezone
+					var start_date = moment(currentCoupon.start_date).tz(timezone).format("MM-DD-YYYY")
+					var end_date = moment(currentCoupon.end_date).tz(timezone).format("MM-DD-YYYY")
+					if (start_date === end_date) {
+						return false
+					} else {
+						return true
+					}
+				},
+				truncate(val_body) {
+                    var truncate = _.truncate(val_body, { 'length': 99, 'separator': ' ' });
+                    return truncate;
                 },
-                isMultiDay(promo) {
-                    var timezone = this.timezone
-                    var start_date = moment(promo.start_date).tz(timezone).format("MM-DD-YYYY")
-                    var end_date = moment(promo.end_date).tz(timezone).format("MM-DD-YYYY")
-                    if (start_date === end_date) {
-                        return false
-                    } else {
-                        return true
-                    }
-                },
-                handleButton: function () {
-                    if(!this.moreEventsFetched){
-                        this.moreEvents = this.promoList;
-                        this.events = this.moreEvents.splice(0, 3);
-                        this.moreEventsFetched = true;
-                    } else {
-                        var nextEvents = this.moreEvents.splice(0, 3);
-                        // Add 3 more posts to posts array
-                        var vm = this;
-                        _.forEach(nextEvents, function(value, key) {
-                            vm.events.push(value);
-                        });
-                    }
-                    if(this.promoList.length === 0){
-                        this.noMoreEvents = true
-                        this.noEvents = true
-                    } else {
-
-                    }
+				shareURL(slug) {
+                    var share_url = window.location.href
+                    return share_url
                 }
-            }
+			}
         });
     });
 </script>
