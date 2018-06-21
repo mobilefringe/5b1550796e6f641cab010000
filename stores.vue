@@ -124,8 +124,8 @@
 
                     console.log(this.$route)
                     this.query = this.$route.query.category
-                    if(this.query == "fast_food"){
-                      this.selectedCat = "Fast Food";
+                    if(this.query == "dining_full_service"){
+                      this.selectedCat = "Dining Full Service";
                       this.filterByCategory();
                     } else {
                         this.selectedCat = "All";
