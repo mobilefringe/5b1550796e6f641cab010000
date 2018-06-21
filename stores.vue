@@ -144,9 +144,9 @@
                     }    
                 },
                 selectedCat: function() {
-                    // this.$nextTick(function() {
+                    this.$nextTick(function() {
                         Vue.prototype.$redrawVueMasonry();
-                    // });    
+                    });    
                 },
                 windowWidth: function() {
                     if (this.windowWidth <= 768) {
