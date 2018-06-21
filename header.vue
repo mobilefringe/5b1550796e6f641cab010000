@@ -35,7 +35,7 @@
     					    <transition name="custom-classes-transition" enter-active-class="animated slideInRight" leave-active-class="animated slideOutRight">
         					    <nav id="mobile_nav" v-show="showMenu" class="">
         					        <ul>
-        					            <li v-for="(item,key) in menu_items" class="menu_item">
+        					            <li v-for="(item, key) in menu_items" :key="item.name" class="menu_item">
         							        <router-link :to="item.href" v-if="item.sub_menu == undefined">
         							            <div class="btn-block">{{$t(item.name)}}</div>
     							            </router-link>
