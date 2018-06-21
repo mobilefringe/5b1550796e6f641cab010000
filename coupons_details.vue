@@ -120,19 +120,19 @@
 				// });
 			},
 			watch: {
-                currentCoupon : function (){
-                    if(this.currentCoupon != null) {
-                        if (this.currentCoupon.promotionable_type === "Store"){
-                            if  (_.includes(this.currentCoupon.promo_image_url_abs, 'missing')) {
-                                this.currentCoupon.image_url = this.currentCoupon.store.store_front_url_abs; 
-                            }
-                        } else {
-                            if  (_.includes(this.currentCoupon.promo_image_url_abs, 'missing')) {
-                                this.currentCoupon.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";    
-                            }
-                        }
-                    }
-                }
+                // currentCoupon : function (){
+                //     if(this.currentCoupon != null) {
+                //         if (this.currentCoupon.promotionable_type === "Store"){
+                //             if  (_.includes(this.currentCoupon.promo_image_url_abs, 'missing')) {
+                //                 this.currentCoupon.image_url = this.currentCoupon.store.store_front_url_abs; 
+                //             }
+                //         } else {
+                //             if  (_.includes(this.currentCoupon.promo_image_url_abs, 'missing')) {
+                //                 this.currentCoupon.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";    
+                //             }
+                //         }
+                //     }
+                // }
             },
             computed: {
                 ...Vuex.mapGetters([
