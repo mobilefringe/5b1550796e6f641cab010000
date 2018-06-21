@@ -60,7 +60,7 @@ define([], function () {
                         },
                         {
                             path: ':id',
-                            component: view('coupon_details'),
+                            component: view('coupons_details'),
                             meta: {
                                 breadcrumb: 'Coupon Details',
                             },
