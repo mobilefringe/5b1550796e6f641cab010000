@@ -119,10 +119,7 @@
                     // } else {
                     //     this.storeBanner = "http://via.placeholder.com/1920x400/4f6726/4f6726";
                     // }
-                    
-                    this.dataLoaded = true;
 
-                    console.log(this.$route)
                     this.query = this.$route.query.category
                     if(this.query == "dining_full_service"){
                       this.selectedCat = "Dining Full Service";
@@ -131,6 +128,8 @@
                         this.selectedCat = "All";
                         this.filteredStores = this.allStores;
                     }
+                    
+                    this.dataLoaded = true;
                 });
             },
             watch: {
