@@ -105,6 +105,7 @@
                         "is_special_promo" : false,
                         "property_id" : 177
                     },
+                    siteInfo: site
                 }
             },
             created() {
