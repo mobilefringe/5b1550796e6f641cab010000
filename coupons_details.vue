@@ -108,16 +108,16 @@
                 }
             },
             created() {
-				this.$store.dispatch("getData", "coupons").then(response => {
-					this.currentCoupon = this.findPromoBySlug(this.id);
-					if (this.currentCoupon === null || this.currentCoupon === undefined) {
-						this.$router.replace({ path: '/coupons' });
-					}
-					this.$breadcrumbs[2].meta.breadcrumb = this.currentCoupon.name
-					this.dataLoaded = true;
-				}, error => {
-					console.error("Could not retrieve data from server. Please check internet connection and try again.");
-				});
+				// this.$store.dispatch("getData", "coupons").then(response => {
+				// 	this.currentCoupon = this.findPromoBySlug(this.id);
+				// 	if (this.currentCoupon === null || this.currentCoupon === undefined) {
+				// 		this.$router.replace({ path: '/coupons' });
+				// 	}
+				// 	this.$breadcrumbs[2].meta.breadcrumb = this.currentCoupon.name
+				// 	this.dataLoaded = true;
+				// }, error => {
+				// 	console.error("Could not retrieve data from server. Please check internet connection and try again.");
+				// });
 			},
 			watch: {
                 currentCoupon : function (){
