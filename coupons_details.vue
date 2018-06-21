@@ -73,7 +73,38 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    currentCoupon: null
+                    // currentCoupon: null
+                    currentCoupon : {
+                        "id" : "117442",
+                        "name" : "20% Off Your Entire Purchase",
+                        "description" : " First time users only. Must be 18 or older. Valid at Peninsula Shopping Center location only. One coupon per person. Not valid with any other offer. Restrictions may appy. See store for details. Coupon must be presented at time of purchase or service. Expires 8-15-18 ",
+                        "rich_description" : "<p>First time users only. Must be 18 or older. Valid at Peninsula Shopping Center location only. One coupon per person. Not valid with any other offer. Restrictions may appy. See store for details. Coupon must be presented at time of purchase or service. Expires 8-15-18</p>",
+                        "rich_description_2" : "null",
+                        "promotionable_id" : "29448",
+                        "promotionable_type" : "Store",
+                        "start_date" : "2018-05-23T07:00:00Z",
+                        "end_date" : "2018-08-16T06:59:59Z",
+                        "no_end_date" : "false",
+                        "show_on_web_date" : "2018-04-18T07:00:00Z",
+                        "created_at" : "2018-04-18T16:46:28Z",
+                        "updated_at" : "2018-05-18T18:39:29Z",
+                        "promo_image_url" : "/promo_images/original/missing.png",
+                        "promo_image_url_abs" : "https://res.cloudinary.com/mallmaverick/image/upload/v1524869884/u6o0fwlhkbqsz4ynl6fx.jpg",
+                        "promo_image_updated_at" : "null",
+                        "slug" : "cerritos-cerritos-towne-center-bay-club-bay-club",
+                        "name_2" : "null",
+                        "description_2" : "null",
+                        "promo_image2_url" : "/promo_image2s/original/missing.png",
+                        "promo_image2_url_abs" : "/original/missing.png",
+                        "promo_image2_updated_at" : "null",
+                        "alt_url" : "null",
+                        "tags" : [ ],
+                        "is_featured" : false,
+                        "feature_item_index" : 0,
+                        "pending" : false,
+                        "is_special_promo" : false,
+                        "property_id" : 177
+                    },
                 }
             },
             created() {
