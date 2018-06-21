@@ -114,7 +114,7 @@
 				// 		this.$router.replace({ path: '/coupons' });
 				// 	}
 				// 	this.$breadcrumbs[2].meta.breadcrumb = this.currentCoupon.name
-				// 	this.dataLoaded = true;
+					this.dataLoaded = true;
 				// }, error => {
 				// 	console.error("Could not retrieve data from server. Please check internet connection and try again.");
 				// });
