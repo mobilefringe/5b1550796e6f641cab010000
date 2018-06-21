@@ -14,37 +14,49 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
-                    <!--<transition-group name="list" tag="div">-->
-                    <!--    <div v-if="events" v-for="item in events" key="item">-->
-                    <!--        <div class="row event_container">-->
-                    <!--            <div class="col-sm-6 col-md-4">-->
-                    <!--                <img :src="item.image_url" :alt="'Event: ' + item.name" class="event_img img_max" />   -->
-                    <!--            </div>-->
-                    <!--            <div class="col-sm-6 col-md-8">-->
-                    <!--                <p class="event_store_name">{{ item.store.name }}</p>-->
-                    <!--                <h4 class="event_name">{{ item.name }}</h4>-->
-                    <!--                <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} to {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>-->
-                    <!--                <div class="event_desc" v-html="item.description_short"></div>-->
-                    <!--                <router-link :to="{ name: 'promotionDetails', params: { id: item.slug }}">-->
-                    <!--                    <p class="event_link">Promotion Details <i class="fas fa-angle-double-right"></i></p>-->
-                    <!--                </router-link>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--    <div v-else>-->
-                    <!--        <div class="row">-->
-                    <!--            <div class="col-md-12">-->
-                    <!--                <p>Sorry, there are no Promotions posted at this time. Please check back soon!</p>    -->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--</transition-group>-->
-                    <!--<div class="row margin_60">-->
-                    <!--    <div class="col-md-12">-->
-                    <!--        <button class="animated_btn event_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>-->
-                    <!--        <p v-if="noEvents">No More Posts</p>-->
-                    <!--    </div>-->
-                    <!--</div>-->
+                    <div v-if="currentCoupon">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p v-if="currentCoupon.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
+                                <p v-else class="event_store_name">{{ currentCoupon.store.name }}</p>
+                                <h4 class="event_name">{{ currentCoupon.name }}</h4>
+                                <p class="event_dates">
+                                    <span v-if="isMultiDay(currentCoupon)">{{ currentCoupon.start_date | moment("MMMM D", timezone)}} to {{ currentCoupon.end_date | moment("MMMM D", timezone)}}</span>
+                                    <span v-else>{{ currentCoupon.start_date | moment("MMMM D", timezone)}}</span>
+                                </p>
+                                <div class="event_desc event_details" v-html="currentCoupon.rich_description"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <a :href="currentCoupon.image_url" :data-lightbox="currentCoupon.name">
+                                    <img v-lazy="currentCoupon.image_url" :alt="'Promotion: ' + currentCoupon.name" class="margin_20 img_max"/>    
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row margin_30">
+                                    <div class="col-md-12">
+                                        <router-link to="/promotions">
+                    		                <div class="animated_btn pull-left">Back to Sales & Promotions</div>    
+                    		            </router-link>    
+                                    </div>
+                                </div>
+                                <social-sharing v-if="currentCoupon" :url="shareURL(currentCoupon.slug)" :title="currentCoupon.title" :description="currentCoupon.body" :quote="truncate(currentCoupon.body)" :twitter-user="siteInfo.twitterHandle" :media="currentCoupon.image_url" inline-template>
+                                    <div class="social_share margin_60">
+                                        <network network="facebook">
+                                            <i class="fab fa-facebook"></i>
+                                        </network>
+                                        <network network="twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </network>
+                                        <network network="email">
+                                            <i class="fas fa-envelope"></i>
+                                        </network>
+                                    </div>
+                                </social-sharing>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </transition>
