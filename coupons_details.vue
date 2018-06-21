@@ -64,20 +64,13 @@
 </template>
               
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load", "bootstrap-vue"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload, BootstrapVue) {
-        Vue.use(BootstrapVue);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load"], function (Vue, Vuex, moment, tz, VueMoment, VueLazyload) {
         Vue.use(VueLazyload);
         return Vue.component("coupons-details-component", {
             template: template, // the variable template will be injected,
             data: function () {
                 return {
                     dataLoaded: false,
-
-                    events: [],
-                    moreEvents: [],
-                    moreEventsFetched: false,
-                    noMoreEvents: false,
-                    noEvents: false
                 }
             },
             created (){
