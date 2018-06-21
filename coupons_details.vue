@@ -28,7 +28,7 @@
                                     <span v-if="isMultiDay(currentCoupon)">{{ currentCoupon.start_date | moment("MM/DD/YYY", timezone)}} to {{ currentCoupon.end_date | moment("MM/DD/YYY", timezone)}}</span>
                                     <span v-else>{{ currentCoupon.start_date | moment("MM/DD/YYY", timezone)}}</span>
                                 </p>
-                                <img src="" alt="" />
+                                <img :src="currentCoupon.promo_image_url_abs" :alt="currentCoupon.name" />
                                 <div class="event_desc event_details" v-html="currentCoupon.rich_description"></div>
                                 <social-sharing v-if="currentCoupon" :url="shareURL(currentCoupon.slug)" :title="currentCoupon.title" :description="currentCoupon.body" :quote="truncate(currentCoupon.body)" :twitter-user="siteInfo.twitterHandle" :media="currentCoupon.image_url" inline-template>
                                     <div class="social_share margin_60">
