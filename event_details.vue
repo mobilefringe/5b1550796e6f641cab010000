@@ -42,7 +42,7 @@
                                     </div>
                                 </div>
                                 {{ shareURL(currentEvent.slug) }}
-                                {{ currentEvent.title }}
+                                {{ currentEvent.name }}
                                 {{currentEvent.body}}
                                 {{ truncate(currentEvent.body) }}
                                 {{ currentEvent.image_url }}
