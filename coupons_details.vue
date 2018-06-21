@@ -30,6 +30,16 @@
                                 </p>
                                 <img :src="currentCoupon.promo_image_url_abs" :alt="currentCoupon.name" />
                                 <div class="event_desc event_details" v-html="currentCoupon.rich_description"></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <router-link to="/promotions">
+                    		                <div class="animated_btn pull-left">Add To Basket</div>    
+                    		            </router-link>  
+                    		            <router-link to="/promotions">
+                    		                <div class="animated_btn pull-left">Print Coupon</div>    
+                    		            </router-link>  
+                                    </div>
+                                </div>
                                 <social-sharing v-if="currentCoupon" :url="shareURL(currentCoupon.slug)" :title="currentCoupon.title" :description="currentCoupon.body" :quote="truncate(currentCoupon.body)" :twitter-user="siteInfo.twitterHandle" :media="currentCoupon.image_url" inline-template>
                                     <div class="social_share margin_60">
                                         <network network="facebook">
