@@ -80,11 +80,16 @@
                     showMobileMenu: false,
                     noScroll: false,
                     windowWidth: 0,
+                    scrollY: 0,
                     siteInfo: site,
                 }
             },
             props:['menu_items', 'social_media'],
             watch: {
+                scrollY: function() {
+                    this.scrollY = window.pageYOffset;
+                    consoel.log(this.scrollY)
+                },
                 $route: function() {
                     if (this.windowWidth <= 768) {
                         this.showMenu = false;
