@@ -108,6 +108,7 @@
             },
             created() {
                 this.$nextTick(function() {
+                    window.addEventListener('scroll', this.handleScroll);
                     window.addEventListener('resize', this.getWindowWidth);
                     this.getWindowWidth();
                 });
@@ -146,6 +147,12 @@
                     // this will update the data store, which in turn will trigger the watcher to update the locale in the system
                     this.locale = val; 
                 },
+                handleScroll (event) {
+                    // Any code to be executed
+                    // when the window is scrolled
+                    this.scrollY = window.pageYOffset;
+                    consoel.log(this.scrollY)
+                }
                 getWindowWidth(event) {
                     this.windowWidth = window.innerWidth;
                 },
@@ -157,6 +164,7 @@
                 }
             },
             beforeDestroy: function() {
+                window.removeEventListener('scroll', this.handleScroll);
                 window.removeEventListener('resize', this.getWindowWidth);
             }
         });
