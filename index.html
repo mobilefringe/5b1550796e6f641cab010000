@@ -32,7 +32,7 @@
         <link href="/style.css" rel="stylesheet">
     </head>
     <body>
-        <h1 class="accessibility">Site Name</h1>
+        <h1 class="accessibility">{{meta_title}}</h1>
         <div id="app" v-cloak>
             <loading-spinner v-if="!dataLoaded"></loading-spinner>
             <header-component :menu_items="menu_items" :social_media="social_media" v-if="dataLoaded"></header-component>
