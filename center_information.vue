@@ -40,7 +40,7 @@
                 </div>
                 <div class="location_image_container">
                     <div v-if="lowerBanner">
-                        <div class="location_banner" v-bind:style="{ backgroundImage: 'url(' + lowerBanner.image_url + ')', backgroundColor: 'rgba(0,0,0,0.8)' }"></div>
+                        <div class="location_banner" v-bind:style="{ backgroundColor: 'rgba(0,0,0,0.8)', backgroundImage: 'url(' + lowerBanner.image_url + ')' }"></div>
                         <h1>{{ lowerBanner.name }}</h1>
                     </div>
                 </div>
