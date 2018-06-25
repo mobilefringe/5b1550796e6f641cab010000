@@ -1,7 +1,7 @@
 <template>
     <div> <!-- without an outer container div this component template will not render -->
         <loading-spinner v-if="!dataLoaded"></loading-spinner>
-        <transition name="fade">
+        <transition name="slideLeft">
             <div v-if="dataLoaded" v-cloak>
         		<div class="inside_page_header">
                     <div class="main_container position_relative">
