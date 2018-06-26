@@ -176,13 +176,17 @@
                     'findRepoByName'
                 ]),
                 allStores() {
-                    var store_list = this.processedStores
+                    var store_list = [];
+                    var dine_filter = 5962;
                     var vm = this;
-                    var hover_image = "";
-                    _.forEach(store_list, function(value, key) {
-                        if (_.includes(value.image_url, 'missing')) {
-                            value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
+                    _.forEach(this.processedStores, function(value, key) {
+                        if(_.includes(value.categories, dine_filter) {
+                            if (_.includes(value.image_url, 'missing')) {
+                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
+                            }
+                            store_list.push(value);
                         }
+                        
                     });
                     this.filteredStores = store_list;
                     return store_list
