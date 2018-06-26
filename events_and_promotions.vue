@@ -20,99 +20,81 @@
         		            <button class="animated_btn stores_btn" @click="toggleView(togglePromos)">Promotions</button>
         		        </div>
         		    </div>
-                    <div class="row margin_60">
-                        <div class="col-md-12">
-                            
-                            <!-- EVENTS -->
-                            <b-card no-body class="mb-1 inside_page_toggle">
-                                <b-card-header header-tag="header" class="p-1" role="tab">
-                                    <b-btn block @click="toggleEvents = !toggleEvents" :aria-expanded="toggleEvents ? 'true' : 'false'" aria-controls="toggleEvents">
-                                        Events
-                                        <i v-if="toggleEvents"  class="fa fa-minus f"></i>
-                                        <i v-else  class="fa fa-plus"></i>
-                                    </b-btn>
-                                </b-card-header>
-                                <b-collapse v-if="eventList.length >= 1" v-for="event in eventList" v-model="toggleEvents" role="tabpanel" id="toggleEvents" class="accordion_body">
-                                    <b-card-body>
-                                        <div class="row">
-                                            <div class="col-md-5" v-if="">
-                                                <img :src="event.image_url" :alt="'Event: ' + event.name" class="max_img" />
-                                            </div>
-                                            <div class="col-md-7">
-                                                <h3 class="promo_name">{{event.name}}</h3>
-                                                <p class="promo_store_name">
-                                                    <router-link v-if="event.eventable_type == 'Store'" :to="'/stores/'+ event.store.slug">
-                                                        {{ event.store.name }}
-                                                    </router-link>
-                                                    <span v-else>{{ property.name }}</span>
-                                                    <span>| </span>
-                                                    <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span>
-                                                    <span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span>
-                                                </p>
-                                                <div class="promo_desc" v-html="event.description_short"></div>
-                                                <router-link :to="'/events/'+ event.slug" >
-						                            <i class="fa fa-caret-right"></i> <span class="read_more">View Event Details</span>
-				                                </router-link>
-                                            </div>
+                    <div v-if="toggleEvents">
+                        <b-card no-body class="mb-1 inside_page_toggle">
+                            <b-card-header header-tag="header" class="p-1" role="tab">
+                                <b-btn block @click="toggleEvents = !toggleEvents" :aria-expanded="toggleEvents ? 'true' : 'false'" aria-controls="toggleEvents">
+                                    Events
+                                    <i v-if="toggleEvents"  class="fa fa-minus f"></i>
+                                    <i v-else  class="fa fa-plus"></i>
+                                </b-btn>
+                            </b-card-header>
+                            <b-collapse v-if="eventList.length >= 1" v-for="event in eventList" v-model="toggleEvents" role="tabpanel" id="toggleEvents" class="accordion_body">
+                                <b-card-body>
+                                    <div class="row">
+                                        <div class="col-md-5" v-if="">
+                                            <img :src="event.image_url" :alt="'Event: ' + event.name" class="max_img" />
                                         </div>
-                                        <hr class="promo_separator" />
-                                    </b-card-body>
-                                </b-collapse>
-                                <b-collapse v-if="eventList.length == 0" v-model="toggleEvents" role="tabpanel" id="toggleEvents" class="accordion_body">
-                                    <b-card-body>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p>Sorry, there are no Events posted at this time. Please check back soon!</p>
-                                            </div>
+                                        <div class="col-md-7">
+                                            <h3 class="promo_name">{{event.name}}</h3>
+                                            <p class="promo_store_name">
+                                                <router-link v-if="event.eventable_type == 'Store'" :to="'/stores/'+ event.store.slug">
+                                                    {{ event.store.name }}
+                                                </router-link>
+                                                <span v-else>{{ property.name }}</span>
+                                                <span>| </span>
+                                                <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span>
+                                                <span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span>
+                                            </p>
+                                            <div class="promo_desc" v-html="event.description_short"></div>
+                                            <router-link :to="'/events/'+ event.slug" >
+					                            <i class="fa fa-caret-right"></i> <span class="read_more">View Event Details</span>
+			                                </router-link>
                                         </div>
-                                        <hr class="promo_separator" />
-                                    </b-card-body>
-                                </b-collapse>
-                            </b-card>
-                            <!-- PROMOTIONS -->
-                            <b-card no-body class="mb-1 inside_page_toggle">
-                                <b-card-header header-tag="header" class="p-1" role="tab">
-                                    <b-btn block @click="togglePromos = !togglePromos" :aria-expanded="togglePromos ? 'true' : 'false'" aria-controls="togglePromotions">
-                                        Promotions
-                                        <i v-if="togglePromos"  class="fa fa-minus f"></i>
-                                        <i v-else  class="fa fa-plus"></i>
-                                    </b-btn>
-                                </b-card-header>
-                                <b-collapse v-if="promoList.length >= 1" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
-                                    <b-card-body>
-                                        <div v-if="promoList" v-for="item in promoList" :key="item.id">
-                                            <div class="row event_container">
-                                                <div class="col-sm-6 col-md-4">
-                                                    <img :src="item.image_url" :alt="'Promotion: ' + item.name" class="event_img img_max" />   
-                                                </div>
-                                                <div class="col-sm-6 col-md-8">
-                                                    <p v-if="item.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
-                                                    <p v-else class="event_store_name">
-                                                        <router-link :to="{ name: 'storeDetails', params: { id: item.store.slug }}">
-                                                            {{ item.store.name }}
-                                                        </router-link>        
-                                                    </p>
-                                                    <h4 class="event_name">{{ item.name }}</h4>
-                                                    <p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} - {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
-                                                    <div class="event_desc" v-html="item.description_short"></div>
-                                                    <router-link :to="{ name: 'promotionDetails', params: { id: item.slug }}">
-                                                        <p class="event_link">Promotion Details <i class="fas fa-angle-double-right"></i></p>
-                                                    </router-link>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <hr class="promo_separator" />
+                                </b-card-body>
+                            </b-collapse>
+                            <b-collapse v-if="eventList.length == 0" v-model="toggleEvents" role="tabpanel" id="toggleEvents" class="accordion_body">
+                                <b-card-body>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>Sorry, there are no Events posted at this time. Please check back soon!</p>
                                         </div>
-                                    </b-card-body>
-                                </b-collapse>
-                                <b-collapse v-if="promoList.length == 0" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
-                                    <b-card-body>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <p>Sorry. There are no Promotions posted at this time. Please check back soon!</p>
-                                            </div>
-                                        </div>
-                                    </b-card-body>
-                                </b-collapse>
-                            </b-card>
+                                    </div>
+                                    <hr class="promo_separator" />
+                                </b-card-body>
+                            </b-collapse>
+                        </b-card>
+                    </div>
+                    <div v-if="togglePromotions">
+                        <div v-if="promoList" v-for="item in promoList" :key="item.id">
+                            <div class="row event_container">
+                                <div class="col-sm-6 col-md-4">
+                                    <img :src="item.image_url" :alt="'Promotion: ' + item.name" class="event_img img_max" />   
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <p v-if="item.promotionable_type == 'Property'" class="event_store_name">{{ property.name }}</p>
+                                    <p v-else class="event_store_name">
+                                        <router-link :to="{ name: 'storeDetails', params: { id: item.store.slug }}">
+                                            {{ item.store.name }}
+                                        </router-link>        
+                                    </p>
+                                    <h4 class="event_name">{{ item.name }}</h4>
+                                    <p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} - {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
+                                    <div class="event_desc" v-html="item.description_short"></div>
+                                    <router-link :to="{ name: 'promotionDetails', params: { id: item.slug }}">
+                                        <p class="event_link">Promotion Details <i class="fas fa-angle-double-right"></i></p>
+                                    </router-link>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Sorry, there are no Promotions posted at this time. Please check back soon!</p>    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
