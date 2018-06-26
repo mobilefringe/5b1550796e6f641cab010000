@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
         		<div class="inside_page_header">
                     <div class="main_container position_relative">
-                        <h2>Dine</h2>
+                        <h2>Directory</h2>
                     </div>
                 </div>
         		<div class="main_container">
@@ -95,7 +95,7 @@
     define(["Vue", "vuex", "vue-select", "vue!search-component", "masonry" , "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, SearchComponent, masonry, VueMasonryPlugin) {
         Vue.component('v-select', VueSelect.VueSelect);
         Vue.use(VueMasonryPlugin.default);
-        return Vue.component("dine-component", {
+        return Vue.component("stores-m-component", {
             template: template, // the variable template will be injected
             data: function() {
                 return {
@@ -108,7 +108,8 @@
                     query: "",
                     toggleText: "Display as List",
                     logoView: true,
-                    listView: false
+                    listView: false,
+                    dineFilter: 5962
                 }
             },
             created (){
@@ -176,19 +177,33 @@
                     'findRepoByName'
                 ]),
                 allStores() {
-                    var store_list = this.processedStores
+                    var store_list = [];
                     var vm = this;
-                    var hover_image = "";
-                    _.forEach(store_list, function(value, key) {
-                        if (_.includes(value.image_url, 'missing')) {
-                            value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
+                    _.forEach(this.processedStores, function(value, key) {
+                        if(!_.includes(value.categories, vm.dineFilter)) {
+                            if (_.includes(value.image_url, 'missing')) {
+                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
+                            }
+                            store_list.push(value);
                         }
                     });
                     this.filteredStores = store_list;
                     return store_list
                 },
                 dropDownCats() {
-                    var cats = _.map(this.processedCategories, 'name');
+                    var vm = this;
+                    var store_cats = _.filter(this.processedStores, function(o) { return !_.includes(o.categories, vm.dineFilter) });
+                    var cats = [];
+                    _.forEach(store_cats, function(value, key) {
+                        _.forEach(value.categories, function(category, key) {
+                            var current_category = vm.findCategoryById(category)
+                            if(!_.includes(cats, current_category.name)) {
+                                
+                                cats.push(current_category.name)
+                            }
+                        });
+                    });
+                    cats = cats.sort();
                     cats.unshift('All');
                     return cats;
                 },
