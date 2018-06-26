@@ -25,7 +25,7 @@
                                         <i v-else  class="fa fa-plus"></i>
                                     </b-btn>
                                 </b-card-header>
-                                <b-collapse v-if="promoList.length >= 1" v-for="promo in promoList" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
+                                <b-collapse v-if="promoList.length >= 1" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
                                     <b-card-body>
                                         <div v-if="promoList" v-for="item in promoList" :key="item.id">
                                             <div class="row event_container">
