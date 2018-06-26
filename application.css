@@ -558,35 +558,35 @@ hr{
 //     line-height: 1.375rem;
 //     color: $primary;
 // }
-.inside_page_toggle {
-    header {
-        margin: 0;
-        min-height: auto;
-    } 
-    button {
-        margin-bottom: 20px;
-        padding: 4px 20px;
-        height: 38px;
-        border-radius: 0;
-        background: $primary;
-        font-family: Georgia-Italic;
-        font-size: 1.375rem;
-        line-height: normal;
-        color: $text;;
-        text-align: left;
-        .fa {
-            float: right;
-            font-size: 1.125rem;
-            line-height: 1.875rem;
-        }
-    }
-    .card-body {
-        img {
-            max-width: 100%;
-            border: 1px solid #f5f5f5;
-        }
-    }
-}
+// .inside_page_toggle {
+//     header {
+//         margin: 0;
+//         min-height: auto;
+//     } 
+//     button {
+//         margin-bottom: 20px;
+//         padding: 4px 20px;
+//         height: 38px;
+//         border-radius: 0;
+//         background: $primary;
+//         font-family: Georgia-Italic;
+//         font-size: 1.375rem;
+//         line-height: normal;
+//         color: $text;;
+//         text-align: left;
+//         .fa {
+//             float: right;
+//             font-size: 1.125rem;
+//             line-height: 1.875rem;
+//         }
+//     }
+//     .card-body {
+//         img {
+//             max-width: 100%;
+//             border: 1px solid #f5f5f5;
+//         }
+//     }
+// }
 .inside_page_link {
     margin-bottom: 20px;  
     display: inline-block;
