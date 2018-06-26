@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
         		<div class="inside_page_header">
                     <div class="main_container position_relative">
-                        <h2>Directory</h2>
+                        <h2>Dine</h2>
                     </div>
                 </div>
         		<div class="main_container">
@@ -95,7 +95,7 @@
     define(["Vue", "vuex", "vue-select", "vue!search-component", "masonry" , "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, SearchComponent, masonry, VueMasonryPlugin) {
         Vue.component('v-select', VueSelect.VueSelect);
         Vue.use(VueMasonryPlugin.default);
-        return Vue.component("stores-m-component", {
+        return Vue.component("dine-component", {
             template: template, // the variable template will be injected
             data: function() {
                 return {
