@@ -27,7 +27,7 @@
                                 </b-card-header>
                                 <b-collapse v-if="promoList.length >= 1" v-for="promo in promoList" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
                                     <b-card-body>
-                                        <div v-if="events" v-for="item in events" :key="item.id">
+                                        <div v-if="promoList" v-for="item in promoList" :key="item.id">
                                             <div class="row event_container">
                                                 <div class="col-sm-6 col-md-4">
                                                     <img :src="item.image_url" :alt="'Promotion: ' + item.name" class="event_img img_max" />   
