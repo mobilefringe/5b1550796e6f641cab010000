@@ -173,6 +173,20 @@ define([], function () {
                     props: true
                 },
                 {
+                    path: '/dine',
+                    component: view('default'),
+                    children: [
+                        {   
+                            path: '',
+                            component: view('dine'),
+                            meta: {
+                                breadcrumb: 'Dining',
+                            },
+                            name: 'dine'
+                        }
+                    ]
+                },
+                {
                     path: '/map',
                     component: view('default'),
                     children: [
