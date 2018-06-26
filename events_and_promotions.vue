@@ -16,8 +16,8 @@
                     </div>
                     <div class="row margin_40">
         		        <div class="col-md-6 clearfix">
-        		            <button class="animated_btn stores_btn" @click="toggleView()">Events</button>
-        		            <button class="animated_btn stores_btn" @click="toggleView()">Promotions</button>
+        		            <button class="animated_btn stores_btn" @click="toggleView(toggleEvents)">Events</button>
+        		            <button class="animated_btn stores_btn" @click="toggleView(togglePromos)">Promotions</button>
         		        </div>
         		    </div>
                     <div class="row margin_60">
@@ -207,6 +207,17 @@
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
+                },
+                toggleView() {
+                    if (this.logoView) {
+                        this.toggleText = "Display as Logos"
+                        this.listView = true;
+                        this.logoView = false;
+                    } else if (this.listView) {
+                        this.toggleText = "Display as List"
+                        this.logoView = true;
+                        this.listView = false;
+                    } 
                 },
                 isMultiDay(promo) {
                     var timezone = this.timezone
