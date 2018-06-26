@@ -8,12 +8,14 @@
                         <h2>Events & Promotions</h2>
                     </div>
                 </div>
-                <div class="main_container mobile_padding margin_30">
-                    <div class="details_row">
-                        <div class="details_col_3 hidden_phone">
-                            <img class="img_max" src="http://placehold.it/440x1200" alt="" />    
+                <div class="main_container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <breadcrumb></breadcrumb>
                         </div>
-                        <div class="details_col_9">
+                    </div>
+                    <div class="row margin_60">
+                        <div class="col-md-12">
                             <!-- PROMOTIONS -->
                             <b-card no-body class="mb-1 inside_page_toggle">
                                 <b-card-header header-tag="header" class="p-1" role="tab">
