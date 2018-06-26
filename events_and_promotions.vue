@@ -14,6 +14,12 @@
                             <breadcrumb></breadcrumb>
                         </div>
                     </div>
+                    <div class="row margin_40">
+        		        <div class="col-md-6 clearfix">
+        		            <button class="animated_btn stores_btn" @click="toggleView()">Events</button>
+        		            <button class="animated_btn stores_btn" @click="toggleView()">Promotions</button>
+        		        </div>
+        		    </div>
                     <div class="row margin_60">
                         <div class="col-md-12">
                             
