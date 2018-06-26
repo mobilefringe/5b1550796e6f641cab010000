@@ -123,6 +123,20 @@ define([], function () {
             ]
         },
         {
+            path: '/events-and-promotions',
+            component: view('default'),
+            meta: {
+                breadcrumb: 'Events & Promotions',
+            },
+            children: [
+                {
+                    path: '',
+                    component: view('events_and_promotions'),
+                    name: 'events'
+                }
+            ]
+        },
+        {
             path: '/location',
             component: view('default'),
             meta: {
