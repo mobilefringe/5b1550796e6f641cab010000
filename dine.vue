@@ -197,7 +197,7 @@
                     _.forEach(store_cats, function(value, key) {
                         _.forEach(value.categories, function(category, key) {
                             var current_category = vm.findCategoryById(category)
-                            if(!_.includes(cats, current_category.name)) {
+                            if(!_.includes(cats, current_category.name) && category != vm.dineFilter) {
                                 
                                 cats.push(current_category.name)
                             }
