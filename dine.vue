@@ -95,7 +95,7 @@
     define(["Vue", "vuex", "vue-select", "vue!search-component", "masonry" , "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, SearchComponent, masonry, VueMasonryPlugin) {
         Vue.component('v-select', VueSelect.VueSelect);
         Vue.use(VueMasonryPlugin.default);
-        return Vue.component("stores-m-component", {
+        return Vue.component("dine-component", {
             template: template, // the variable template will be injected
             data: function() {
                 return {
