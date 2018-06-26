@@ -21,51 +21,29 @@
         		        </div>
         		    </div>
                     <div v-if="toggleEvents">
-                        <b-card no-body class="mb-1 inside_page_toggle">
-                            <b-card-header header-tag="header" class="p-1" role="tab">
-                                <b-btn block @click="toggleEvents = !toggleEvents" :aria-expanded="toggleEvents ? 'true' : 'false'" aria-controls="toggleEvents">
-                                    Events
-                                    <i v-if="toggleEvents"  class="fa fa-minus f"></i>
-                                    <i v-else  class="fa fa-plus"></i>
-                                </b-btn>
-                            </b-card-header>
-                            <b-collapse v-if="eventList.length >= 1" v-for="event in eventList" v-model="toggleEvents" role="tabpanel" id="toggleEvents" class="accordion_body">
-                                <b-card-body>
-                                    <div class="row">
-                                        <div class="col-md-5" v-if="">
-                                            <img :src="event.image_url" :alt="'Event: ' + event.name" class="max_img" />
-                                        </div>
-                                        <div class="col-md-7">
-                                            <h3 class="promo_name">{{event.name}}</h3>
-                                            <p class="promo_store_name">
-                                                <router-link v-if="event.eventable_type == 'Store'" :to="'/stores/'+ event.store.slug">
-                                                    {{ event.store.name }}
-                                                </router-link>
-                                                <span v-else>{{ property.name }}</span>
-                                                <span>| </span>
-                                                <span v-if="isMultiDay(event)" class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span>
-                                                <span v-else class="promo_date">{{ event.start_date | moment("MMMM D", timezone)}}</span>
-                                            </p>
-                                            <div class="promo_desc" v-html="event.description_short"></div>
-                                            <router-link :to="'/events/'+ event.slug" >
-					                            <i class="fa fa-caret-right"></i> <span class="read_more">View Event Details</span>
-			                                </router-link>
-                                        </div>
-                                    </div>
-                                    <hr class="promo_separator" />
-                                </b-card-body>
-                            </b-collapse>
-                            <b-collapse v-if="eventList.length == 0" v-model="toggleEvents" role="tabpanel" id="toggleEvents" class="accordion_body">
-                                <b-card-body>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <p>Sorry, there are no Events posted at this time. Please check back soon!</p>
-                                        </div>
-                                    </div>
-                                    <hr class="promo_separator" />
-                                </b-card-body>
-                            </b-collapse>
-                        </b-card>
+                        <div v-if="eventList" v-for="(events, key) in eventList" class="col-md-12" >
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 class="event_date_heading">{{ key }}</h3> 
+                                </div>
+                            </div>
+                            <div class="row event_container" v-for="event in events">
+                                <div class="col-md-4">
+                                    <img :src="event.image_url" :alt="'Event: ' + event.name" class="event_img img_max" />   
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="event_name">{{ event.name }}</h4>
+                                    <p class="event_dates"><span>Location</span> | <span v-if="isMultiDay(event)">{{ event.start_date | moment("MMMM D", timezone)}} to {{ event.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ event.start_date | moment("MMMM D", timezone)}}</span></p>
+                                    <div class="event_desc" v-html="event.description_short"></div>
+                                    <router-link :to="{ name: 'eventDetails', params: { id: event.slug }}">
+                                        <p class="event_link">Event Details <i class="fas fa-angle-double-right"></i></p>
+                                    </router-link>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <p>Sorry, there are no Events posted at this time. Please check back soon!</p>    
+                        </div>
                     </div>
                     <div v-if="togglePromotions">
                         <div v-if="promoList" v-for="item in promoList" :key="item.id">
@@ -129,31 +107,40 @@
                     'processedPromos'
                 ]),
                 eventList: function events() {
-                    var events = this.processedEvents;
+                    var events = _.orderBy(this.processedEvents, function (o) { return o.start_date });
                     var showEvents = [];
+                    var month_heading = "";
                     _.forEach(events, function (value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        var today_month = moment.tz(this.timezone).format("MM-YYYY");
                         if (today >= showOnWebDate) {
+                            var start_month = moment.tz(value.start_date, this.timezone).format("MM-YYYY");
+                            if (start_month <= today_month) {
+                                value.month = moment.tz(this.timezone).format("MMMM YYYY");
+                                month_heading = today_month;
+                            } else {
+                                value.month = moment.tz(value.start_date, this.timezone).format("MMMM YYYY");
+                                month_heading = start_month;
+                            }
+
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
-                                value.store.image_url = "http://placehold.it/400x400";
+                                value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
                             }
                             
                             if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "http://placehold.it/400x400";
+                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532187000/eventsplaceholder2@2x.png";
                             }
                             
-                            value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
+                            value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
                             showEvents.push(value);
                         }
                     });
-                    var sortedEvents = _.orderBy(showEvents, function (o) { return o.end_date });
-                    if (sortedEvents.length > 0) {
-                        this.toggleEvents = true;
-                    }
-                    return sortedEvents
-                    
+                    showEvents = _.orderBy(showEvents, function (o) { return o.end_date });
+                    showEvents = _.groupBy(showEvents, event => (event.month));
+
+                    return showEvents
                 },
                 promoList: function promos() {
                     var vm = this;
@@ -163,14 +150,14 @@
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
                         if (today >= showOnWebDate) {
                             if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
-                                value.store.image_url = "http://placehold.it/400x400";
+                                value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
                             }
                             
                             if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "http://placehold.it/400x400";
+                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";
                             }
                             
-                            value.description_short = _.truncate(value.description, { 'length': 100, 'separator': ' ' });
+                            value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
                             showPromos.push(value);
                         }
