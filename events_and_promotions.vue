@@ -95,13 +95,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div v-else>
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <p>Sorry, there are no Promotions posted at this time. Please check back soon!</p>    
-                                                </div>
-                                            </div>
-                                        </div>
                                     </b-card-body>
                                 </b-collapse>
                                 <b-collapse v-if="promoList.length == 0" v-model="togglePromos" role="tabpanel" id="togglePromotions" class="accordion_body">
@@ -198,7 +191,7 @@
                     if (sortedPromos.length > 0) {
                         this.togglePromos = true;
                     }
-                    return sortedPromos;
+                    // return sortedPromos;
                 }
             },
             methods: {
