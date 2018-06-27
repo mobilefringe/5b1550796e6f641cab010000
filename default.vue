@@ -1,6 +1,7 @@
 <template>
-    <h1>{{ property.name }}</h1>
-    <router-view></router-view>
+    <router-view>
+        <h1>{{ property.name }}</h1>
+    </router-view>
 </template>
 
 <script>
