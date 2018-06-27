@@ -1,7 +1,7 @@
 <template>
     <div> <!-- without an outer container div this component template will not render -->
-        <!--<loading-spinner v-if="!dataLoaded"></loading-spinner>-->
-        <transition name="slideLeft">
+        <loading-spinner v-if="!dataLoaded"></loading-spinner>
+        <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
         		<div class="inside_page_header">
                     <div class="main_container position_relative">
@@ -55,7 +55,7 @@
                             	    <div class="store_logo_container">
                             	        <router-link :to="'/stores/'+ store.slug">
                                 			<img class="store_img" :src="store.image_url" alt="">
-                                			<div class="store_tag" v-if="store.total_published_promos">-->
+                                			<div class="store_tag" v-if="store.total_published_promos">
             									<div class="store_tag_text">Promotion</div>
             								</div>
             								<div class="store_tag" v-if="!store.total_published_promos && !store.is_new_store && store.is_coming_soon_store">
