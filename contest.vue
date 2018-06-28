@@ -70,7 +70,7 @@
                                                 I agree to receive newsletters from {{ property.name }}. (You can unsubscribe at anytime)
                                         </label>
         						    </div>
-        						    <div class="col-xs-12 margin_60">
+        						    <div class="col-xs-12">
         						        <p>For more details about personal privacy, please read our <a href="" target="_blank">Privacy Policy</a>.</p>
                                     </div>
                                 </div>
