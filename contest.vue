@@ -83,7 +83,7 @@
         						    <div class="col-xs-12" :class="{'has-error': errors.has('agree_newsletter')}">
         						        <label class="checkbox">
                                             <input name="agree_newsletter" type="checkbox" v-model="form_data.agree_newsletter">
-                                                Yes, I would like to receive ongoing news related to events, promotions and special announcements from Eastgate Square. 
+                                                Yes, I would like to receive ongoing news related to events, promotions and special announcements from {{ property.name }}. 
                                         </label>
         						    </div>
         						    <div class="col-xs-12">
