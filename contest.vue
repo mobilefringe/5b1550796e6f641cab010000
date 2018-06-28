@@ -129,7 +129,7 @@
 </style>
 
 <script>
-    define(["Vue", "vuex", "axios", "vee-validate"], function(Vue, Vuex,axios, VeeValidate) {
+    define(["Vue", "vuex", "jquery", "axios", "vee-validate"], function(Vue, Vuex, $, axios, VeeValidate) {
         Vue.use(VeeValidate);
 
         return Vue.component("contest-component", {
