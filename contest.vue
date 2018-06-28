@@ -27,7 +27,7 @@
         						<div class="form-group ">
         							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('first_name')}">
         								<label class="accessibility" for="first_name">First Name</label>
-        								<input v-model="form_data.first_name" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="first_name" type="text" placeholder="First Name" data-vv-delay="500" data-vv-as="first name">
+        								<input v-model="form_data.first_name" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="first_name" type="text" placeholder="First Name" data-vv-delay="500" data-vv-as="first name" required>
         								<span v-show="errors.has('first_name')" class="form-control-feedback">{{ errors.first('first_name') }}</span>
         							</div>
         							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('last_name')}">
