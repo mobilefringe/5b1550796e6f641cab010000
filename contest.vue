@@ -47,20 +47,24 @@
         							</div>
         						</div>
         						<div class="form-group account-btn text-left m-t-10 agreement">
+        						    <div class="col-xs-12">
+        						        <label class="checkbox">
+                                            <input name="agree_terms" type="checkbox" required >
+                                            I am over the age of 18.
+                                        </label>
+        						    </div>
         						    <div class="col-xs-12" :class="{'has-error': errors.has('agree_newsletter')}">
         						        <label class="checkbox">
                                             <input name="agree_newsletter" type="checkbox" v-model="form_data.agree_newsletter">
-                                                Yes, I would like to receive ongoing news related to events, promotions and special announcements from {{ property.name }}. 
+                                                I agree to receive newsletters from {{ property.name }}. (You can unsubscribe at anytime)
                                         </label>
         						    </div>
         						    <div class="col-xs-12">
-        						        <label class="checkbox">
-                                            <input name="agree_terms" required type="checkbox" >
-                                            I agree to the <a href = "/pages/eastgate-contest-rules-and-regulations" target="_blank"><u> rules and regulations</u></a>
-                                        </label>
-        						    </div>
+        						        <p>For more details about personal privacy, please read our <a href="" target="_blank">Privacy Policy</a>.</p>
+
+
         							<div class="col-xs-12">
-        								<button class="feature-readmore" type="submit" :disabled="formSuccess">Submit</button>
+        								<button class="animated_btn" type="submit" :disabled="formSuccess">Submit</button>
         							</div>
         						</div>
         					</form>
