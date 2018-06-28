@@ -74,7 +74,7 @@
         						        <p>For more details about personal privacy, please read our <a href="" target="_blank">Privacy Policy</a>.</p>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group margin_60">
         							<div class="col-xs-12">
         								<button class="animated_btn" type="submit" :disabled="formSuccess">Submit</button>
         							</div>
