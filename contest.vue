@@ -1,5 +1,5 @@
 <template>
-    <div class="page_container" id="contact_us_container" v-if="currentContest"> <!-- for some reason if you do not put an outer container div this component template will not render -->
+    <div class="page_container" id="contact_us_container"> <!-- for some reason if you do not put an outer container div this component template will not render -->
         <div>
             <div class="row">
                     <img :src='currentContest.image_url' alt="contest image">
