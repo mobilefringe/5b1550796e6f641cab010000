@@ -61,8 +61,7 @@
         						    </div>
         						    <div class="col-xs-12">
         						        <p>For more details about personal privacy, please read our <a href="" target="_blank">Privacy Policy</a>.</p>
-
-
+                                    </div>
         							<div class="col-xs-12">
         								<button class="animated_btn" type="submit" :disabled="formSuccess">Submit</button>
         							</div>
