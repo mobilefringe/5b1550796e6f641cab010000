@@ -175,7 +175,7 @@
             },
             mounted() {
                 //creating random validation num 
-                this.correctValNum = Utility.rannumber();
+                // this.correctValNum = Utility.rannumber();
                 
             },
             computed: {
