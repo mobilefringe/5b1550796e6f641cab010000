@@ -170,6 +170,7 @@
             template: template, // the variable template will be injected
             data: function() {
                 return {
+                    dataLoaded: false,
                     form_data: {},
                     formSuccess: false,
                     formError: false,
