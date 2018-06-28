@@ -16,13 +16,13 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <img class="img_max" :src="currentContest.image_url" :alt="currentContest.name">
+                            <img v-if="currentContest.image_url" class="img_max" :src="currentContest.image_url" :alt="currentContest.name">
                         </div>
                     </div> 
                     <div class="row"> 
                         <div class="col-md-8 col-md-offset-2">
-    						<h3 class="contest_title">{{currentContest.name}}</h3>
-                            <div class="contest_desc" v-html="currentContest.rich_description"></div>
+    						<h3 v-if="currentContest.name" class="contest_title">{{currentContest.name}}</h3>
+                            <div v-if="currentContest.rich_description" class="contest_desc" v-html="currentContest.rich_description"></div>
                             <form id="contest_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
         						<div class="form-group ">
         							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('first_name')}">
