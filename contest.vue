@@ -16,16 +16,15 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <!--<img :src='currentContest.image_url' alt="contest image">-->
-                            <img src="https://placehold.it/1000x500" />
+                            <img :src="currentContest.image_url" :alt="currentContest.name">
                         </div>
                     </div> 
                     <div class="row"> 
                         <div class="col-md-8 col-md-offset-2 contest_contents">
                             <div class="page_header all_caps double_border_top double_border_bottom">
-        						<!--<div class="text_left">{{currentContest.name}}</div>-->
+        						<div class="text_left">{{currentContest.name}}</div>
         					</div>
-                            <!--<div class="description_text text_left" style="padding-top:20px"  v-html="currentContest.rich_description"></div>-->
+                            <div class="description_text text_left" style="padding-top:20px"  v-html="currentContest.rich_description"></div>
                             <form id="contest_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
         						<div class="form-group ">
         							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('first_name')}">
