@@ -100,6 +100,20 @@ define([], function () {
             ]
         },
         {
+            path: '/contest',
+            component: view('default'),
+            meta: {
+                breadcrumb: 'Contest',
+            },
+            children: [
+                {
+                    path: '',
+                    component: view('contests'),
+                    name: 'contest'
+                }
+            ]
+        },
+        {
             path: '/events',
             component: view('default'),
             meta: {
