@@ -159,11 +159,6 @@
                     console.error("Could not retrieve data from server. Please check internet connection and try again.");
                 });
             },
-            mounted() {
-                //creating random validation num 
-                // this.correctValNum = Utility.rannumber();
-                
-            },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
