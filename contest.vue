@@ -17,6 +17,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <!--<img :src='currentContest.image_url' alt="contest image">-->
+                            <img src="https://placehold.it/1000x500" />
                         </div>
                     </div> 
                     <div class="row"> 
