@@ -96,12 +96,6 @@
         bottom: -27px;
     }
 
-    .agreement.form-group {
-        margin:0;   
-    }
-    /*.checkbox {*/
-    /*    font-weight: normal;*/
-    /*}*/
 </style>
 
 <script>
