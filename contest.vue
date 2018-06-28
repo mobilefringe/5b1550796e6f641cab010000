@@ -16,11 +16,11 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
-                            <img :src="currentContest.image_url" :alt="currentContest.name">
+                            <img class="img_max" :src="currentContest.image_url" :alt="currentContest.name">
                         </div>
                     </div> 
                     <div class="row"> 
-                        <div class="col-md-8 col-md-offset-2 contest_contents">
+                        <div class="col-md-8 col-md-offset-2">
                             <div class="page_header all_caps double_border_top double_border_bottom">
         						<div class="text_left">{{currentContest.name}}</div>
         					</div>
