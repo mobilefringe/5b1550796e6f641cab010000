@@ -23,6 +23,20 @@
                         <div class="col-md-8 col-md-offset-2">
     						<h3 v-if="currentContest.name" class="contest_title">{{currentContest.name}}</h3>
                             <div v-if="currentContest.rich_description" class="contest_desc" v-html="currentContest.rich_description"></div>
+                            <transition name="fade">
+                                <div>
+                                    <div id="send_contact_success" class="alert alert-success text-left" role="alert" v-show="formSuccess">
+                                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                                        <span class="sr-only">Success</span>
+                                        Good luck and thank you for entering our contest.
+                                    </div>
+                                    <div id="send_contact_error" class="alert alert-danger text-left" role="alert" v-show="formError">
+                                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                        <span class="sr-only">Error:</span>
+                                        There was an error when trying to submit your request. Please try again later.
+                                    </div>
+                                </div>
+                            </transition>
                             <form id="contest_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
         						<div class="form-group ">
         							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('first_name')}">
@@ -65,16 +79,7 @@
         						</div>
         					</form>
                             
-                            <div id="send_contact_success" class="alert alert-success text-left" role="alert" v-show="formSuccess">
-                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                <span class="sr-only">Success</span>
-                                Good luck and thank you for entering our contest.
-                            </div>
-                            <div id="send_contact_error" class="alert alert-danger text-left" role="alert" v-show="formError">
-                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                <span class="sr-only">Error:</span>
-                                There was an error when trying to submit your request. Please try again later.
-                            </div>
+                            
                             
                         </div>
                     </div>
