@@ -85,23 +85,9 @@
         </transition>
     </div>
 </template>
-
-<style>
-
-    .form-group .form-control-feedback{
-        font-size: 12px;
-        /*top:60px;*/
-        color: #F44336;
-        top: initial;
-        bottom: -27px;
-    }
-
-</style>
-
 <script>
     define(["Vue", "vuex", "jquery", "axios", "vee-validate"], function(Vue, Vuex, $, axios, VeeValidate) {
         Vue.use(VeeValidate);
-
         return Vue.component("contest-component", {
             template: template, // the variable template will be injected
             data: function() {
@@ -118,10 +104,7 @@
             },
             created() {
                 this.$store.dispatch("getData", "contests").then(response => {
-                    console.log(response)
-                    // this.dataloaded = true;
                     this.currentContest = this.findContestByShowOnSlug('cerritos-contest');
-                    console.log(this.currentContest)
                     this.dataLoaded = true;
                 }, error => {
                     console.error("Could not retrieve data from server. Please check internet connection and try again.");
@@ -162,6 +145,7 @@
                             //format contests data for MM
                             var contest_entry = {};
                             contest_entry.contest = this.form_data;
+                            console.log( contest_entry.contest)
                             var vm = this;
                             host_name = this.property.mm_host.replace("http:", "");
                             var url = host_name + "/contests/" + this.currentContest.slug + "/create_js_entry";
