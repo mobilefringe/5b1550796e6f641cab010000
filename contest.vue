@@ -22,7 +22,6 @@
                     <div class="row"> 
                         <div class="col-md-8 col-md-offset-2">
     						<h3 class="contest_title">{{currentContest.name}}</h3>
-        					
                             <div class="contest_desc" v-html="currentContest.rich_description"></div>
                             <form id="contest_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
         						<div class="form-group ">
@@ -44,7 +43,7 @@
         								<span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
         							</div>
         						</div>
-        						<div class="form-group account-btn text-left m-t-10 agreement">
+        						<div class="form-inline row">
         						    <div class="col-xs-12">
         						        <label class="checkbox">
                                             <input name="agree_terms" type="checkbox" required >
