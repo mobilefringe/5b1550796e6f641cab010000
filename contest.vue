@@ -21,10 +21,9 @@
                     </div> 
                     <div class="row"> 
                         <div class="col-md-8 col-md-offset-2">
-                            <div class="page_header all_caps double_border_top double_border_bottom">
-        						<h3>{{currentContest.name}}</h3>
-        					</div>
-                            <div class="description_text text_left" style="padding-top:20px"  v-html="currentContest.rich_description"></div>
+    						<h3 class="contest_title">{{currentContest.name}}</h3>
+        					
+                            <div class="contest_desc" v-html="currentContest.rich_description"></div>
                             <form id="contest_form" class="form-horizontal clearfix" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
         						<div class="form-group ">
         							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('first_name')}">
