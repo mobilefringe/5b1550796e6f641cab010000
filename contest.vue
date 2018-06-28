@@ -11,78 +11,78 @@
 					</div>
                     <div class="description_text text_left" style="padding-top:20px"  v-html="currentContest.rich_description">
                     </div>
-                    <form class="form-horizontal padding_top_20" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">
-						<div class="form-group ">
-							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('first_name')}">
-								<label class="label" for="first_name">First Name</label>
-								<input v-model="form_data.first_name" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="first_name" type="text" placeholder="First Name" data-vv-delay="500" data-vv-as="first name">
-								<span v-show="errors.has('first_name')" class="form-control-feedback">{{ errors.first('first_name') }}</span>
-							</div>
-							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('last_name')}">
-								<label class="label" for="last_name">Last Name</label>
-								<input v-model="form_data.last_name" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="last_name" type="text" placeholder="Last Name" data-vv-delay="500" data-vv-as="last name">
-								<span v-show="errors.has('last_name')" class="form-control-feedback">{{ errors.first('last_name') }}</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('email')}">
-								<label class="label" for="email">Email</label>
-								<input v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" placeholder="Email" data-vv-delay="500" data-vv-as="email">
-								<span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
-							</div>
-							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('phone')}" >
-								<label class="label" for="phone">Phone Number</label>
-								<input v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" placeholder="Phone number" data-vv-delay="500" data-vv-as="phone">
-								<span v-show="errors.has('phone')" class="form-control-feedback">{{ errors.first('phone') }}</span>
-							</div>
-							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('street')}"  style="padding-top: 20px;">
-								<label class="label" for="street">Street Address</label>
-								<input v-model="form_data.mailing_address" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="street" type="text" placeholder="Street Address" data-vv-delay="500" data-vv-as="street address">
-								<span v-show="errors.has('street')" class="form-control-feedback">{{ errors.first('street') }}</span>
-							</div>
-							<div class="col-sm-6 col-xs-12"  :class="{'has-error': errors.has('city')}" style="padding-top: 20px;">
-								<label class="label" for="city"> City</label>
-								<input v-model="form_data.city" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="city" type="text" placeholder="Town/City" data-vv-delay="500" data-vv-as="city">
-								<span v-show="errors.has('city')" class="form-control-feedback">{{ errors.first('city') }}</span>
-							</div>
-							<div class="col-sm-6 col-xs-12 " :class="{'has-error': errors.has('postal')}"  style="padding-top: 20px;">
-								<label class="label" for="postal">Postal Code</label>
-								<input v-model="form_data.postal_code" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="postal" type="text" placeholder="Postal Code" data-vv-delay="500" data-vv-as="postal code">
-								<span v-show="errors.has('postal')" class="form-control-feedback">{{ errors.first('postal') }}</span>
-							</div>
-							<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('birthday')}"   style="padding-top: 20px;">
-								<label class="label" for="birthday">Birthday</label>
-								<input v-model="form_data.birthday" class="form-control" v-validate="'required|date_format:MM/DD/YYYY'" :class="{'input': true}" name="birthday" type="text" placeholder="mm/dd/yyyy" data-vv-delay="500" data-vv-as="birthday">
+     <!--               <form class="form-horizontal padding_top_20" action="form-submit" v-on:submit.prevent="validateBeforeSubmit">-->
+					<!--	<div class="form-group ">-->
+					<!--		<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('first_name')}">-->
+					<!--			<label class="label" for="first_name">First Name</label>-->
+					<!--			<input v-model="form_data.first_name" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="first_name" type="text" placeholder="First Name" data-vv-delay="500" data-vv-as="first name">-->
+					<!--			<span v-show="errors.has('first_name')" class="form-control-feedback">{{ errors.first('first_name') }}</span>-->
+					<!--		</div>-->
+					<!--		<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('last_name')}">-->
+					<!--			<label class="label" for="last_name">Last Name</label>-->
+					<!--			<input v-model="form_data.last_name" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="last_name" type="text" placeholder="Last Name" data-vv-delay="500" data-vv-as="last name">-->
+					<!--			<span v-show="errors.has('last_name')" class="form-control-feedback">{{ errors.first('last_name') }}</span>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<!--	<div class="form-group">-->
+					<!--		<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('email')}">-->
+					<!--			<label class="label" for="email">Email</label>-->
+					<!--			<input v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" placeholder="Email" data-vv-delay="500" data-vv-as="email">-->
+					<!--			<span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>-->
+					<!--		</div>-->
+					<!--		<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('phone')}" >-->
+					<!--			<label class="label" for="phone">Phone Number</label>-->
+					<!--			<input v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" placeholder="Phone number" data-vv-delay="500" data-vv-as="phone">-->
+					<!--			<span v-show="errors.has('phone')" class="form-control-feedback">{{ errors.first('phone') }}</span>-->
+					<!--		</div>-->
+					<!--		<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('street')}"  style="padding-top: 20px;">-->
+					<!--			<label class="label" for="street">Street Address</label>-->
+					<!--			<input v-model="form_data.mailing_address" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="street" type="text" placeholder="Street Address" data-vv-delay="500" data-vv-as="street address">-->
+					<!--			<span v-show="errors.has('street')" class="form-control-feedback">{{ errors.first('street') }}</span>-->
+					<!--		</div>-->
+					<!--		<div class="col-sm-6 col-xs-12"  :class="{'has-error': errors.has('city')}" style="padding-top: 20px;">-->
+					<!--			<label class="label" for="city"> City</label>-->
+					<!--			<input v-model="form_data.city" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="city" type="text" placeholder="Town/City" data-vv-delay="500" data-vv-as="city">-->
+					<!--			<span v-show="errors.has('city')" class="form-control-feedback">{{ errors.first('city') }}</span>-->
+					<!--		</div>-->
+					<!--		<div class="col-sm-6 col-xs-12 " :class="{'has-error': errors.has('postal')}"  style="padding-top: 20px;">-->
+					<!--			<label class="label" for="postal">Postal Code</label>-->
+					<!--			<input v-model="form_data.postal_code" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="postal" type="text" placeholder="Postal Code" data-vv-delay="500" data-vv-as="postal code">-->
+					<!--			<span v-show="errors.has('postal')" class="form-control-feedback">{{ errors.first('postal') }}</span>-->
+					<!--		</div>-->
+					<!--		<div class="col-sm-6 col-xs-12" :class="{'has-error': errors.has('birthday')}"   style="padding-top: 20px;">-->
+					<!--			<label class="label" for="birthday">Birthday</label>-->
+					<!--			<input v-model="form_data.birthday" class="form-control" v-validate="'required|date_format:MM/DD/YYYY'" :class="{'input': true}" name="birthday" type="text" placeholder="mm/dd/yyyy" data-vv-delay="500" data-vv-as="birthday">-->
                                 <!--<v-date-picker mode='single' v-model='birthday'  v-validate="'required:true'" select-color='green'></v-date-picker>-->
-								<span v-show="errors.has('birthday')" class="form-control-feedback">{{ errors.first('birthday') }}</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="col-xs-6" :class="{'has-error': errors.has('validate')}">
-								<label class="label" for="validate">Enter the following number below to proceed: {{correctValNum}}</label> 
-								<input v-model="validaNum" v-validate="'required|numeric|min:6|max:6'" class="form-control col-xs-3" :class="{'input': true}" name="validate" type="text" placeholder="Enter above number" data-vv-delay="500" data-vv-as="validation">
-								<span v-show="errors.has('validate')" class="form-control-feedback">{{ errors.first('validate') }}</span>
-								<span v-if="validaNum.length === 6 && validaNum !== correctValNum && errors.first('validate') == null" class="form-control-feedback" :class="{shake_element : validNumError}">Please enter correct number</span>
-							</div>
-						</div>
-						<div class="form-group account-btn text-left m-t-10 agreement">
-						    <div class="col-xs-12" :class="{'has-error': errors.has('agree_newsletter')}">
-						        <label class="checkbox">
-                                    <input name="agree_newsletter" type="checkbox" v-model="form_data.agree_newsletter">
-                                        Yes, I would like to receive ongoing news related to events, promotions and special announcements from Eastgate Square. 
-                                </label>
-						    </div>
-						    <div class="col-xs-12">
-						        <label class="checkbox">
-                                    <input name="agree_terms" required type="checkbox" >
-                                    I agree to the <a href = "/pages/eastgate-contest-rules-and-regulations" target="_blank"><u> rules and regulations</u></a>
-                                </label>
-						    </div>
-							<div class="col-xs-12">
-								<button class="feature-readmore" type="submit" :disabled="formSuccess">Submit</button>
-							</div>
-						</div>
-					</form>
+					<!--			<span v-show="errors.has('birthday')" class="form-control-feedback">{{ errors.first('birthday') }}</span>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<!--	<div class="form-group">-->
+					<!--		<div class="col-xs-6" :class="{'has-error': errors.has('validate')}">-->
+					<!--			<label class="label" for="validate">Enter the following number below to proceed: {{correctValNum}}</label> -->
+					<!--			<input v-model="validaNum" v-validate="'required|numeric|min:6|max:6'" class="form-control col-xs-3" :class="{'input': true}" name="validate" type="text" placeholder="Enter above number" data-vv-delay="500" data-vv-as="validation">-->
+					<!--			<span v-show="errors.has('validate')" class="form-control-feedback">{{ errors.first('validate') }}</span>-->
+					<!--			<span v-if="validaNum.length === 6 && validaNum !== correctValNum && errors.first('validate') == null" class="form-control-feedback" :class="{shake_element : validNumError}">Please enter correct number</span>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<!--	<div class="form-group account-btn text-left m-t-10 agreement">-->
+					<!--	    <div class="col-xs-12" :class="{'has-error': errors.has('agree_newsletter')}">-->
+					<!--	        <label class="checkbox">-->
+     <!--                               <input name="agree_newsletter" type="checkbox" v-model="form_data.agree_newsletter">-->
+     <!--                                   Yes, I would like to receive ongoing news related to events, promotions and special announcements from Eastgate Square. -->
+     <!--                           </label>-->
+					<!--	    </div>-->
+					<!--	    <div class="col-xs-12">-->
+					<!--	        <label class="checkbox">-->
+     <!--                               <input name="agree_terms" required type="checkbox" >-->
+     <!--                               I agree to the <a href = "/pages/eastgate-contest-rules-and-regulations" target="_blank"><u> rules and regulations</u></a>-->
+     <!--                           </label>-->
+					<!--	    </div>-->
+					<!--		<div class="col-xs-12">-->
+					<!--			<button class="feature-readmore" type="submit" :disabled="formSuccess">Submit</button>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<!--</form>-->
                     
                     <div id="send_contact_success" class="alert alert-success text-left" role="alert" v-show="formSuccess">
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
