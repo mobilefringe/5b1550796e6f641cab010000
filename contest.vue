@@ -57,7 +57,7 @@
         								<span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
         							</div>
         						</div>
-        						<div class="form-inline row margin_60">
+        						<div class="form-inline row margin_40">
         						    <div class="col-xs-12">
         						        <label class="checkbox">
                                             <input name="agree_terms" type="checkbox" required >
