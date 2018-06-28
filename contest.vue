@@ -2,7 +2,7 @@
     <div class="page_container" id="contact_us_container"> <!-- for some reason if you do not put an outer container div this component template will not render -->
         <div>
             <div class="row">
-                    <img :src='currentContest.image_url' alt="contest image">
+                    <!--<img :src='currentContest.image_url' alt="contest image">-->
                 </div> 
             <div class="row"> 
                 <div class="col-md-8 col-offset-md-2 contest_contents">
