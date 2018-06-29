@@ -158,7 +158,7 @@
                                 success: function(data) {
                                     vm.formSuccess = true;
                                     var container = this.$el.querySelector("#send_contact_success");
-                                    container.scrollTop = container.clinteight;
+                                    container.scrollTop = container.clientHeight;
                                 },
                                 error: function(data){
                                     vm.formError = true;
