@@ -150,7 +150,6 @@
                             contest_entry.property_id = this.currentContest.property_id;
                             contest_entry.contest = this.form_data;
                             console.log( contest_entry)
-                            contest_entry = this.serializeObject(contest_entry)
                             var vm = this;
                             host_name = this.property.mm_host.replace("http:", "");
                             var url = host_name + "/newsletter_no_captcha";//"/contests/" + this.currentContest.slug + "/create_js_entry";
@@ -177,7 +176,7 @@
                         tempVal.value = value;
                         newObj.push(tempVal);
                     });
-                    console.log(newObj);
+                    console.log(obj);
                     return newObj;
                 }
             }
