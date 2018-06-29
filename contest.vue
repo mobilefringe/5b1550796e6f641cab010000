@@ -146,13 +146,11 @@
                             // }
                             //format contests data for MM
                             var contest_entry = {};
-                            contest_entry.contest_id = this.currentContest.id;
-                            contest_entry.property_id = this.currentContest.property_id;
                             contest_entry.contest = this.form_data;
-                            console.log( contest_entry)
+                            console.log( contest_entry.contest)
                             var vm = this;
                             host_name = this.property.mm_host.replace("http:", "");
-                            var url = host_name + "/newsletter_no_captcha";//"/contests/" + this.currentContest.slug + "/create_js_entry";
+                            var url = host_name + "/contests/" + this.currentContest.slug + "/create_js_entry";
                             $.ajax({
                                 url: url,
                                 type: "POST",
@@ -166,18 +164,6 @@
                             });
                         }
                     })
-                },
-                serializeObject(obj) {
-                    console.log(obj);
-                    var newObj = [];
-                    _.forEach(obj, function(value, key) {
-                        var tempVal = {};
-                        tempVal.name = key;
-                        tempVal.value = value;
-                        newObj.push(tempVal);
-                    });
-                    console.log(obj);
-                    return newObj;
                 }
             }
         });
