@@ -148,7 +148,7 @@
                             var contest_entry = {};
                             contest_entry.contest_id = this.currentContest.id;
                             contest_entry.property_id = this.currentContest.property_id;
-                            contest_entry.contest = this.serializeObject(this.form_data);//this.form_data
+                            contest_entry.contest = this.form_data;
                             console.log( contest_entry)
                             contest_entry = this.serializeObject(contest_entry)
                             var vm = this;
