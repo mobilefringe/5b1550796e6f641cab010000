@@ -150,7 +150,7 @@
                             console.log( contest_entry.contest)
                             var vm = this;
                             host_name = this.property.mm_host.replace("http:", "");
-                            var url = host_name + "/contests/" + this.currentContest.slug + "/create_js_entry";
+                            var url = host_name + "newsletter_no_captcha";//"/contests/" + this.currentContest.slug + "/create_js_entry";
                             $.ajax({
                                 url: url,
                                 type: "POST",
