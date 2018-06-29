@@ -176,6 +176,7 @@
                         tempVal.value = value;
                         newObj.push(tempVal);
                     });
+                    console.log(newObj);
                     return newObj;
                 }
             }
