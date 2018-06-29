@@ -157,6 +157,8 @@
                                 data: contest_entry,
                                 success: function(data) {
                                     vm.formSuccess = true;
+                                    var container = this.$el.querySelector("#container");
+container.scrollTop = container.scrollHeight;
                                 },
                                 error: function(data){
                                     vm.formError = true;
