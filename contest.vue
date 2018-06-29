@@ -147,7 +147,7 @@
                             //format contests data for MM
                             var contest_entry = {};
                             contest_entry.contest_id = this.currentContest.id;
-                            contest_entry.property_id = this.property.id;
+                            contest_entry.property_id = this.currentContest.property_id;
                             contest_entry.contest = this.form_data;
                             console.log( contest_entry)
                             var vm = this;
