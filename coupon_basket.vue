@@ -81,6 +81,7 @@
             },
             created (){
                 this.loadData().then(response => {
+                    console.log("Cookies Basket ", Cookies.get('coupon_ids'))
                     console.log(this.selected)
                     console.log(this.couponsFullList)
                     // this.handleButton();
