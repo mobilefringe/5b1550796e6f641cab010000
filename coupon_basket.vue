@@ -62,7 +62,7 @@
 </template>
               
 <script>
-    define(["Vue", "vuex", "jquery", 'js-cookie', "moment", "moment-timezone", "vue-moment", "vue-lazy-load", "json!coupons.json"], function (Vue, Vuex, $, Cookies, moment, tz, VueMoment, VueLazyload, coupons) {
+    define(["Vue", "vuex", "jquery", 'js-cookie', "moment", "moment-timezone", "vue-moment", "vue-lazy-load"], function (Vue, Vuex, $, Cookies, moment, tz, VueMoment, VueLazyload) {
         Vue.use(VueLazyload);
         return Vue.component("coupon-basket-component", {
             template: template, // the variable template will be injected,
@@ -70,8 +70,7 @@
             data: function () {
                 return {
                     dataLoaded: false,
-                    couponsFullList: coupons,
-                    
+                    selectedCoupons: null,
                     events: [],
                     moreEvents: [],
                     moreEventsFetched: false,
@@ -82,6 +81,7 @@
             created (){
                 this.loadData().then(response => {
                     console.log("Cookies Basket ", Cookies.get('coupon_ids'))
+                    this.selectedCoupons = Cookies.get('coupon_ids');
                     console.log(this.selected)
                     console.log(this.couponsFullList)
                     // this.handleButton();
@@ -97,21 +97,22 @@
                 couponList: function coupons() {
                     var vm = this;
                     var showCoupons = [];
-                    _.forEach(this.couponsFullList, function(value, key) {
-                        var today = moment.tz(this.timezone).format();
-                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
-                        if (today >= showOnWebDate) {
-                            if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
-                                value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
-                            }
+                    _.forEach(this.selectedCoupons, function(value, key) {
+                        console.log(value)
+                        // var today = moment.tz(this.timezone).format();
+                        // var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        // if (today >= showOnWebDate) {
+                        //     if (value.store != null && value.store != undefined && _.includes(value.store.image_url, 'missing')) {
+                        //         value.store.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
+                        //     }
                             
-                            if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
-                            }
+                        //     if (_.includes(value.image_url, 'missing')) {
+                        //         value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
+                        //     }
                             
-                            value.name_short = _.truncate(value.name, { 'length': 30, 'separator': ' ' });
+                        //     value.name_short = _.truncate(value.name, { 'length': 30, 'separator': ' ' });
                             
-                            value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
+                        //     value.description_short = _.truncate(value.description, { 'length': 250, 'separator': ' ' });
                             
                             showCoupons.push(value);
                         }
