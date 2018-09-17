@@ -5,5 +5,6 @@
     "propertyManagementURL": "https://www.firstwash.com/",
     "siteLogo": "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1528125727000/cerritos_logo.png",
     "siteName": "Cerritos Town Center",
-    "twitterHandle": "propertyTwitterHandle"
+    "twitterHandle": "propertyTwitterHandle",
+    "subdomain": "twinpine"
 }
