@@ -3,7 +3,7 @@
         <loading-spinner v-if="!dataLoaded"></loading-spinner>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
-                <div class="inside_page_header">
+                <div class="inside_page_header" v-if="pageBanner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + pageBanner.image_url + ') center center' }">
                     <div class="main_container position_relative">
                         <h2>Center Information</h2>
                     </div>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-	define(["Vue", "vuex"], function(Vue, Vuex) {
+	define(["Vue", "vuex", "json!site.json"], function(Vue, Vuex, Site) {
 		return Vue.component("center-info-component", {
             template: template, // the variable template will be injected
             data: function () {
@@ -64,17 +64,34 @@
             },
             created() {
                 this.loadData().then(response => {
+                    var repo = this.findRepoByName('Center Information Banner');
+                    if(repo !== null && repo !== undefined) {
+                       repo = repo.images;
+                       this.pageBanner = repo[0];
+                    }
+                    else {
+                        this.pageBanner = {
+                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5b71eb886e6f6450013c0000/image/jpeg/1529532304000/insidebanner2.jpg"
+                        }
+                    }
                     var temp_repo = this.findRepoByName('Center Information Images');
                     if(temp_repo) {
-                        var three_imgs = _.slice(temp_repo.images, [0], [3])
+                        
+                         console.log("temp_repo", temp_repo.images)
+                        var three_imgs = _.slice(_.sortBy(temp_repo.images, function(o){return o.id}), [0], [3])
                         this.pageImages = three_imgs;
 
-                        var one_img = temp_repo.images[3];
+                        var one_img = _.sortBy(temp_repo.images, function(o){return o.id})[3];
                         this.lowerBanner = one_img;
                     }
-                    
-                    this.main = response[1].data;
-                    this.amenities = response[1].data.subpages
+                    if(response && response[1]){
+                         this.main = response[1].data;
+                        if(response[1].data && response[1].data.subpages){
+                           this.amenities = response[1].data.subpages
+                        }
+                    }
+                    // this.main = response[1].data;
+                    // this.amenities = response[1].data.subpages
                     this.dataLoaded = true;
                 });
             },
@@ -89,7 +106,7 @@
                 loadData: async function () {
                     this.property.mm_host = this.property.mm_host.replace("http:", "");
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/cerritos-center-information.json"})]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/"+Site.subdomain+"-center-information.json"})]);
                         return results;
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
