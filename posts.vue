@@ -21,7 +21,6 @@
         		        <div class="col-md-12 clearfix text-center">
         		            <button class="animated_btn stores_btn" @click="filterList('all')">All</button>
         		            <button class="animated_btn stores_btn" @click="filterList(tag)" v-for="tag in tags">{{tag}}</button>
-        		            <!--<button class="animated_btn stores_btn" @click="toggleView(togglePromos)">Promotions</button>-->
         		        </div>
         		    </div>
                     <!--<div >-->
