@@ -23,42 +23,7 @@
         		            <button class="animated_btn stores_btn" @click="filterList(tag)" v-for="tag in tags">{{tag}}</button>
         		        </div>
         		    </div>
-                    <!--<div >-->
-                    <!--    <div v-if="filteredBlogList" >-->
-                    <!--        <div v-for="(event,index) in filteredBlogList">-->
-                            <!--<div v-if="index==0"  class="row event_container">-->
-                            <!--    <div class="col-md-12 text-center">-->
-                            <!--    <img :src="event.image_url" :alt="'Event: ' + event.name" class="event_img img_max" /> -->
-                            <!--    <h4 class="event_name">{{ event.name }}</h4>-->
-                            <!--    <p class="event_dates"><span v-if="event.tags && event.tags.length >0">{{event.tags[0]}} | </span><span>{{ event.publish_date | moment("MMMM D", timezone)}}</span></p>-->
-                            <!--    <div class="event_desc" v-html="event.description_short"></div>-->
-                            <!--    <router-link :to="{ name: 'eventDetails', params: { id: event.slug, banner: pageBanner }}">-->
-                            <!--        <p class="event_link">Event Details <i class="fas fa-angle-double-right"></i></p>-->
-                            <!--    </router-link>-->
-                            <!--    </div>-->
-                            <!--</div>-->
-                            <!--    <div class="row event_container" v-else>-->
-                            <!--        <div class="col-md-4">-->
-                            <!--            <img :src="event.image_url" :alt="'Event: ' + event.name" class="event_img img_max" />   -->
-                            <!--        </div>-->
-                            <!--        <div class="col-md-8">-->
-                            <!--            <h4 class="event_name">{{ event.name }}</h4>-->
-                            <!--            <p class="event_dates"><span v-if="event.tags && event.tags.length >0">{{event.tags[0]}} | </span><span>{{ event.publish_date | moment("MMMM D", timezone)}}</span></p>-->
-                            <!--            <div class="event_desc" v-html="event.description_short"></div>-->
-                            <!--            <router-link :to="{ name: 'eventDetails', params: { id: event.slug, banner: pageBanner }}">-->
-                            <!--                <p class="event_link">Event Details <i class="fas fa-angle-double-right"></i></p>-->
-                            <!--            </router-link>-->
-                            <!--        </div>-->
-                            <!--    </div>-->
-                            <!--</div>-->
-                            
-                    <!--    </div>-->
-                    <!--    <div class="row margin_60" v-if="Object.keys(blogList).length === 0">-->
-                    <!--        <div class="col-md-12">-->
-                    <!--            <p>Sorry, there are no Events posted at this time. Please check back soon!</p>    -->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--</div>-->
+                   
                     <transition-group name="list" tag="div">
                         <div v-if="paginatedBlogs" v-for="(event,index) in paginatedBlogs" :key="event.id">
                             <div v-if="index==0"  class="row event_container">
