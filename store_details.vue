@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div v-if="this.currentStore.coupons">
+                            <div v-if="currentStore.coupons">
                                 <h3 class="store_details_title">Current Coupons</h3> 
                                 <div class="row margin_40">
                                     <div class="col-md-6" v-if="storeCoupons" v-for="item in storeCoupons">
