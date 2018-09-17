@@ -73,15 +73,36 @@
             data: function() {
                 return {
                     dataLoaded: false,
+                    pageBanner: null,
                     currentPromo: null,
                     siteInfo: site
                 }
             },
             created() {
 				this.$store.dispatch("getData", "promotions").then(response => {
+				    var temp_repo = this.findRepoByName('Events Banner').images;
+                    if(temp_repo != null) {
+                        this.pageBanner = temp_repo[0];
+                    } else {
+                        this.pageBanner = {
+                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5b5f2c136e6f644fcb5b0100/image/jpeg/1529532304000/insidebanner2.jpg"
+                        }
+                    }
+                    
 					this.currentPromo = this.findPromoBySlug(this.id);
 					if (this.currentPromo === null || this.currentPromo === undefined) {
 						this.$router.replace({ path: '/promotions' });
+					}
+					else {
+					    if (this.currentPromo.promotionable_type === "Store"){
+                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
+                                this.currentPromo.image_url = this.currentPromo.store.store_front_url_abs; 
+                            }
+                        } else {
+                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
+                                this.currentPromo.image_url = "//codecloud.cdn.speedyrails.net/sites/5b8712636e6f641ebd220000/image/png/1529532181000/promoplaceholder2@2x.png";    
+                            }
+                        }
 					}
 					this.$breadcrumbs[2].meta.breadcrumb = this.currentPromo.name
 					this.dataLoaded = true;
@@ -89,26 +110,12 @@
 					console.error("Could not retrieve data from server. Please check internet connection and try again.");
 				});
 			},
-			watch: {
-                currentPromo : function (){
-                    if(this.currentPromo != null) {
-                        if (this.currentPromo.promotionable_type === "Store"){
-                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
-                                this.currentPromo.image_url = this.currentPromo.store.store_front_url_abs; 
-                            }
-                        } else {
-                            if  (_.includes(this.currentPromo.promo_image_url_abs, 'missing')) {
-                                this.currentPromo.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529532181000/promoplaceholder2@2x.png";    
-                            }
-                        }
-                    }
-                }
-            },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
-                    'findPromoBySlug'
+                    'findPromoBySlug',
+                    'findRepoByName'
                 ])
             },
             methods: {
