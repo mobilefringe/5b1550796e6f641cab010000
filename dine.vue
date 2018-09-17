@@ -3,9 +3,9 @@
         <loading-spinner v-if="!dataLoaded"></loading-spinner>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
-        		<div class="inside_page_header">
+        		<div class="inside_page_header" v-if="pageBanner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + pageBanner.image_url + ') center center' }">
                     <div class="main_container position_relative">
-                        <h2>Dine</h2>
+                        <h2>Dining</h2>
                     </div>
                 </div>
         		<div class="main_container">
@@ -54,18 +54,29 @@
                                 <div v-masonry-tile  v-for="(store, index) in filteredStores" :key="index" class="stores-grid-item">
                             	    <div class="store_logo_container">
                             	        <router-link :to="'/stores/'+ store.slug">
-                                			<img class="store_img" :src="store.image_url" alt="">
+                                			<!--<img class="store_img" :src="store.image_url" alt="">-->
+                                			<div v-if="!store.no_store_logo">
+                                			    <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png">
+                                			    <img  class="store_img" :src="store.store_front_url_abs" alt="">
+                                			</div>
+                                			
+                                            <div v-else class="no_logo_container">
+                                                <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
+                                                <div class="no_logo_text">
+                                                    <div class="store_text"><h4>{{ store.name }}</h4></div>
+                                                </div>
+                                            </div>
                                 			<div class="store_tag" v-if="store.total_published_promos">
             									<div class="store_tag_text">Promotion</div>
             								</div>
-            								<div class="store_tag" v-if="!store.total_published_promos && !store.is_new_store && store.is_coming_soon_store">
+            								<div class="store_tag" v-if="!store.total_published_promos && store.is_coming_soon_store">
             									<div class="store_tag_text">Coming Soon</div>
             								</div>
             								<div class="store_tag" v-if="!store.total_published_promos && !store.is_coming_soon_store && store.is_new_store">
             									<div class="store_tag_text">New Store</div>
             								</div>
             								<div class="store_details">
-            								    <div class="store_text"><h3>{{ store.name }}</h3></div>    
+            								    <div class="store_text"><h4>{{ store.name }}</h4></div>    
             								</div>
                                 		</router-link>
                             	    </div>
@@ -100,7 +111,7 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    storeBanner : null,
+                    pageBanner : null,
                     windowWidth: 0,
                     selectedCat: null,
                     filteredStores: null,
@@ -109,52 +120,30 @@
                     toggleText: "Display as List",
                     logoView: true,
                     listView: false,
-                    dineFilter: 5962
+                    dineFilter: 6032
                 }
             },
             created (){
                 this.loadData().then(response => {
-                    // var temp_repo = this.findRepoByName('Directory Banner').images;
-                    // if(temp_repo != null) {
-                    //     this.storeBanner = temp_repo[0];
-                    // } else {
-                    //     this.storeBanner = "http://via.placeholder.com/1920x400/4f6726/4f6726";
-                    // }
-                    
-                    this.dataLoaded = true;
-                    
-                    this.query = this.$route.query.category
-                    if(this.query == "dining_full_service"){
-                      this.selectedCat = "Dining Full Service";
-                      this.filterByCategory;
-                    } else {
-                        this.selectedCat = "All";
-                        this.filteredStores = this.allStores;
+                    var temp_repo = this.findRepoByName('Dine Banner');
+                    if(temp_repo !== null && temp_repo !== undefined) {
+                       temp_repo = temp_repo.images;
+                       this.pageBanner = temp_repo[0];
                     }
+                    else {
+                        this.pageBanner = {
+                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5b71eb886e6f6450013c0000/image/jpeg/1529532304000/insidebanner2.jpg"
+                        }
+                    }
+
+                    this.dataLoaded = true;
                 });
             },
             watch: {
-                $route: function() {
-                    this.query = this.$route.query.category
-                    if(this.query == "dining_full_service"){
-                      this.selectedCat = "Dining Full Service";
-                      this.filterByCategory;
-                    } else {
-                        this.selectedCat = "All";
-                        this.filteredStores = this.allStores;
-                    }    
-                },
                 selectedCat: function() {
                     this.$nextTick(function() {
                         Vue.prototype.$redrawVueMasonry();
                     });    
-                },
-                windowWidth: function() {
-                    if (this.windowWidth <= 768) {
-                        this.mobile_store = true;
-                    } else {
-                        this.mobile_store = false;
-                    }
                 }
             },
             mounted() {
@@ -174,6 +163,9 @@
                     'storesByCategoryName',
                     'findCategoryById',
                     'findCategoryByName',
+                    'findSubcategoryById',
+                    'findSubcategoryByName',
+                    'findSubcategoriesByParentID',
                     'findRepoByName'
                 ]),
                 allStores() {
@@ -182,7 +174,7 @@
                     _.forEach(this.processedStores, function(value, key) {
                         if(_.includes(value.categories, vm.dineFilter)) {
                             if (_.includes(value.image_url, 'missing')) {
-                                value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1529516445000/cerritos.png";
+                                value.image_url = vm.property.default_logo;
                             }
                             store_list.push(value);
                         }
@@ -192,35 +184,30 @@
                 },
                 dropDownCats() {
                     var vm = this;
-                    var store_cats = _.filter(this.processedStores, function(o) { return _.includes(o.categories, vm.dineFilter) });
-                    var cats = [];
-                    _.forEach(store_cats, function(value, key) {
-                        _.forEach(value.categories, function(category, key) {
-                            var current_category = vm.findCategoryById(category)
-                            if(!_.includes(cats, current_category.name) && category != vm.dineFilter) {
-                                
-                                cats.push(current_category.name)
-                            }
-                        });
-                    });
-                    cats = cats.sort();
-                    cats.unshift('All');
-                    return cats;
+                    var dining_cat =  _.find(this.processedCategories, function(o) { return o.name == "Dining"});
+                    var subcategories = [];
+                    if (dining_cat !== null && dining_cat !== undefined) {
+                       subcategories = vm.findSubcategoriesByParentID(dining_cat.id);
+                    }
+                    
+                    subcategories = _.map(subcategories, 'name').sort();
+                    subcategories.unshift('All Cuisine');
+                    return subcategories;
                 },
                 filterByCategory() {
                     category_id = this.selectedCat;
-                    if (category_id == "All" || category_id == null || category_id == undefined) {
+                    if (category_id == "All Cuisine" || category_id == null || category_id == undefined) {
                         category_id = "All";
                     } else {
-                        category_id = this.findCategoryByName(category_id).id;
+                        category_id = this.findSubcategoryByName(category_id).id;
                     }
 
                     if (category_id == "All") {
                         this.filteredStores = this.allStores;
                     } else {
-                        var find = this.findCategoryById;
+                        var find = this.findSubcategoryById;
                         var filtered = _.filter(this.allStores, function(o) {
-                            return _.indexOf(o.categories, _.toNumber(category_id)) > -1;
+                            return _.indexOf(o.subcategories, _.toNumber(category_id)) > -1;
                         });
                         this.filteredStores = filtered;
                     }
@@ -233,7 +220,7 @@
             methods: {
                 loadData: async function() {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData", "repos")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "subcategories")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
