@@ -23,13 +23,12 @@
         		            <button class="animated_btn stores_btn" @click="filterList(tag)" v-for="tag in tags">{{tag}}</button>
         		        </div>
         		    </div>
-                   
                     <transition-group name="list" tag="div">
                         <div v-if="paginatedBlogs" v-for="(event,index) in paginatedBlogs" :key="event.id">
                             <div v-if="index==0"  class="row event_container">
                                 <div class="col-md-12 text-center">
-                                <img :src="event.image_url" :alt="'Event: ' + event.name" class="event_img img_max" /> 
-                                <h4 class="event_name">{{ event.name }}</h4>
+                                <img :src="event.image_url" :alt="'Event: ' + event.title" class="event_img img_max" /> 
+                                <h4 class="event_name">{{ event.title }}</h4>
                                 <p class="event_dates"><span v-if="event.tags && event.tags.length >0">{{event.tags[0]}} | </span><span>{{ event.publish_date | moment("MMMM D", timezone)}}</span></p>
                                 <div class="event_desc" v-html="event.description_short"></div>
                                 <router-link :to="{ name: 'postsDetails', params: { id: event.slug, banner: pageBanner }}">
@@ -39,10 +38,10 @@
                             </div>
                             <div class="row event_container" v-else>
                                 <div class="col-md-4">
-                                    <img :src="event.image_url" :alt="'Event: ' + event.name" class="event_img img_max" />   
+                                    <img :src="event.image_url" :alt="'Event: ' + event.title" class="event_img img_max" />   
                                 </div>
                                 <div class="col-md-8">
-                                    <h4 class="event_name">{{ event.name }}</h4>
+                                    <h4 class="event_name">{{ event.title }}</h4>
                                     <p class="event_dates"><span v-if="event.tags && event.tags.length >0">{{event.tags[0]}} | </span><span>{{ event.publish_date | moment("MMMM D", timezone)}}</span></p>
                                     <div class="event_desc" v-html="event.description_short"></div>
                                     <router-link :to="{ name: 'postsDetails', params: { id: event.slug, banner: pageBanner }}">
@@ -94,7 +93,7 @@
             },
             created (){
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Events Banner');
+                    var temp_repo = this.findRepoByName('Blog Banner');
                     if(temp_repo !== null && temp_repo !== undefined) {
                        temp_repo = temp_repo.images;
                        this.pageBanner = temp_repo[0];
