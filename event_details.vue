@@ -21,7 +21,7 @@
                                 <p class="event_details_dates">
                                     <span v-if="isMultiDay(currentEvent)">{{ currentEvent.start_date | moment("MMMM D", timezone)}} - {{ currentEvent.end_date | moment("MMMM D", timezone)}}</span>
                                     <span v-else>{{ currentEvent.start_date | moment("MMMM D", timezone)}}</span>
-                                </p
+                                </p>
                                 <div class="event_desc event_details" v-html="currentEvent.rich_description"></div>
                             </div>
                             <div class="col-md-4">
