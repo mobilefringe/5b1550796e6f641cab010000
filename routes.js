@@ -31,6 +31,29 @@ define([], function () {
                     ]
                 },
                 {
+                   path: '/jobs',
+                   component: view('default'),
+                   meta: {
+                      breadcrumb: 'Jobs'
+                   },
+                   children: [
+                      {
+                         path: '',
+                         component: view('jobs'),
+                         name: 'jobList'
+                      },
+                      {
+                         path: ':id',
+                         component: view('job_details'),
+                         meta: {
+                            breadcrumb: 'Jobs'
+                         },
+                         name: 'jobDetails',
+                         props: true
+                      }
+                   ]
+                },
+                {
                     path: '/coupons',
                     component: view('default'),
                     meta: {
@@ -65,29 +88,6 @@ define([], function () {
                                 breadcrumb: 'Coupon Details',
                             },
                             name: 'couponDetails',
-                            props: true
-                        }
-                    ]
-                },
-                {
-                    path: '/jobs',
-                    component: view('default'),
-                    meta: {
-                        breadcrumb: 'Jobs'
-                    },
-                    children: [
-                        {
-                            path: '',
-                            component: view('jobs'),
-                            name: 'jobList'
-                        },
-                        {
-                            path: ':id',
-                            component: view('job_details'),
-                            meta: {
-                                breadcrumb: 'Jobs'
-                            },
-                            name: 'jobDetails',
                             props: true
                         }
                     ]
